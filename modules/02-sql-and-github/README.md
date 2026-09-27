@@ -1,6 +1,6 @@
 # SQL and GitHub
 
-[Course home](../../README.md) · [Schedule](../../course/SCHEDULE.md) · [Assessment](../../course/ASSESSMENT.md)
+[Course home](../../README.md) · [Schedule](../../course/STUDENT_SCHEDULE.md) · [Assessment](../../course/ASSESSMENT.md)
 
 **D03–D08 · 24 scheduled hours · Status: D03–D05 labs and the upload guide ready; D06–D08 not yet authored.**
 
@@ -10,12 +10,12 @@ Query, combine and audit data with GoogleSQL; document analytical work in a port
 
 | Session | Date | Focus |
 |---|---|---|
-| [D03](../../course/DAILY_OUTLINE.md#d03) | Sun 27 Sep | SQL foundations and the relational model |
-| [D04](../../course/DAILY_OUTLINE.md#d04) | Mon 28 Sep | Aggregation, grain and business measures |
-| [D05](../../course/DAILY_OUTLINE.md#d05) | Tue 29 Sep | Joins and the fan-out trap |
-| [D06](../../course/DAILY_OUTLINE.md#d06) | Sun 4 Oct | Subqueries, CTEs and reusable SQL |
-| [D07](../../course/DAILY_OUTLINE.md#d07) | Mon 5 Oct | Window functions for analytical questions |
-| [D08](../../course/DAILY_OUTLINE.md#d08) | Wed 7 Oct | SQL practical, cost control and GitHub portfolio |
+| D03 | Sun 27 Sep | SQL foundations and the relational model |
+| D04 | Mon 28 Sep | Aggregation, grain and business measures |
+| D05 | Tue 29 Sep | Joins and the fan-out trap |
+| D06 | Sun 4 Oct | Subqueries, CTEs and reusable SQL |
+| D07 | Mon 5 Oct | Window functions for analytical questions |
+| D08 | Wed 7 Oct | SQL practical, cost control and GitHub portfolio |
 
 ## Materials
 
