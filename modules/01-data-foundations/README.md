@@ -27,7 +27,7 @@ preview, and your first query on a public table.
 ## Homework
 
 [Week 1 homework](assignments/W01-homework.md) — get BigQuery, GitHub and Power BI Desktop working.
-About 90 minutes. Due before 2:00 PM on Sunday 27 September, at the start of D03.
+About 90 minutes. Due before 4:00 PM on Sunday 27 September, at the start of D03.
 
 It is the only homework this week, and it is not graded. D03 teaches SQL and assumes you can reach
 BigQuery, so a tool that will not open is the one thing that can cost you a session.

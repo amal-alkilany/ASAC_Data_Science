@@ -5,7 +5,7 @@
 This beginner programme prepares learners for analyst and business intelligence roles. It combines guided instruction with practical work in SQL, Power Query, data modelling, DAX, report design, introductory machine learning and responsible AI.
 
 **Dates:** 20 September–12 November 2026  
-**Class time:** 2:00–6:00 PM (Asia/Amman)  
+**Class time:** 4:00–8:00 PM (Asia/Amman), from 27 September; D01–D02 ran 2:00–6:00 PM  
 **Format:** 26 sessions across 8 weeks, for 104 scheduled hours  
 **Lead instructor:** Tarek Atwan  
 **Cohort:** Approximately 200 trainees
@@ -20,7 +20,7 @@ The programme supports preparation for the Microsoft Power BI Data Analyst certi
 
 [View the student schedule](course/STUDENT_SCHEDULE.md) · [Download the Excel version](course/assets/student-schedule.xlsx) · [Open in Google Sheets](https://docs.google.com/spreadsheets/d/1eese9ddJeecPEWQ60ApRvr0rfiYVBfoNaogoYhwyRNk/edit?usp=sharing)
 
-The scheduled hours include a 25-minute break from 3:35 to 4:00 PM. The final mock exam will follow the timing and break rules confirmed by its provider.
+The scheduled hours include a 30-minute break from 6:30 to 7:00 PM. Labs start at 7:00 PM, right after the break. The final mock exam will follow the timing and break rules confirmed by its provider.
 
 > [!NOTE]
 > Course materials will be released weekly before the first session of each new week.

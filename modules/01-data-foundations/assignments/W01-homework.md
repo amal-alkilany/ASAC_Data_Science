@@ -2,7 +2,7 @@
 
 [Module home](../README.md) · [Course home](../../../README.md) · [Assessment and deadlines](../../../course/ASSESSMENT.md)
 
-**Due: before 2:00 PM on Sunday 27 September 2026 — one week after D01, at the start of D03.**
+**Due: before 4:00 PM on Sunday 27 September 2026 — one week after D01, at the start of D03.**
 **Time: about 90 minutes, most of it waiting for downloads.** Not graded. It is checked.
 
 There is one job this week: get BigQuery, GitHub and Power BI Desktop working on your own machine.
