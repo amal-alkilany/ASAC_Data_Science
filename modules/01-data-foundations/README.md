@@ -1,6 +1,6 @@
 # Module 01 · Data foundations
 
-[Course home](../../README.md) · [Schedule](../../course/STUDENT_SCHEDULE.md) · [Assessment](../../course/ASSESSMENT.md)
+[Course home](../../README.md) · [Schedule](../../course/STUDENT_SCHEDULE.md)
 
 **Week 1 · D01–D02 · 20 and 21 September 2026 · 8 hours**
 
@@ -55,4 +55,4 @@ A copy of these materials is mirrored in the course
 This repository is the original; if the two ever disagree, trust this one.
 
 Labs are done in class and are not graded. If you do not finish one, the reference solution is
-released at the debrief so you can finish it yourself. It never becomes homework.
+released at the debrief so you can finish it yourself. It never becomes homework.e
