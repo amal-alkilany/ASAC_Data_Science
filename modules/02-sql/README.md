@@ -16,6 +16,7 @@ Query, combine and check data with SQL in BigQuery, then save the views that Pow
 | D06 | Sun 4 Oct | Joins: combining tables |
 | D07 | Mon 5 Oct | Joins continued: joins with GROUP BY and CASE |
 | D08 | Wed 7 Oct | Subqueries, CTEs and views |
+| Optional | Thu 8 Oct | Optional review: SQL so far (D03–D08), 4:00–6:00 PM |
 | D09 | Sun 11 Oct | Window functions and SQL wrap-up |
 
 ## Materials

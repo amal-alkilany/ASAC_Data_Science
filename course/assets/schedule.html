@@ -42,6 +42,8 @@
   .handoffs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
   .handoffs div{border:1px solid #ead9ca;border-radius:9px;padding:13px 18px;color:#59463a;font-size:16px;line-height:1.55;background:#fffaf4}
   .handoffs b{color:#8e3d0a}
+  td.on.optional{background:#f6c531;color:#3b2c00}
+  .sw.optional{background:#f6c531}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 </style></head><body>
@@ -82,7 +84,7 @@
     <table>
       <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
       <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-      <tr><td class="on " data-session="D06"><span class="n">4</span><span class="d">D06</span><span class="role">LEAD</span></td><td class="on " data-session="D07"><span class="n">5</span><span class="d">D07</span><span class="role">LEAD</span></td><td>6</td><td class="on " data-session="D08"><span class="n">7</span><span class="d">D08</span><span class="role">LEAD</span></td><td>8</td><td>9</td><td>10</td></tr>
+      <tr><td class="on " data-session="D06"><span class="n">4</span><span class="d">D06</span><span class="role">LEAD</span></td><td class="on " data-session="D07"><span class="n">5</span><span class="d">D07</span><span class="role">LEAD</span></td><td>6</td><td class="on " data-session="D08"><span class="n">7</span><span class="d">D08</span><span class="role">LEAD</span></td><td class="on optional" data-session="optional"><span class="n">8</span><span class="d">OPTIONAL</span><span class="role">4-6 PM</span></td><td>9</td><td>10</td></tr>
       <tr><td class="on " data-session="D09"><span class="n">11</span><span class="d">D09</span><span class="role">LEAD</span></td><td class="on " data-session="D10"><span class="n">12</span><span class="d">D10</span><span class="role">LEAD</span></td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
       <tr><td class="on " data-session="D11"><span class="n">18</span><span class="d">D11</span><span class="role">LEAD</span></td><td class="on " data-session="D12"><span class="n">19</span><span class="d">D12</span><span class="role">LEAD</span></td><td>20</td><td class="on " data-session="D13"><span class="n">21</span><span class="d">D13</span><span class="role">LEAD</span></td><td>22</td><td>23</td><td>24</td></tr>
       <tr><td class="on " data-session="D14"><span class="n">25</span><span class="d">D14</span><span class="role">LEAD</span></td><td class="on " data-session="D15"><span class="n">26</span><span class="d">D15</span><span class="role">LEAD</span></td><td>27</td><td>28</td><td class="on " data-session="D16"><span class="n">29</span><span class="d">D16</span><span class="role">LEAD</span></td><td>30</td><td>31</td></tr>
@@ -113,11 +115,12 @@
   <div class="legend">
     <span class="item"><span class="sw"></span> Solid green: Tarek teaches throughout, D01-D24</span>
     <span class="item"><span class="sw ta-only"></span> Solid orange: TA-only D25-D26</span>
+    <span class="item"><span class="sw optional"></span> Yellow: optional SQL review, Thu 8 Oct, 4:00-6:00 PM</span>
   </div>
   <p class="note">
     Re-planned 29 September 2026: SQL slowed down (joins over D06-D07), machine learning moved straight after SQL, Power BI runs D15-D23, generative AI on D24.<br>
     D01-D02 ran 2:00-6:00 PM. D25-D26 are TA-led throughout; Tarek is absent on D26.<br>
-    26 days &times; 4 hours = 104 scheduled hours, including breaks.<br>
+    26 days &times; 4 hours = 104 scheduled hours, including breaks. The optional review on Thursday 8 October (4:00-6:00 PM) is extra.<br>
     Assignments keep their published due dates. The D26 mock will follow the provider's confirmed timing and break rules.
   </p>
 </footer>

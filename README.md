@@ -7,6 +7,7 @@ This beginner programme prepares learners for analyst and business intelligence 
 **Dates:** 20 September–12 November 2026  
 **Class time:** 4:00–8:00 PM (Asia/Amman), from 27 September; D01–D02 ran 2:00–6:00 PM  
 **Format:** 26 sessions across 8 weeks, for 104 scheduled hours  
+**Optional review:** Thursday 8 October, 4:00–6:00 PM, a review of the SQL from D03 to D08 (yellow on the schedule)  
 **Lead instructor:** Tarek Atwan  
 **Cohort:** Approximately 200 trainees
 

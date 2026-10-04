@@ -4,6 +4,8 @@ Classes run **4:00–8:00 PM** (Asia/Amman) with a break from **6:30 to 7:00 PM*
 
 **Updated 29 September 2026.** We slowed SQL down so that joins get two full sessions. Machine learning and AI now come straight after SQL, in BigQuery, so you keep using the SQL you learned. Power BI runs from 26 October and reads the BigQuery views you build on 7 October. The assignment dates below replace the earlier ones.
 
+**Optional review, Thursday 8 October, 4:00–6:00 PM.** A review of the SQL from D03 to D08, before window functions and Assignment 1 on 11 October. It is optional: no new content, no lab and nothing graded. It is shown in yellow on the schedule.
+
 | Date | Topic | Material home | Lab | Assignment given | Assignment due |
 |---|---|---|:---:|---|---|
 | D01 · Sun 20 Sep 2026 | Programme launch and data literacy | [Data foundations](../modules/01-data-foundations/README.md) | Yes | - | - |
@@ -14,6 +16,7 @@ Classes run **4:00–8:00 PM** (Asia/Amman) with a break from **6:30 to 7:00 PM*
 | D06 · Sun 4 Oct 2026 | Joins: combining tables | [SQL](../modules/02-sql/README.md) | After class | - | - |
 | D07 · Mon 5 Oct 2026 | Joins continued: joins with GROUP BY and CASE | [SQL](../modules/02-sql/README.md) | After class | - | - |
 | D08 · Wed 7 Oct 2026 | Subqueries, CTEs and views | [SQL](../modules/02-sql/README.md) | After class | - | - |
+| **Optional** · Thu 8 Oct 2026 | **Optional review: SQL so far (D03–D08)**, 4:00–6:00 PM | [SQL](../modules/02-sql/README.md) | No | - | - |
 | D09 · Sun 11 Oct 2026 | Window functions and SQL wrap-up | [SQL](../modules/02-sql/README.md) | After class | Assignment 1 | - |
 | D10 · Mon 12 Oct 2026 | Machine learning 1: what learning means, and regression | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
 | D11 · Sun 18 Oct 2026 | Machine learning 2: classification and choosing an algorithm | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
