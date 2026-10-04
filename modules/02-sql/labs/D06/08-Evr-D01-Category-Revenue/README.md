@@ -4,6 +4,36 @@ In this activity, you will answer the first question of the programme, "which pr
 
 **Time:** 22 minutes · **Data:** `D03.order_items`, `D03.orders`, `D03.products` · **Starter:** `Unsolved/d01_category_revenue.sql`
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    orders ||--|{ order_items : "contains"
+    products ||--o{ order_items : "appears on"
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        string status
+    }
+    order_items {
+        int item_id PK
+        int order_id FK
+        string product_id FK
+        int qty
+        float price
+    }
+    products {
+        string product_id PK
+        string product_name
+        string category
+    }
+```
+
+Join keys: `order_items.order_id = orders.order_id` and `order_items.product_id = products.product_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. Start from `order_items`: it has the amounts. Record its row count and `SUM(qty * price)` in the audit table.

@@ -6,6 +6,35 @@ In this activity, you will answer "completed revenue by customer segment" by joi
 
 The amount is on `orders`; the segment is on `customers`. One join brings the column, then D04's `GROUP BY` does the rest.
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+```
+
+Join key: `orders.customer_id = customers.customer_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. Run the Five Checks out loud. `orders`: one row per order. `customers`: one row per customer. Key: `customer_id`, unique in `customers` (500 and 500, from D06, [Join Nakheel orders to customers](../../D06/05-Evr-Orders-to-Customers/README.md)). Rows expected: at most 2,771, the number of completed orders. Unmatched rows: order 101664 has no customer.

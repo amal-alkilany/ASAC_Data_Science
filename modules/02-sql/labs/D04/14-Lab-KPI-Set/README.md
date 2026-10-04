@@ -8,6 +8,16 @@ In this lab, you will define and calculate five KPIs for Nakheel's managers, the
 
 **What you hand in:** nothing. Save your `.sql` file with the definition table and every comment block filled in. It is one of the files you choose from for Assignment 1, which is issued on D09 (Sunday 11 October).
 
+## How this lab is organised
+
+There are five KPIs and three checkpoints. The KPIs are **what** the manager wants. The checkpoints, **C1**, **C2** and **C3**, are the **steps** you work through to build them. Each one ends with a check before you move on:
+
+| Checkpoint | SQL skill | KPIs |
+|---|---|---|
+| C1 · Group correctly | `GROUP BY` | 1, 2, 3 |
+| C2 · Count some rows, filter groups | `COUNTIF`, `HAVING` | 4, 5 |
+| C3 · Change the grain | One KPI at three grains | 3 again |
+
 ## The five KPIs
 
 Fill in the definition table at the top of the starter file before you write any query. For each KPI: the rule in words, and the grain (what one row of the result is).
@@ -29,8 +39,8 @@ Fill in the definition table at the top of the starter file before you write any
 
 ## C2 · A conditional aggregate and a filter on groups
 
-3. KPI 4: for each month, orders placed, cancelled orders and the cancellation rate. Cancelled orders are counted with `COUNTIF`; the rate is the average of a 0/1 column. Do not filter out the other orders.
-4. KPI 5: only the months where the rate is above 0.09.
+3. KPI 4: for each month, show orders placed, cancelled orders and the cancellation rate. Count cancelled orders with `COUNTIF`. For the rate, divide cancelled orders by orders placed. Keep every order in the query: do not filter out the orders that were not cancelled.
+4. KPI 5: show only the months where the rate is above 0.09.
 
 **Checkpoint C2:** KPI 4 returns 24 rows and KPI 5 returns 6.
 
@@ -39,9 +49,9 @@ Fill in the definition table at the top of the starter file before you write any
 The commercial manager asks: "Is the typical order getting bigger?"
 
 5. Calculate average order value (completed orders) by **year**. What would you tell the manager from this result alone?
-6. Add a column that counts how many months of data each year contains: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Does that change your answer?
+6. Add a column that counts how many months of data each year has: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Are the three years built from the same number of months? Does that change your answer to step 5?
 7. Calculate it by **month**. Is there a steady trend?
-8. Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label the two periods, and group by the label.
+8. Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label each order with its period, then group by the label. You get both periods side by side in one result.
 9. In your interpretation line, say which result answers the manager's question, and why the yearly one could mislead.
 
 **Checkpoint C3:** your interpretation names the grain you chose and gives the reason.
@@ -62,7 +72,7 @@ If a count differs, check the status and date range before changing the aggregat
 
 ## Hint
 
-For C2, a `WHERE status = 'cancelled'` would remove the orders you need to divide by. For C3 step 8, `CASE WHEN order_date < '2025-09-01' THEN … ELSE … END` gives each order a period label.
+For C2, a `WHERE status = 'cancelled'` would remove the orders you need to divide by. For C3 step 8, `CASE WHEN order_date < '2025-09-01' THEN … ELSE … END` gives each order a period label. A `WHERE` on the dates would also work, but it keeps one period per query, so you would need two queries and compare them by eye.
 
 ## Stretch card
 

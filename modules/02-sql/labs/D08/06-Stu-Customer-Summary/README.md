@@ -6,6 +6,35 @@ In this activity, you will build a customer summary in two named steps: complete
 
 Before you start, answer two questions in a comment: what is one row of the final answer, and which table has every customer?
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+```
+
+Join key: `orders.customer_id = customers.customer_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. "For each customer who has bought from us: how many completed orders, how much revenue, and the dates of their first and last order." Write it as a CTE named `completed`, then read it with `SELECT * FROM completed`. Predict the row count first; you saw it in [From nested to named](../04-Ins-Nested-To-Named/README.md).

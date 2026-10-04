@@ -6,6 +6,43 @@ In this activity, you will compare the four joins by the rows each one keeps, se
 
 You will read these joins more often than you write them. Most analysts write `LEFT JOIN` and put the table they want to keep first.
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    orders ||--|{ order_items : "contains"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+    order_items {
+        int item_id PK
+        int order_id FK
+        string product_id FK
+        int qty
+        float price
+    }
+```
+
+Join keys: `orders.customer_id = customers.customer_id` and `order_items.order_id = orders.order_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Every join keeps the matches
 
 Picture two circles of `customer_id` values: the left circle holds the keys in `customers`, the right circle the keys in `orders`, and the overlap the keys in both. Each join keeps a different part. Customers are written first every time.

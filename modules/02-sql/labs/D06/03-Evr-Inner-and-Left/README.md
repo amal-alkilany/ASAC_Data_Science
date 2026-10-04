@@ -4,6 +4,30 @@ In this activity, you will join the D01 orders and customers two ways, and see w
 
 **Time:** 22 minutes · **Data:** `D03.orders`, `D03.customers` · **Starter:** `Unsolved/inner_and_left.sql`
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        string status
+    }
+```
+
+Join key: `orders.customer_id = customers.customer_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 Before you start, run the Five Checks out loud for `orders` and `customers`, and predict the row count of each query.

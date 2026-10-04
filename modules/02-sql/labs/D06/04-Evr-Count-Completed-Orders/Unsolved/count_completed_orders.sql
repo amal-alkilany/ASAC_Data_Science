@@ -8,3 +8,8 @@
 
 -- 3. Change the count so it answers the question.
 
+
+
+-- 4. "How many completed orders included at least one item priced 20 or more?"
+--    Write it with COUNT(*), then with COUNT(DISTINCT o.order_id).
+

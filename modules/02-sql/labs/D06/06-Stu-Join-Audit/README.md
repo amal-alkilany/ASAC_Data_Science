@@ -4,6 +4,35 @@ In this activity, you will join Nakheel orders to their order lines and fill in 
 
 **Time:** 15 minutes · **Data:** `nakheel.orders`, `nakheel.order_items` · **Starter:** `Unsolved/join_audit.sql`
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    orders ||--|{ order_items : "contains"
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+    order_items {
+        int item_id PK
+        int order_id FK
+        string product_id FK
+        int qty
+        float price
+    }
+```
+
+Join key: `order_items.order_id = orders.order_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 Before you start, run the Five Checks for `orders` and `order_items`. Which is the "one" side? Predict how many rows the join returns.

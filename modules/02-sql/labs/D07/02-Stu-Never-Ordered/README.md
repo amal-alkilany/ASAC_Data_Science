@@ -4,6 +4,50 @@ In this activity, you will find the customers who have never placed an order and
 
 **Time:** 10 minutes · **Data:** `nakheel.customers`, `nakheel.orders`, `nakheel.products`, `nakheel.order_items` · **Starter:** `Unsolved/never_ordered.sql`
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    orders ||--|{ order_items : "contains"
+    products ||--o{ order_items : "appears on"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+    order_items {
+        int item_id PK
+        int order_id FK
+        string product_id FK
+        int qty
+        float price
+    }
+    products {
+        string product_id PK
+        string product_name
+        string category
+        float list_price
+    }
+```
+
+Join keys: `orders.customer_id = customers.customer_id`, `order_items.order_id = orders.order_id` and `order_items.product_id = products.product_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. "Which customers have signed up but never placed an order? The marketing team wants to contact them."

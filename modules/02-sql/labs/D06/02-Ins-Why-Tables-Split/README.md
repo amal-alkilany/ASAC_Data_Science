@@ -14,12 +14,33 @@ In this activity, you will see why a database keeps customers and orders in sepa
 
 3. Look at the shape. One customer can have many orders; each order has one customer. That is a **one-to-many** relationship. `customers.customer_id` is the **primary key** (it names one customer); `orders.customer_id` is a **foreign key** (it points to a customer).
 
-    ```text
-    customers (one row per customer)        orders (one row per order)
-    customer_id  customer_name   ─── 1 : many ───  order_id  customer_id  status
-    C-118        Lina Haddad                        1002      C-118        cancelled
-                                                    1005      C-118        completed
+    ```mermaid
+    erDiagram
+        customers ||--o{ orders : "places"
+        customers {
+            string customer_id PK
+            string customer_name
+            string city
+        }
+        orders {
+            int order_id PK
+            string customer_id FK
+            string status
+        }
     ```
+
+    Read the line between the tables from left to right: one customer (the end with two short bars) places zero or more orders (the end that splits into a fork). PK marks the primary key, FK the foreign key.
+
+    Here is what that looks like for Lina. Her name is stored once in `customers`, and her `customer_id` appears on each of her orders:
+
+    | customer_id | customer_name |
+    |---|---|
+    | C-118 | Lina Haddad |
+
+    | order_id | customer_id | status |
+    |---:|---|---|
+    | 1002 | C-118 | cancelled |
+    | 1005 | C-118 | completed |
 
     A **join** puts the columns of two tables side by side for one query, matching rows on a key. It does not change either table.
 

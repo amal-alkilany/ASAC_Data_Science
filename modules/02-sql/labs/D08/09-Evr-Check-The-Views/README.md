@@ -8,6 +8,43 @@ In this activity, you will answer three questions you have answered before, this
 
 A view is only useful if you can trust it. The test is simple: use it to reproduce answers you already have. If the numbers match, the view is right; if they do not, find out why before anyone builds a report on it.
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    dim_customer ||--o{ fact_sales : "buys"
+    dim_product ||--o{ fact_sales : "sold as"
+    dim_customer {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    fact_sales {
+        int item_id PK
+        int order_id
+        date order_date
+        string channel
+        string status
+        string customer_id FK
+        string product_id FK
+        int qty
+        float price
+        float revenue
+    }
+    dim_product {
+        string product_id PK
+        string product_name
+        string category
+        float list_price
+    }
+```
+
+Join keys: `fact_sales.customer_id = dim_customer.customer_id` and `fact_sales.product_id = dim_product.product_id`. `fact_sales` is the fact table, one row per order line. The two `dim_` views describe its customers and products.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. "Completed revenue by product category." Answer it from the views.

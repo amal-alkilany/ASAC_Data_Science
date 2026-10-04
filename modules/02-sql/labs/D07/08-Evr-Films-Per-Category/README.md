@@ -6,6 +6,35 @@ In this activity, you will upload three tables from a film rental database, join
 
 Pagila is a sample database for a DVD rental shop, used in many SQL courses. It is a new sector on purpose: film and media, with the same method as Nakheel. One film can belong to more than one category, so the link between films and categories is kept in a third table, `film_category`, with one row per film per category. A table that sits between two others like this is called a **bridge table**.
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    film ||--|{ film_category : "is listed in"
+    category ||--o{ film_category : "groups"
+    film {
+        int film_id PK
+        string title
+        int release_year
+        string rating
+        int length
+        float rental_rate
+        float replacement_cost
+    }
+    film_category {
+        int film_id FK
+        int category_id FK
+    }
+    category {
+        int category_id PK
+        string name
+    }
+```
+
+Join keys: `film_category.film_id = film.film_id` and `film_category.category_id = category.category_id`. `film_category` is the bridge table: each row pairs one film with one category, so a film with three categories has three rows there.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. Upload the three tables.

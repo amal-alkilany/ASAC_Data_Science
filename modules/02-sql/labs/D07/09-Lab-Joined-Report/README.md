@@ -10,6 +10,50 @@ In this lab, you will build one report on Nakheel that uses all of D06 and D07: 
 
 **What you hand in:** nothing. Save your `.sql` file with the audit table filled in. It is the fourth of the files you choose from for Assignment 1, which is issued on D09 (Sunday 11 October).
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    orders ||--|{ order_items : "contains"
+    products ||--o{ order_items : "appears on"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+    order_items {
+        int item_id PK
+        int order_id FK
+        string product_id FK
+        int qty
+        float price
+    }
+    products {
+        string product_id PK
+        string product_name
+        string category
+        float list_price
+    }
+```
+
+Join keys: `orders.customer_id = customers.customer_id`, `order_items.order_id = orders.order_id` and `order_items.product_id = products.product_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## The audit table
 
 Before you group anything, record these numbers and say whether each should have changed:

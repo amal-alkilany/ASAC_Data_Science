@@ -6,6 +6,35 @@ In this activity, you will count the completed orders from wholesale customers w
 
 "How many completed orders came from wholesale customers, and what were they worth?" Before you start, write two answers in a comment: which table knows who is wholesale, and which table has the orders?
 
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+```
+
+Join key: `orders.customer_id = customers.customer_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
+
 ## Instructions
 
 1. The inner query alone: "Which customers are wholesale?" Predict the row count, then run.

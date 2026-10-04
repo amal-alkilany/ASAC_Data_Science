@@ -2,7 +2,36 @@
 
 In this activity, you will join 3,000 Nakheel orders to their customers, find the one order that does not survive an `INNER JOIN`, and see why a `LEFT JOIN` keeps it.
 
-**Time:** 12 minutes · **Data:** `nakheel.orders`, `nakheel.customers` · **Starter:** `Unsolved/orders_to_customers.sql`
+**Time:** 10 minutes · **Data:** `nakheel.orders`, `nakheel.customers` · **Starter:** `Unsolved/orders_to_customers.sql`
+
+## How the tables connect
+
+```mermaid
+erDiagram
+    customers ||--o{ orders : "places"
+    customers {
+        string customer_id PK
+        string customer_name
+        string city
+        string segment
+        date signup_date
+    }
+    orders {
+        int order_id PK
+        string customer_id FK
+        date order_date
+        timestamp order_ts
+        string channel
+        string status
+        float order_total
+        float shipping_fee
+        date delivered_date
+    }
+```
+
+Join key: `orders.customer_id = customers.customer_id`.
+
+PK is the primary key: it names one row. FK is a foreign key: it points to a row in another table. The line between two tables shows the join: the end with two short bars is the "one" side, and the end that splits into a fork is the "many" side.
 
 ## Instructions
 
