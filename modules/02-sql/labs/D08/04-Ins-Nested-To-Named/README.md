@@ -1,10 +1,12 @@
 # From nested to named
 
-In this activity, you will answer "What does a typical customer spend, in each segment?" first with a query nested inside another, then with a CTE that names each step and reads from top to bottom.
+In this activity, you will answer "What does a typical customer who has bought from us spend, in each segment?" first with a query nested inside another, then with a CTE that names each step and reads from top to bottom.
 
 **Time:** 12 minutes · **Data:** `nakheel.orders`, `nakheel.customers` · **File:** `Solved/nested_to_named.sql`
 
 Can one `GROUP BY` answer this question? No. It needs two grains: first one row per customer (what each customer spent), then one row per segment (the average of those customers).
+
+"Customers who have bought from us" means customers with at least one completed order. The 49 customers with none are not in step 1, so they are not in the average.
 
 ## How the tables connect
 
@@ -83,13 +85,15 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 4. Read the result as a manager would. A wholesale customer spends about six and a half times what a retail customer does (2,658.69 against 409.37). The D07 totals did not show this: wholesale had far fewer customers but nearly half the revenue.
 
+5. Which customers does the average count? Only those who have bought from us. If you start from `customers` and count the 49 customers with no completed order as 0, every customer is in the average and the numbers drop: wholesale 65 customers, 2,372.37; retail 435, 369.84. Neither answer is wrong; say which one you report. X1 in the lab, [Reporting views for Power BI and for D10](../10-Lab-Reporting-Views/README.md), uses the second kind: the average of every customer.
+
 A CTE is not saved anywhere. It exists only while this one query runs. To save a query under a name, you make a view: see [Save a query as a view](../07-Ins-First-View/README.md).
 
 ## Check yourself
 
 | Step | Rows returned | One value to check |
 |---|---:|---|
-| 1 | 452 | the revenues add up to 316,023.50 |
+| 1 | 452 | C-1380: 82 orders, 35,338.50 |
 | 2 | 3 | the same 3 rows as step 3 |
 | 3 | 3 | wholesale 58 customers, 2,658.69; retail 393, 409.37 |
 

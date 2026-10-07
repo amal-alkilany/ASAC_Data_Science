@@ -14,7 +14,7 @@ In this activity, you will group Nakheel's orders by status and by month, then c
 
     Translate: completed orders only, grouped by month (`DATE_TRUNC(order_date, MONTH)`), `order_total` summed.
 
-3. On the whole table, in one query: `COUNT(*)`, `COUNT(delivered_date)` and `COUNT(DISTINCT customer_id)`. Say which question each number answers.
+3. On the whole table, in one query: `COUNT(*)`, `COUNT(delivered_date)` and `COUNT(DISTINCT customer_id)`. Predict which is largest and which is smallest before you run. Then say which question each number answers.
 
 ## Check yourself
 

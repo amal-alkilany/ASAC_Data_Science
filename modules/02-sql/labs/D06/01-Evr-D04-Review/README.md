@@ -22,7 +22,7 @@ Every join on D06 changes what one row is. This review makes sure `GROUP BY` is 
 
     Translate: `WHERE status = 'completed'`, `GROUP BY channel`, `COUNT(*)` and `ROUND(SUM(order_total), 2)`.
 
-4. "Split each channel by order size." Use the D04 rule: an order is large from 200, medium from 50, otherwise small. One row is one ___? How many rows?
+4. "Split each channel by order size." Start from query 3, so it still counts completed orders only. Use the D04 rule: an order is large from 200, medium from 50, otherwise small. One row is one ___? How many rows?
 
     Translate: add the rule as a `CASE` column called `size_band`; group by `channel` and `size_band`; sort by `channel`, then `revenue` from largest.
 
@@ -40,7 +40,7 @@ Every join on D06 changes what one row is. This review makes sure `GROUP BY` is 
 | 4 | 6 | online large first: 107 orders, 52,844.50; store large: 210 orders, 102,848.00 |
 | 5 | 3 | store large 102,848.00; store medium 82,422.50; online large 52,844.50 |
 
-If query 5 returns 0 rows, you wrote `WHERE order_total > 50000`. That tests each order, and no single order is worth 50,000 (the largest is 1,964.50). The test belongs on the group's total, in `HAVING`. If it returns 6 rows, the `HAVING` line is missing.
+If query 5 returns 0 rows, you wrote `WHERE order_total > 50000`. That tests each order, and no single order is worth 50,000 (the largest is 1,964.50). The test belongs on the group's total, in `HAVING`. If it returns 6 rows, the `HAVING` line is missing. If query 4 shows online large with 114 orders, or query 5 returns 4 rows, the `WHERE status = 'completed'` line is missing.
 
 ## Hint
 

@@ -52,22 +52,22 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 1. "Which customers have signed up but never placed an order? The marketing team wants to contact them."
 
-    Translate: `customers LEFT JOIN orders`, keep the rows where the order side is empty.
+    Translate: `customers LEFT JOIN orders`, keep the rows where the order side is empty. Show each customer's ID, name, city and signup date, sorted by ID.
 
 2. "Which products have never sold? The buying team is deciding whether to stop stocking them."
 
-    Translate: `products LEFT JOIN order_items`, keep the rows where the item side is empty.
+    Translate: `products LEFT JOIN order_items`, keep the rows where the item side is empty. Show each product's ID, name and category, sorted by ID.
 
 ## Check yourself
 
 | Question | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 39 | C-1013, Anas Abbadi, is first by ID |
-| 2 | 4 | P-009, Hiking boot |
+| 2 | 4 | P-009, Hiking boot, is first by ID |
 
 ## Hint
 
-After a `LEFT JOIN`, test a column from the right-hand table that is never empty in real rows, such as its key: `WHERE o.order_id IS NULL`.
+After a `LEFT JOIN`, test a column from the right-hand table that is never empty in real rows, such as its key: `WHERE o.order_id IS NULL` for customers, `WHERE i.item_id IS NULL` for products.
 
 ## Bonus
 

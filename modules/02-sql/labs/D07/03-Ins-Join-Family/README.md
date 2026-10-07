@@ -68,7 +68,7 @@ The circles show which keys survive. They do not count rows: C-118 is one key in
 
 5. Run query 6: the same idea from the other side keeps the one order with no customer, 101664. That is a **right anti join**.
 
-6. Optional, a preview of D08: run query 7. It adds up `order_items` to one row per order first, inside brackets, then joins. Both sides then have one row per order, so `order_total` is not copied. Look at the result; you learn to write the query inside brackets (a subquery) on D08.
+6. Optional, a preview of D08: run query 7, completed revenue and units by channel. It adds up `order_items` to one row per order first, inside brackets, then joins to `orders`, keeps completed orders and groups by `channel`. Both sides then have one row per order, so `order_total` is not copied. Look at the result; you learn to write the query inside brackets (a subquery) on D08.
 
 ## Check yourself
 

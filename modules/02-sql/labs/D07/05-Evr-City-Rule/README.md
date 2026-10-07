@@ -51,7 +51,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
     Translate: three lines in the `CASE`, in the order of your rule; `GROUP BY city_clean`; `ROUND(SUM(o.order_total), 2)`.
 
-4. Why does `WHEN c.city IS NULL` come first? `LOWER(TRIM(NULL))` is `NULL`, so an `ELSE` line would return `NULL`, not `unknown`. `CASE` stops at the first true line, so the order of the lines matters.
+4. Why do you need the `WHEN c.city IS NULL` line? `LOWER(TRIM(NULL))` is `NULL`, so without it the `ELSE` line returns `NULL`, not `unknown`. Putting the test for a missing value first is a good habit. In this rule no city can pass two tests, so moving the `IS NULL` line below the `Al Zarqa` line gives the same 9 rows. The order matters when two tests can both be true: `CASE` stops at the first true line, which is why D04's size band tests `>= 200` before `>= 50`.
 
 ## Check yourself
 
@@ -60,7 +60,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 | 1 | 11 | the `NULL` group has 37 orders |
 | 3 | 9 | amman first: 1,064 orders, 130,848.00; zarqa 284 orders; unknown 37 orders, 3,197.00 |
 
-In step 3, 10 rows means the `Al Zarqa` line is missing. A blank row instead of `unknown` means the `IS NULL` line is last or missing.
+In step 3, 10 rows means the `Al Zarqa` line is missing. A blank row instead of `unknown` means the `IS NULL` line is missing.
 
 ## Hint
 

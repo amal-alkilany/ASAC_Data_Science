@@ -9,4 +9,5 @@
 
 -- 3. On the whole table: COUNT(*), COUNT(delivered_date), COUNT(DISTINCT customer_id).
 --    Predict which is largest and which is smallest before you run.
+--    Then say which question each number answers.
 

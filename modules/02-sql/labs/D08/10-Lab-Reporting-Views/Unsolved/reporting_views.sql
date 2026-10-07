@@ -3,10 +3,10 @@
 -- Name:
 -- ============================================================
 --
--- Audit table (fill in as you go)
+-- Audit table (fill in as you go). Rows = rows in the table or view; for the last line, the order lines the join returns.
 -- | Audit                                               | Rows | Completed orders or lines | Revenue |
 -- |-----------------------------------------------------|------|---------------------------|---------|
--- | orders, completed only (known since D06)            |      |                           |         |
+-- | orders, completed only (known since D06)            | 2,771 | 2,771 orders             | 316,023.50 |
 -- | bi.customer_summary                                 |      |                           |         |
 -- | bi.category_month                                   |      |            –              |         |
 -- | fact_sales INNER JOIN dim_customer_complete, compl. |      |                           |         |
@@ -43,13 +43,14 @@
 
 
 -- ============================================================
--- C3 · Step 6. Audit: the view's rows, then fact_sales INNER JOIN dim_customer_complete, completed
+-- C3 · Step 6. Audit: fact_sales INNER JOIN dim_customer_complete, completed lines and revenue.
+-- Then read the whole view with SELECT * and count its rows (6b)
 -- Result check:
 -- ============================================================
 
 
 -- ============================================================
--- Stretch card (not checked): bi.segment_month
+-- Stretch card S1 (not checked): bi.segment_month
 -- ============================================================
 
 

@@ -28,6 +28,7 @@ FROM D03.orders
 WHERE order_number = 1003;
 
 -- The fix: filter on the column's real name. (1 row)
+-- @check 4 (fixed)
 SELECT order_id AS order_number, status
 FROM D03.orders
 WHERE order_id = 1003;

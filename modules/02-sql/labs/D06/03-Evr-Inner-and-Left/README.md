@@ -46,7 +46,7 @@ Before you start, run the Five Checks out loud for `orders` and `customers`, and
 
 | Query | Rows returned | One value to check |
 |---|---:|---|
-| 1 | 5 | order 1004 is Omar Nasser (C-401) |
+| 1 | 5 | order 1004 is Omar Nasser, Irbid |
 | 2 | 7 | C-377 and C-455 have `NULL` in `order_id` |
 | 3 | 5 | C-377 and C-455 are gone |
 

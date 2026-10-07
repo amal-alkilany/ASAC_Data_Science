@@ -21,7 +21,7 @@ In this activity, you will filter rows with `WHERE`, then meet two filters writt
 | Query | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 4 | orders 1001, 1003, 1004, 1005 |
-| 2 | 4 | item 9004, price 42.00 |
+| 2 | 4 | item 9004, price 42.00 (BigQuery shows `42.0`) |
 | 3 | 4 | no cancelled order |
 | 4 | error | `Operands of = cannot be literal NULL` |
 | 5 | 1 | C-455, Sami Odeh |

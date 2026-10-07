@@ -70,7 +70,7 @@ Before you start, answer three questions in a comment: which table has the amoun
 | 2 | 16 | Outerwear, retail first: 1,403 units, 41,238.00 |
 | 3 | 10 | the last row is Sportswear, wholesale, 20,580.50 |
 
-If your revenue is about three times too big, you summed `o.order_total`. What is one row after the join? If question 2 has 12 rows, look for the order with no customer.
+If your revenue is about three times too big, you summed `o.order_total`. What is one row after the join? If question 2 has 12 rows, look for the order with no customer. If it has 34 rows, the segment is not cleaned.
 
 ## Hint
 
@@ -78,7 +78,7 @@ The test in question 3 is on a group's total, so it goes in `HAVING`. `WHERE SUM
 
 ## Bonus
 
-Not required, not checked. "For each category, what share of completed revenue comes from wholesale customers?" Use a `CASE` inside `SUM` that keeps a line's value only when the cleaned segment is `wholesale`, and 0 otherwise. Expect 6 rows; Shoes has the largest wholesale share, 53.5%.
+Not required, not checked. "For each category, what share of completed revenue comes from wholesale customers?" Use a `CASE` inside `SUM` that keeps a line's value only when the cleaned segment is `wholesale`, and 0 otherwise. Keep the `LEFT JOIN` to `customers` from question 2. Expect 6 rows; Shoes has the largest wholesale share, 53.5%.
 
 ## References
 

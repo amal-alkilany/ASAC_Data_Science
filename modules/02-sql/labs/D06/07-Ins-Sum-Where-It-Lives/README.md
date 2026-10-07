@@ -51,7 +51,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 4. Run query 4. It counts after the join two ways. `COUNT(*)` gives 2,535 (online) and 4,416 (store): those are lines. `COUNT(DISTINCT o.order_id)` gives 1,008 and 1,763: those are orders.
 
-5. Run query 5. `shipping_fee` also lives on `orders`, so it inflates in exactly the same way: 1,742.50 after the join against 1,032.50 on `orders` alone, for completed orders.
+5. Run queries 5a and 5b. `shipping_fee` also lives on `orders`, so it inflates in exactly the same way. For completed orders, 5a sums it after the join and gets 1,742.50; 5b sums it on `orders` alone and gets 1,032.50.
 
 6. Write the rule in your own `.sql` file as a comment: **sum an amount at the table where it lives, or prove the join did not change that table's grain.** To know where an amount lives, look at the table's grain: `order_total` is one value per order, so it lives on `orders`. The [dataset README](../../D04/03-Evr-Upload-Nakheel/Resources/README.md) says which table each column is on.
 
@@ -63,7 +63,8 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 | 2 | 2 | online 110,685.50; store 205,338.00 |
 | 3 | 2 | the same as query 2 |
 | 4 | 2 | online 2,535 rows, 1,008 orders |
-| 5 | 1 | 1,742.50 after the join; 1,032.50 on `orders` |
+| 5a | 1 | 1,742.50 after the join |
+| 5b | 1 | 1,032.50 on `orders` alone |
 
 BigQuery may show money as `351733.5` rather than `351,733.50`. The numbers are the same.
 

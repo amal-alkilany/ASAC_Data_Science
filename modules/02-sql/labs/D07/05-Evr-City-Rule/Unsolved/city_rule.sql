@@ -9,5 +9,8 @@
 --    no city at all      -> 'unknown'
 --    Al Zarqa            -> 'zarqa'
 --    everything else     -> trimmed and lower-case
---    Then write it as a CASE called city_clean, and report completed orders and revenue by city_clean.
+
+
+-- 3. Write the rule as a CASE called city_clean, and report completed orders and revenue
+--    by city_clean, largest revenue first.
 

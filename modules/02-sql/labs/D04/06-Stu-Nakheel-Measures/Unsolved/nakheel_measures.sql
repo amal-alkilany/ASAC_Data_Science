@@ -10,5 +10,5 @@
 -- Q3 Customers per city, as the city was typed. Biggest first.
 
 
--- Bonus
+-- Bonus: the single day with the most orders, counting every status.
 

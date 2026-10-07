@@ -17,7 +17,7 @@ ORDER BY customers DESC;
 
 -- COALESCE replaces NULL with a value you choose, here for display. (10 rows)
 -- TRIM and LOWER fix "amman". They cannot know that "Al Zarqa" is Zarqa: that needs a rule
--- you write yourself, as a CASE, or a cleaning step in Power Query (Module 3).
+-- you write yourself, as a CASE like the size bands in activity 07, or a cleaning step in Power Query (Module 3).
 -- @check 3
 SELECT COALESCE(LOWER(TRIM(city)), 'unknown') AS city_clean,
        COUNT(*) AS customers

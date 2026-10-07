@@ -24,3 +24,7 @@ FROM D03.customers AS c
 INNER JOIN D03.orders AS o
   ON c.customer_id = o.customer_id
 ORDER BY c.customer_id, o.order_id;
+
+-- Bonus: query 2 has 7 rows for 5 customers. C-118 and C-204 appear twice each,
+-- because each has two orders and the join returns one row per match.
+-- C-377 and C-455 appear once each, with NULL order columns.

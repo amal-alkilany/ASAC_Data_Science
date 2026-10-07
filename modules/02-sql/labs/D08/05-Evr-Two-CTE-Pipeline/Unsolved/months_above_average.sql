@@ -5,7 +5,7 @@
 --   (2)
 --   (3)
 
--- Step 1 alone: completed revenue per month. Check it before you go on.
+-- 1. Step 1 alone: completed revenue per month. Check it before you go on.
 WITH monthly AS (
 
 )
@@ -13,8 +13,8 @@ SELECT *
 FROM monthly
 ORDER BY month;
 
--- Steps 1 and 2: add a second CTE, average_month, that reads monthly. One row: the average month.
+-- 2. Steps 1 and 2: add a second CTE, average_month, that reads monthly. One row: the average month.
 
 
--- The answer: the months above the average, using average_month as a one-number subquery.
+-- 3. The answer: the months above the average, using average_month as a one-number subquery.
 

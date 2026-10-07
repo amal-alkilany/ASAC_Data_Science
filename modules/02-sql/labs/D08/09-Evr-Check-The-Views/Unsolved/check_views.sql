@@ -1,4 +1,4 @@
--- D08 · 5.1 Everyone Do: Prove the views give the numbers we already know
+-- D08 · 5.1 Everyone Do: Prove the views give the numbers you know
 
 -- 1. Completed revenue by category, from bi.fact_sales and bi.dim_product. Must match the D06 lab.
 

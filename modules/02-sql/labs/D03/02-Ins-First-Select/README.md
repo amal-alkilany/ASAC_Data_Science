@@ -16,7 +16,7 @@ In this activity, you will run the shortest useful query, every column of every 
 
 4. Run query 2. The query runs inside your project, so you can leave the project part out and write `D03.orders`. The result is the same.
 
-5. Predict the row count of `D03.order_items`, then run query 3.
+5. Predict the row count of `D03.order_items`, then run query 3. Without `ORDER BY`, BigQuery can return the rows in any order, so yours may not start with item 9001.
 
 ## Check yourself
 
@@ -24,7 +24,7 @@ In this activity, you will run the shortest useful query, every column of every 
 |---|---:|---|
 | 1 | 5 | order 1001, C-204, completed |
 | 2 | 5 | the same as query 1 |
-| 3 | 12 | item 9001 first, order 1001 |
+| 3 | 12 | includes item 9001, order 1001 |
 
 ## References
 

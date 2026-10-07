@@ -88,7 +88,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
     FROM bi.fact_sales;
     ```
 
-    You should see 7,516 lines; 3,000 orders; 340,370.00; completed 316,023.50. These are the numbers from the D06 lab, [Revenue by category, with a join audit](../../D06/09-Lab-Category-Revenue/README.md).
+    You should see 7,516 lines; 3,000 orders; 340,370.00; completed 316,023.50. The lines and both revenues are the numbers from the D06 lab, [Revenue by category, with a join audit](../../D06/09-Lab-Category-Revenue/README.md). 3,000 is the number of orders you uploaded on D04.
 
 5. What a view costs. The bytes estimate in step 4 is the size of the columns read from `order_items` and `orders`, because every read of the view runs the join again. A view costs nothing to store and costs a query every time it is read. On Nakheel that is tiny. On a table of billions of rows, a view that many people read is a query that many people pay for. In the BigQuery sandbox, those reads count against the free monthly query allowance.
 

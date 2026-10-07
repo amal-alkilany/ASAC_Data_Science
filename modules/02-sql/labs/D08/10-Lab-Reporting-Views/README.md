@@ -51,11 +51,11 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 ## The audit table
 
-Record these numbers as you go and compare each with what you already know:
+Record these numbers as you go and compare each with what you already know. **Rows** is the number of rows in the table or view you audit; for the last line, it is the number of order lines the join returns. The first line is filled in for you.
 
 | Audit | Rows | Completed orders or lines | Revenue |
 |---|---:|---:|---:|
-| `orders`, completed only (known since D06) | | | |
+| `orders`, completed only (known since D06) | 2,771 | 2,771 orders | 316,023.50 |
 | `bi.customer_summary` | | | |
 | `bi.category_month` | | – | |
 | `fact_sales INNER JOIN dim_customer_complete`, completed | | | |
@@ -64,13 +64,13 @@ If a number differs from the one above it and you cannot say why, stop and find 
 
 ## C1 · bi.customer_summary
 
-1. Save your query from [One row per customer](../06-Stu-Customer-Summary/README.md) as a view named `bi.customer_summary`. Build it on `bi.dim_customer` instead of `nakheel.customers`, so the city and segment arrive already cleaned. Columns: `customer_id`, `customer_name`, `segment`, `city`, `completed_orders`, `revenue`, `first_order`, `last_order`. No `ORDER BY`.
+1. Save your query from [One row per customer](../06-Stu-Customer-Summary/README.md) as a view named `bi.customer_summary`. Build it on `bi.dim_customer` instead of `nakheel.customers`, so the city and segment arrive already cleaned. Columns: `customer_id`, `customer_name`, `segment`, `city`, `completed_orders`, `revenue`, `first_order`, `last_order`. The two dates are the first and last completed order. No `ORDER BY`.
 
     Translate: `CREATE OR REPLACE VIEW bi.customer_summary AS`, then your `WITH completed AS (...)` and a `SELECT` from `bi.dim_customer LEFT JOIN completed`. A view can start with `WITH`.
 
 2. Audit the view: the number of customers, `SUM(completed_orders)`, the revenue and `COUNTIF(completed_orders = 0)`, reading from `bi.customer_summary`.
 
-**Checkpoint C1:** 500 customers; 2,770 completed orders; 315,085.50; 49 customers with none. The 938.00 gap to 316,023.50 is order 101664, as in One row per customer. D10's first machine-learning model starts from this view.
+**Checkpoint C1:** 500 customers; 2,770 completed orders; 315,085.50; 49 customers with none. The gaps to `orders` (1 order and 938.00, against 2,771 and 316,023.50) are order 101664, as in One row per customer. D10's first machine-learning model starts from this view.
 
 ## C2 · bi.category_month
 
@@ -110,7 +110,7 @@ Steps 1, 3 and 5 create views, so they return no rows. You should see "This stat
 
 For C1, start from the table that has every customer, and `LEFT JOIN` the CTE to it. For C3, write the empty date as `CAST(NULL AS DATE)`, so both halves of the `UNION ALL` have a date in that column. The column names come from the first half.
 
-## Stretch card
+## Stretch card (S1)
 
 Not required, not checked. "Completed units and revenue by customer segment and month." Save it as `bi.segment_month`, on the pattern of `bi.category_month`, but joined to `bi.dim_customer_complete` so order 101664 gets the segment `unknown`. Predict the rows before you audit: 2 segments × 24 months, plus the months in which the unknown customer ordered. Audit with the number of rows and the rounded total.
 

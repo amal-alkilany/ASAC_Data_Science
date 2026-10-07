@@ -43,11 +43,16 @@ WHERE o.status = 'completed'
 GROUP BY o.channel
 ORDER BY o.channel;
 
--- 5. shipping_fee also lives on orders, so it inflates in exactly the same way. (1 row)
--- @check 5
-SELECT ROUND(SUM(o.shipping_fee), 2) AS shipping_after_join,
-       (SELECT ROUND(SUM(shipping_fee), 2) FROM nakheel.orders WHERE status = 'completed') AS shipping_on_orders
+-- 5a. shipping_fee also lives on orders, so it inflates in exactly the same way. (1 row)
+-- @check 5a
+SELECT ROUND(SUM(o.shipping_fee), 2) AS shipping_after_join
 FROM nakheel.orders AS o
 INNER JOIN nakheel.order_items AS i
   ON o.order_id = i.order_id
 WHERE o.status = 'completed';
+
+-- 5b. The true figure: shipping_fee summed on orders alone, with no join. (1 row)
+-- @check 5b
+SELECT ROUND(SUM(shipping_fee), 2) AS shipping_on_orders
+FROM nakheel.orders
+WHERE status = 'completed';

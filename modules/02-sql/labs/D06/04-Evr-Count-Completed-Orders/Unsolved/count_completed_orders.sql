@@ -11,5 +11,6 @@
 
 
 -- 4. "How many completed orders included at least one item priced 20 or more?"
---    Write it with COUNT(*), then with COUNT(DISTINCT o.order_id).
+--    "Priced" means the unit price, not qty * price.
+--    4a: write it with COUNT(*). 4b: write it with COUNT(DISTINCT o.order_id).
 

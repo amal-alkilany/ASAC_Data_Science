@@ -16,3 +16,10 @@ FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY month
 ORDER BY month;
+
+-- Step 3: read the August 2025 and August 2026 rows of the result above.
+-- August 2025: 13,075.50 from 126 orders, average 103.77.
+-- August 2026: 13,061.50 from 129 orders, average 101.25.
+-- Revenue is almost flat (14.00 lower), completed orders are up by 3, and the
+-- average order is 2.52 smaller. All three moved a little, in different directions,
+-- which is why the definition table keeps them as three separate KPIs.

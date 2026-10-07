@@ -2,7 +2,7 @@
 -- D03 Lab · Life expectancy
 -- Table: owid.life_expectancy_data
 -- Name:
--- For every question, fill in all four comment lines, then write the query under them.
+-- For every question, fill in the three blank comment lines, then write the query under them.
 -- ============================================================
 
 -- ============================================================
@@ -22,7 +22,7 @@
 
 
 -- ============================================================
--- Q3  Which ten countries had the highest life expectancy in 2023?
+-- Q3  Which ten places had the highest life expectancy in 2023?
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -35,15 +35,15 @@
 -- Result check:
 -- Interpretation:
 -- ============================================================
--- (a) every row for 2023
+-- C3a every row for 2023
 
--- (b) 2023 rows with no code
+-- C3b 2023 rows with no code
 
--- (c) 2023 rows with a code
+-- C3c 2023 rows with a code
 
--- (d) 2023 rows whose code starts with OWID
+-- C3d 2023 rows whose code starts with OWID
 
--- (e) countries and territories only
+-- C3e countries and territories only, highest life expectancy first
 
 
 -- ============================================================
