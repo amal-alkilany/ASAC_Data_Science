@@ -2,15 +2,15 @@
 
 In this lab, you will define and calculate five KPIs for Nakheel's managers, then show how the answer to "is the typical order getting bigger?" changes with the grain you choose.
 
-**Time:** 45 minutes, TA-led · **Data:** `nakheel.orders` · **Starter:** `Unsolved/kpi_set.sql`
+**Time:** about 45 minutes, after class · **Data:** `nakheel.orders` · **Starter:** `Unsolved/kpi_set.sql`
 
 **Before you start:** the four `nakheel` tables are uploaded (3,000 rows in `orders`). If not, use the CSVs and steps in the [Nakheel upload activity](../03-Evr-Upload-Nakheel/README.md); `orders.csv` alone is enough for C1 to C3.
 
-**What you hand in:** nothing. Save your `.sql` file with the definition table and every comment block filled in. It is one of the files you choose from for Assignment 1, which is issued on D09 (Sunday 11 October).
+**What you hand in:** nothing. The lab is practice and is not graded; the solution is released after class. Save your `.sql` file with the definition table and every comment block filled in. It is one of the files you choose from for Assignment 1, which is issued on D09 (Sunday 11 October).
 
 ## How this lab is organised
 
-There are five KPIs and three checkpoints. The KPIs are **what** the manager wants. The checkpoints, **C1**, **C2** and **C3**, are the **steps** you work through to build them. Each one ends with a check before you move on:
+There are five KPIs and three checkpoints. The KPIs, numbered 1 to 5, are **what** the manager wants. The checkpoints, **C1**, **C2** and **C3**, are the **steps** you work through to build them. Each step has a label such as C1a or C3b, and the same label appears in the starter file and in Check yourself. Each checkpoint ends with a check before you move on:
 
 | Checkpoint | SQL skill | KPIs |
 |---|---|---|
@@ -32,39 +32,43 @@ Fill in the definition table at the top of the starter file before you write any
 
 ## C1 · Group correctly
 
-1. KPIs 1 and 2 in one query, one row per month.
-2. KPI 3, one row per channel.
+**C1a.** KPIs 1 and 2 in one query, one row per month.
+
+**C1b.** KPI 3, one row per channel.
 
 **Checkpoint C1:** 24 rows for KPIs 1–2 and 2 rows for KPI 3, matching the Check yourself table.
 
 ## C2 · A conditional aggregate and a filter on groups
 
-3. KPI 4: for each month, show orders placed, cancelled orders and the cancellation rate. Count cancelled orders with `COUNTIF`. For the rate, divide cancelled orders by orders placed. Keep every order in the query: do not filter out the orders that were not cancelled.
-4. KPI 5: show only the months where the rate is above 0.09.
+**C2a.** KPI 4: for each month, show orders placed, cancelled orders and the cancellation rate. Count cancelled orders with `COUNTIF`. For the rate, divide cancelled orders by orders placed. Keep every order in the query: do not filter out the orders that were not cancelled.
 
-**Checkpoint C2:** KPI 4 returns 24 rows and KPI 5 returns 6.
+**C2b.** KPI 5: show only the months where the rate is above 0.09.
+
+**Checkpoint C2:** C2a returns 24 rows and C2b returns 6.
 
 ## C3 · Change the grain
 
 The commercial manager asks: "Is the typical order getting bigger?"
 
-5. Calculate average order value (completed orders) by **year**. What would you tell the manager from this result alone?
-6. Add a column that counts how many months of data each year has: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Are the three years built from the same number of months? Does that change your answer to step 5?
-7. Calculate it by **month**. Is there a steady trend?
-8. Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label each order with its period, then group by the label. You get both periods side by side in one result.
-9. In your interpretation line, say which result answers the manager's question, and why the yearly one could mislead.
+**C3a.** Calculate average order value (completed orders) by **year**. What would you tell the manager from this result alone? Then add a column to the same query that counts how many months of data each year has: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Are the three years built from the same number of months? Does that change your answer?
 
-**Checkpoint C3:** your interpretation names the grain you chose and gives the reason.
+**C3b.** Calculate average order value (completed orders) by **month**. Is there a steady trend?
+
+**C3c.** Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label each order with its period, then group by the label. You get both periods side by side in one result.
+
+**C3d.** In your interpretation line, say which result answers the manager's question, and why the yearly one could mislead.
+
+**Checkpoint C3:** C3a returns 3 rows, C3b 24 and C3c 2, and your interpretation names the grain you chose and gives the reason.
 
 ## Check yourself
 
 | Step | Rows returned | One value to check |
 |---|---:|---|
-| C1 | 24 | August 2026: 13,061.50 from 129 orders |
+| C1a | 24 | August 2026: 13,061.50 from 129 orders |
 | C1b | 2 | online 109.81; store 116.47 |
-| C2 | 24 | January 2025: 12 of 116 cancelled, 0.1034 |
+| C2a | 24 | January 2025: 12 of 116 cancelled, 0.1034 |
 | C2b | 6 | March 2025 is the highest, 0.1111 |
-| C3a | 3 | 2024 has 4 months of data; 2026 has 8 |
+| C3a | 3 | 2024: 116.08 from 4 months of data; 2025: 110.39 from 12; 2026: 117.98 from 8 |
 | C3b | 24 | September 2024: 100.61 |
 | C3c | 2 | 115.20, then 113.12 |
 
@@ -72,7 +76,7 @@ If a count differs, check the status and date range before changing the aggregat
 
 ## Hint
 
-For C2, a `WHERE status = 'cancelled'` would remove the orders you need to divide by. For C3 step 8, `CASE WHEN order_date < '2025-09-01' THEN … ELSE … END` gives each order a period label. A `WHERE` on the dates would also work, but it keeps one period per query, so you would need two queries and compare them by eye.
+For C2, a `WHERE status = 'cancelled'` would remove the orders you need to divide by. For C3c, `CASE WHEN order_date < '2025-09-01' THEN … ELSE … END` gives each order a period label. A `WHERE` on the dates would also work, but it keeps one period per query, so you would need two queries and compare them by eye.
 
 ## Stretch card
 

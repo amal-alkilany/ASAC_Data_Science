@@ -7,3 +7,9 @@
 -- | Completed orders     |                                                        |                     |
 -- | Average order value  |                                                        |                     |
 
+-- 2. One query that returns all three KPIs, one row per month.
+
+
+-- 3. Compare August 2025 with August 2026. How did each KPI change, and by how much?
+
+

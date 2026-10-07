@@ -5,7 +5,7 @@
 --    Predict both numbers first.
 
 
--- 2. "Revenue by channel." Run this exactly as written and read the result.
+-- 2. "Revenue by channel." Run this exactly as written and read the error aloud.
 SELECT channel, SUM(order_total) AS revenue
 FROM nakheel.orders;
 
@@ -14,10 +14,11 @@ FROM nakheel.orders;
 --    and the revenue rounded to 2 decimals. One row is one ___? How many rows?
 
 
--- 4. Add the D04 size rule as a CASE and group by it too:
---    'large' from 200, 'medium' from 50, otherwise 'small'.
---    One row is one ___? How many rows?
+-- 4. Start from query 3 (completed orders only). Add the D04 size rule as a CASE
+--    called size_band and group by it too: 'large' from 200, 'medium' from 50, otherwise 'small'.
+--    Sort by channel, then revenue from largest. One row is one ___? How many rows?
 
 
 -- 5. Keep only the groups worth more than 50,000. WHERE or HAVING?
+--    Sort by revenue from largest.
 

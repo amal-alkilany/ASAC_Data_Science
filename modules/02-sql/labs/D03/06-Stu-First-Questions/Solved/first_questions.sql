@@ -22,7 +22,8 @@ SELECT customer_id, customer_name
 FROM D03.customers
 WHERE city IS NULL;
 
--- Q4 The orders customer C-118 placed, newest first.
+-- Q4 Which orders has customer C-118 placed with us? Newest first.
+-- One row is one order.
 -- @check 4
 SELECT order_id, order_date, status
 FROM D03.orders

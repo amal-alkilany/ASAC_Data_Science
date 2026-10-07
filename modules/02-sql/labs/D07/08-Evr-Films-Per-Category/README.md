@@ -48,7 +48,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 2. "Can a film be in more than one category?" Look at film 1, ACADEMY DINOSAUR: show its rows in `film_category` with the category names.
 
-    Translate: `film_category INNER JOIN category` on `category_id`, `WHERE fc.film_id = 1`.
+    Translate: `film_category INNER JOIN category` on `category_id`, `WHERE fc.film_id = 1`, sorted by category name.
 
 3. Audit, before: the number of rows in `film`.
 
@@ -70,9 +70,9 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 | 5 | 16 | Drama and Music, 152 each |
 | 7 | 1 | 2,980.00 on `film` |
 | 7b | 1 | 7,077.33 after the join |
-| 8 | 3 | 403 films have 3 categories |
+| Review | 3 | 403 films have 3 categories |
 
-Row 8 is the query behind step 6's explanation: how many categories each film has (36 films have 1, 561 have 2, 403 have 3). It needs a query inside a query, which is D08, so it is in the Solved file for you to run and read rather than write.
+The Review row is the query behind step 6's explanation: how many categories each film has (36 films have 1, 561 have 2, 403 have 3). It needs a query inside a query, which is D08, so it is in the Solved file for you to run and read rather than write.
 
 ## Why 1,000 films become 2,367 rows
 

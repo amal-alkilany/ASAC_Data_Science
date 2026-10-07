@@ -9,7 +9,7 @@ In this activity, you will turn many rows into one number with each aggregate fu
 1. Count the orders. Predict first.
 2. Count the customer rows, and the customer rows that have a city, in one query.
 3. Count the orders, and the different customer IDs that placed them.
-4. In one query on `order_items`: total revenue (`SUM(qty * price)`), average unit price, cheapest and dearest unit.
+4. In one query on `order_items`: total revenue (`SUM(qty * price)`), the average of the `price` column (`AVG(price)`, rounded to 2 decimals), and the cheapest and most expensive unit price.
 5. The first and last order dates.
 
 ## Check yourself
@@ -19,7 +19,7 @@ In this activity, you will turn many rows into one number with each aggregate fu
 | 1 | 1 | 5 |
 | 2 | 1 | 5 rows, 4 with a city |
 | 3 | 1 | 5 orders, 3 customer IDs |
-| 4 | 1 | revenue 487.00; average unit price 21.08 |
+| 4 | 1 | revenue 487.00; average price 21.08; cheapest 8.00, most expensive 42.00 |
 | 5 | 1 | 2026-08-03 to 2026-08-24 |
 
 ## Hint

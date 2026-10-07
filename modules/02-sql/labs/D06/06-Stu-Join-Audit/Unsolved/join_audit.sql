@@ -15,5 +15,6 @@
 -- Q3 After the join: the sum of qty * price.
 
 
--- Bonus
+-- Bonus: which order had its total copied onto the most rows?
+--    Sort by the number of rows from largest, then by order_id. Expect one row.
 

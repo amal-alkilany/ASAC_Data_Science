@@ -48,7 +48,7 @@ Before you start, run the Five Checks for `orders` and `order_items`. Which is t
 | Question | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 1 | 3,000 rows; 3,000 orders; 340,370.00 |
-| 2 | 1 | 7,516 rows; 3,000 orders; 1,067,249.00 |
+| 2 | 1 | 7,516 rows; 3,000 orders; 1,067,249.00 (4,516 more rows; 726,879.00 more in the total) |
 | 3 | 1 | 340,370.00 |
 
 If rows or totals differ, check the `ON` condition and which table supplied the amount you summed.

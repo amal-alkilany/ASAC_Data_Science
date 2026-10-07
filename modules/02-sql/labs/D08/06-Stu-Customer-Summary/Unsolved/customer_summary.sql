@@ -2,7 +2,7 @@
 -- One row of the final answer is:
 -- The table that has every customer is:
 
--- 1. Step 1 alone: completed orders per customer (orders, revenue, first and last order date).
+-- 1. Step 1 alone: completed orders per customer (orders, revenue, first and last completed order date).
 --    Rows expected:
 WITH completed AS (
 

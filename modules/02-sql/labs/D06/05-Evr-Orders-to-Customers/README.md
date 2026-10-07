@@ -35,12 +35,14 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 ## Instructions
 
-Before you start, run the Five Checks for `orders` and `customers`. Is `customer_id` unique in `customers`?
+Before you start, run the Five Checks for `orders` and `customers`. Is `customer_id` unique in `customers`? `COUNT(*)` and `COUNT(DISTINCT customer_id)` on `customers` should both be 500.
 
 1. Count the orders.
 2. Count the rows after `orders INNER JOIN customers`.
 3. Count the rows after `orders LEFT JOIN customers`.
 4. Find the order the `INNER JOIN` dropped: after the `LEFT JOIN`, its customer columns are `NULL`.
+
+    Translate: the `LEFT JOIN` from query 3, then `WHERE c.customer_id IS NULL`. Test the key, not `city`: six Nakheel customers have no city, so `WHERE c.city IS NULL` also returns their orders, 39 rows in all.
 
 ## Check yourself
 
@@ -50,6 +52,8 @@ Before you start, run the Five Checks for `orders` and `customers`. Is `customer
 | 2 | 1 | 2,999 |
 | 3 | 1 | 3,000 |
 | 4 | 1 | order 101664, customer C-0999, 938.00 |
+
+If query 3 returns 3,038 rows, `customers` is on the left: that keeps every customer, including the ones with no orders. Put `orders` first: `FROM nakheel.orders AS o LEFT JOIN nakheel.customers AS c`.
 
 ## Why it matters
 

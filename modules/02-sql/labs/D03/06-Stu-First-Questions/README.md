@@ -1,6 +1,6 @@
 # First questions
 
-In this activity, you will answer four questions from the store manager using the D01 tables, on your own.
+In this activity, you will answer four questions from the store manager using the `D03` tables, on your own. They are the four tables you met on D01.
 
 **Time:** 10 minutes · **Data:** `D03.orders`, `D03.order_items`, `D03.customers` · **Starter:** `Unsolved/first_questions.sql`
 
@@ -29,7 +29,7 @@ For every question: write down what one row of the table is, predict how many ro
 | Question | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 1 | order 1002, 2026-08-03 |
-| 2 | 8 | first row has `price` 42.00 |
+| 2 | 8 | first row has `price` 42.00 (BigQuery shows `42.0`) |
 | 3 | 1 | C-455, Sami Odeh |
 | 4 | 2 | first row is order 1005 |
 

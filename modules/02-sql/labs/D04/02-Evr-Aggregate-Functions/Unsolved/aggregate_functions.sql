@@ -10,7 +10,8 @@
 -- 3. How many orders, and how many different customer IDs placed them?
 
 
--- 4. Total revenue of all order lines, the average unit price, the cheapest and the dearest unit.
+-- 4. Total revenue of all order lines (SUM(qty * price)), the average of the price column (AVG(price), rounded to 2),
+--    and the cheapest and most expensive unit price.
 
 
 -- 5. The first and last order dates.

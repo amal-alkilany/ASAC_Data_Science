@@ -25,10 +25,10 @@ WHERE entity ='Jordan'
 ORDER BY year ASC ;
 
 -- ============================================================
--- Q3  Which ten countries had the highest life expectancy in 2023?
--- One row is:A countrts life expectancy in 2023.
--- Result check:10 rows
--- Interpretation:Developed nations have the highest life expectancy.
+-- Q3  Which ten places had the highest life expectancy in 2023?
+-- One row is:
+-- Result check:
+-- Interpretation:
 -- ============================================================
 SELECT  entity, year, life_expectancy
 FROM owid.life_expectancy_data
@@ -56,8 +56,15 @@ WHERE year= 2023 AND code IS NULL ;
 SELECT*
 FROM owid.life_expectancy_data
 WHERE year = 2023 AND code LIKE 'OWID%';
+-- C3a every row for 2023
 
--- (e) countries and territories only
+-- C3b 2023 rows with no code
+
+-- C3c 2023 rows with a code
+
+-- C3d 2023 rows whose code starts with OWID
+
+-- C3e countries and territories only, highest life expectancy first
 
 
 -- ============================================================

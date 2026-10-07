@@ -10,7 +10,7 @@
 -- 3. Order lines with a quantity of 2 or more, largest quantity first.
 
 
--- 4. Try this one and read the error message. Why does it fail?
+-- 4. Try this one and read the error message. Why does it fail? Then fix it.
 SELECT order_id AS order_number, status
 FROM D03.orders
 WHERE order_number = 1003;

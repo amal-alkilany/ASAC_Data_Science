@@ -12,13 +12,14 @@ A KPI (key performance indicator) is a number a business agrees to track the sam
 
 2. The three KPIs share a grain, one month. Write one query that returns all three, one row per month.
 
-3. Compare August 2025 with August 2026. Which KPI moved, and in which direction?
+3. Compare August 2025 with August 2026. How did each of the three KPIs change, and by how much?
 
 ## Check yourself
 
 | Query | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 24 | 2024-09-01: 11,268.00 from 112 orders; average 100.61 |
+| Step 3 | two rows of query 1 | August 2025: 13,075.50, 126 orders, 103.77. August 2026: 13,061.50, 129 orders, 101.25 |
 
 ## Hint
 

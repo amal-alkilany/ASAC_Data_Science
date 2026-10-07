@@ -8,9 +8,9 @@ In this activity, you will count the cancelled orders without filtering the othe
 
 1. In one row: all orders, and the cancelled ones. Use `COUNTIF(status = 'cancelled')`.
 
-2. The cancellation rate as the average of a 0/1 column: `AVG(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END)`. Why does the average of zeros and ones give a share?
+2. The cancellation rate as the average of a 0/1 column: `AVG(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END)`, wrapped in `ROUND(…, 4)`. Why does the average of zeros and ones give a share?
 
-3. The same count and rate for each channel. Which channel cancels more?
+3. The same counts and rate for each channel: orders, cancelled orders and the cancellation rate. Which channel cancels more?
 
 ## Check yourself
 

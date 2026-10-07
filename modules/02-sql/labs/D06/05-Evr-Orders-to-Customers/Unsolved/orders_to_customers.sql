@@ -11,4 +11,5 @@
 
 
 -- 4. Find the order that the INNER JOIN dropped.
+--    After the LEFT JOIN, test the key: WHERE c.customer_id IS NULL (not c.city).
 

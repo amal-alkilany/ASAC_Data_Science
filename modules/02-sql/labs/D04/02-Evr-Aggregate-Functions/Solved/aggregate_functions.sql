@@ -17,12 +17,12 @@ SELECT COUNT(*) AS orders,
        COUNT(DISTINCT customer_id) AS customer_ids
 FROM D03.orders;
 
--- 4. SUM, AVG, MIN, MAX on the order lines.
+-- 4. SUM, AVG, MIN, MAX on the order lines. AVG(price) counts every line once, whatever its qty.
 -- @check 4
 SELECT SUM(qty * price) AS revenue_all_orders,
        ROUND(AVG(price), 2) AS average_unit_price,
        MIN(price) AS cheapest_unit,
-       MAX(price) AS dearest_unit
+       MAX(price) AS most_expensive_unit
 FROM D03.order_items;
 
 -- 5. MIN and MAX work on dates too.

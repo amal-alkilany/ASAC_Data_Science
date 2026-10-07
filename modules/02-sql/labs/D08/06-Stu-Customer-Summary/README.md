@@ -1,6 +1,6 @@
 # One row per customer
 
-In this activity, you will build a customer summary in two named steps: completed orders, revenue, and first and last order date for every customer, including those with no completed order, and then audit it.
+In this activity, you will build a customer summary in two named steps: completed orders, revenue, and the dates of the first and last completed order for every customer, including those with no completed order, and then audit it.
 
 **Time:** 18 minutes · **Data:** `nakheel.orders`, `nakheel.customers` · **Starter:** `Unsolved/customer_summary.sql`
 
@@ -37,9 +37,9 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 ## Instructions
 
-1. "For each customer who has bought from us: how many completed orders, how much revenue, and the dates of their first and last order." Write it as a CTE named `completed`, then read it with `SELECT * FROM completed`. Predict the row count first; you saw it in [From nested to named](../04-Ins-Nested-To-Named/README.md).
+1. "For each customer who has bought from us: how many completed orders, how much revenue, and the dates of their first and last completed order." Write it as a CTE named `completed`, then read it with `SELECT * FROM completed`. Predict the row count first; you saw it in [From nested to named](../04-Ins-Nested-To-Named/README.md).
 
-    Translate: completed orders only, `GROUP BY customer_id`; `COUNT(*)`, `SUM(order_total)`, `MIN(order_date)` and `MAX(order_date)`, each with a name.
+    Translate: completed orders only, `GROUP BY customer_id`; `COUNT(*)`, `SUM(order_total)`, `MIN(order_date)` and `MAX(order_date)`, each with a name. Name the dates `first_order` and `last_order`. They count completed orders only, because the `WHERE` keeps only those: a cancelled order does not move them.
 
 2. "Now every customer, including those who have never completed an order. Show 0 for them, not a blank."
 
@@ -65,7 +65,7 @@ If step 2 has 452 rows, you started from the CTE; if it has 451, you used an `IN
 
 ## Hint
 
-`COALESCE(x.completed_orders, 0)` returns 0 when the value is `NULL`. A customer with no completed orders spent 0, not an unknown amount. The dates stay `NULL`: there is no first order to show.
+`COALESCE(x.completed_orders, 0)` returns 0 when the value is `NULL`. A customer with no completed orders spent 0, not an unknown amount. The dates stay `NULL`: there is no completed order to show.
 
 ## Bonus
 

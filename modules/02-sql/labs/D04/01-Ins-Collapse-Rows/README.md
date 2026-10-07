@@ -20,7 +20,7 @@ In this activity, you will add a calculated column to every row of `D03.order_it
 
 3. Run query 3. `GROUP BY product_id` collapses the same 12 rows into 5 different groups, one per product. **The grain of the result is whatever you group by.** Before you run a `GROUP BY`, say what one row of the answer will be.
 
-4. Run query 4. It stops with `SELECT list expression references column product_id which is neither grouped nor aggregated`. Every column in `SELECT` must be either in the `GROUP BY` or inside a function such as `SUM` or `COUNT`. BigQuery cannot put five different products into one order's row.
+4. Run query 4. It stops with `SELECT list expression references column product_id which is neither grouped nor aggregated`. Every column in `SELECT` must be either in the `GROUP BY` or inside a function such as `SUM` or `COUNT`. Order 1003 has three products, and BigQuery cannot put three different `product_id` values into one order's row.
 
 ## Check yourself
 

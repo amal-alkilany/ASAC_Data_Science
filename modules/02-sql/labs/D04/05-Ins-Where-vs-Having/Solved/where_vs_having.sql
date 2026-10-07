@@ -6,7 +6,8 @@
 SELECT channel, COUNT(*) AS completed_orders
 FROM nakheel.orders
 WHERE status = 'completed'
-GROUP BY channel;
+GROUP BY channel
+ORDER BY channel;
 
 -- HAVING removes groups after they are counted: customers with more than 20 orders.
 -- @check 2

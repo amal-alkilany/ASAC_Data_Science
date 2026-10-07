@@ -48,14 +48,15 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 ## The audit table
 
-After every join, record the numbers and say whether each should have changed:
+After every join, record the numbers and say whether each should have changed. The same table is at the top of the starter file:
 
-| Step | Rows | Different orders | Total you care about |
-|---|---:|---:|---:|
-| before the join | | | |
-| after join 1 | | | |
-| after join 2 | | | |
-| after the filter | | | |
+| Step | Rows | `SUM(qty * price)` |
+|---|---:|---:|
+| `order_items` alone (step 2) | | |
+| + `products` (step 3) | | |
+| + `orders` (step 5) | | |
+| completed only (step 6) | | |
+| `orders` table, completed only (step 7, `SUM(order_total)`) | – | |
 
 If a number changed and you cannot say why, stop and find out before you go on.
 
@@ -116,7 +117,7 @@ Not required, not checked. `bigquery-public-data.thelook_ecommerce` has `order_i
 **Not checked and not submitted.** Solutions are in the Solved file. Each join question needs its own audit.
 
 - X1 "Units sold per category, completed orders."
-- X2 "Omar Nasser from Irbid has two customer IDs. What has he spent in total on completed orders?"
+- X2 "Omar Nasser from Irbid has two customer IDs. What has he spent on completed orders under each ID? Add the two rows to get his total."
 - X3 Transfer: in `thelook_ecommerce`, orders per user country. Read the bytes estimate before you run.
 
 ## Check yourself: more practice
@@ -124,7 +125,7 @@ Not required, not checked. `bigquery-public-data.thelook_ecommerce` has `order_i
 | Question | Rows returned | One value to check |
 |---|---:|---|
 | X1 | 6 | Sportswear first, 3,408 units |
-| X2 | 2 | C-1401: 18 orders, 6,033.00 |
+| X2 | 2 | C-1204: 3 orders, 143.00; C-1401: 18 orders, 6,033.00; in total 21 orders, 6,176.00 |
 
 X3 uses public data that changes, so it has no fixed answer.
 

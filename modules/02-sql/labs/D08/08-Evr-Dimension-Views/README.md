@@ -33,7 +33,7 @@ Power BI works best with one table of events and small tables that describe them
 | 4 | 1 | 500 rows; 500 customers; 2 segments; 9 cities (8 cities and unknown) |
 | 5 | 1 | 60 rows; 60 products; 6 categories |
 
-10 cities means the `al zarqa` line is missing from the `CASE`. More than 2 segments means `LOWER(TRIM(...))` is missing.
+10 cities means the `al zarqa` line is missing from the `CASE`. 8 cities means the `WHEN city IS NULL THEN 'unknown'` line is missing: `COUNT(DISTINCT ...)` does not count `NULL`. More than 2 segments means `LOWER(TRIM(...))` is missing.
 
 ## Hint
 

@@ -7,14 +7,13 @@
 -- Audit table (fill in from your results)
 -- | Step                                  | Rows | SUM(qty * price) |
 -- |---------------------------------------|------|------------------|
--- | order_items alone                     |      |                  |
 -- | after all three joins, completed only |      |                  |
 -- | orders table, completed only          |  –   |                  |  (SUM(order_total))
 
 -- Q1 Audit: completed order lines after joining products, orders and customers.
 
 
--- Q2 Units and revenue by category and cleaned segment.
+-- Q2 Units and revenue by category and cleaned segment, largest revenue first.
 --    One row is:
 --    Rows expected:
 

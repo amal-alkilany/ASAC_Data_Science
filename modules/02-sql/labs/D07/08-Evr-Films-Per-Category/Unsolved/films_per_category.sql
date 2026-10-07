@@ -7,7 +7,7 @@
 -- | film alone                 |      |                 |                  |
 -- | + film_category            |      |                 |                  |
 
--- Step 2. Film 1 in film_category, with its category names.
+-- Step 2. Film 1 in film_category, with its category names, sorted by name.
 
 
 -- Step 3. Audit: rows in film.
@@ -16,7 +16,7 @@
 -- Step 4. Audit: rows and different films after film INNER JOIN film_category.
 
 
--- Step 5. Films per category.
+-- Step 5. Films per category. Largest count first, then by name.
 -- One row is:
 -- Result check:
 

@@ -10,9 +10,9 @@ In this activity, you will fix the D01 problem, "retail" typed three ways, on Na
 
 2. Run query 2. `LOWER(TRIM(segment))` gives two: `retail` 435, `wholesale` 65. `TRIM` removes spaces at the ends; `LOWER` makes every letter small. The table is not changed; only the result is.
 
-3. Run query 3. `COALESCE(city, 'unknown')` shows a word instead of `NULL`.
+3. Run query 3. `COALESCE(LOWER(TRIM(city)), 'unknown')` cleans each city's spelling first, then shows `unknown` instead of `NULL`.
 
-4. Look at the cities in query 3. `TRIM` and `LOWER` fix `amman`. They cannot know that `Al Zarqa` is Zarqa. That needs a rule you write yourself, as a `CASE` (D07), or a cleaning step in Power Query in Module 3.
+4. Look at the cities in query 3. `TRIM` and `LOWER` fix `amman`. They cannot know that `Al Zarqa` is Zarqa. That needs a rule you write yourself, as a `CASE` like the size bands in activity 07, or a cleaning step in Power Query in Module 3.
 
 ## Check yourself
 

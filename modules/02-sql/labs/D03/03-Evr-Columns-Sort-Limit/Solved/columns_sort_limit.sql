@@ -17,7 +17,7 @@ FROM D03.order_items
 ORDER BY price DESC;
 
 -- 4. LIMIT keeps the first rows of the sorted result. The second sort column
---    decides ties, so everyone gets the same three rows. (3 rows: 9010, 9003, 9009)
+--    decides ties, so everyone gets the three rows in the same order. (3 rows: 9010, 9003, 9009)
 -- @check 4
 SELECT item_id, order_id, product_id, qty
 FROM D03.order_items

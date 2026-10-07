@@ -11,7 +11,7 @@ FROM nakheel.orders;
 SELECT ROUND(AVG(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END), 4) AS cancellation_rate
 FROM nakheel.orders;
 
--- 3. The same rate for each channel. One row of the result is one channel.
+-- 3. The same counts and rate for each channel. One row of the result is one channel.
 -- @check 3
 SELECT channel,
        COUNT(*) AS orders,

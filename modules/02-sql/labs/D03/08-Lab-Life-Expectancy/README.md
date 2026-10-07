@@ -21,7 +21,7 @@ Our World in Data publishes life expectancy for every country and region, year b
 
 ## How to write your answers
 
-Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab). Each question has a comment block. Fill in all four lines, not only the query:
+Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab). Each question has a comment block. Fill in its three blank lines (One row is, Result check, Interpretation), not only the query:
 
 ```sql
 -- ============================================================
@@ -45,11 +45,11 @@ Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab
 
 ## C2 · Answer two questions
 
-7. "How has life expectancy in Jordan changed since 1950? Show me every year, oldest first."
+7. **Q2.** "How has life expectancy in Jordan changed since 1950? Show me every year, oldest first."
 
     Translate: rows for `Jordan`, columns `year` and `life_expectancy`, sorted by `year`.
 
-8. "Which ten countries had the highest life expectancy in 2023?"
+8. **Q3.** "Which ten places had the highest life expectancy in 2023?"
 
     Translate: rows for 2023, sorted by `life_expectancy`, largest first, the first ten.
 
@@ -59,11 +59,11 @@ Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab
 
 A colleague runs your 2023 query without `LIMIT` and writes back: "There are 193 UN member states. Why does 2023 have 261 rows?"
 
-9. Show every row for 2023. Confirm 261 rows. Scroll through them: which entities are not countries?
-10. Show the 2023 rows where `code` is empty. What kind of entity has no code?
-11. Remove those rows. How many are left?
-12. Search the result for `World`. It is still there. Show the 2023 rows whose `code` starts with `OWID`. What are they?
-13. Write one query that keeps countries and territories only. One of the `OWID_` rows is a country: keep it.
+9. **C3a.** Show every row for 2023. Confirm 261 rows. Scroll through them: which entities are not countries?
+10. **C3b.** Show the 2023 rows where `code` is empty. What kind of entity has no code?
+11. **C3c.** Remove those rows. How many are left?
+12. **C3d.** Search the result for `World`. It is still there. Show the 2023 rows whose `code` starts with `OWID`. What are they?
+13. **C3e.** Write one query that keeps countries and territories only, highest life expectancy first. One of the `OWID_` rows is a country: keep it.
 14. In your interpretation line, explain why your final count is still above 193.
 
 **Checkpoint C3:** your final query returns 237 rows, and your interpretation explains the difference from 193.
@@ -74,7 +74,7 @@ A colleague runs your 2023 query without `LIMIT` and writes back: "There are 193
 |---|---:|---|
 | C1 | 1 | Jordan 2023: 77.8145 |
 | Q2 | 74 | first row 1950, 40.8736; last row 2023, 77.8145 |
-| Q3 | 10 | Monaco first (86.3724); Australia tenth (83.9228) |
+| Q3 | 10 | Monaco first (86.3724); Australia tenth (83.9228). Hong Kong is third: is it a country? C3 comes back to this |
 | C3a | 261 | Africa appears, with code `OWID_AFR` |
 | C3b | 15 | Americas has no code |
 | C3c | 246 | World is still in the list |
@@ -85,7 +85,7 @@ If a count differs, check the year first. For C3, check which regions your condi
 
 ## Hint
 
-For step 12, `code LIKE 'OWID%'` finds codes that start with `OWID`. For step 13, you need `AND` and `OR` in one `WHERE`, so use brackets.
+For step 12, `code LIKE 'OWID%'` finds codes that start with `OWID`. For step 13, `code NOT LIKE 'OWID%'` keeps the codes that do not start with `OWID`. You also need `AND` and `OR` in one `WHERE`, so use brackets.
 
 ## Stretch card
 
@@ -119,7 +119,7 @@ Which change made the estimate smaller: naming columns, or `LIMIT`? What does th
 | P3 | 10 | North Korea lowest, 14.2015 (the Korean War) |
 | P4 | 1 | 1996 |
 | P5 | 3 | South Africa, South Korea, South Sudan |
-| P6 | 4 | 2021, 74.2042 |
+| P6 | 4 | lowest is 2021, 74.2042 |
 
 ## If something goes wrong
 

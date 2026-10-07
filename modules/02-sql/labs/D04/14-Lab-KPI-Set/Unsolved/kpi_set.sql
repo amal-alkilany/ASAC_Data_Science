@@ -14,7 +14,7 @@
 -- | 5 | High-cancellation months  |                                                 |                    |
 
 -- ============================================================
--- C1 · KPIs 1 and 2 by month
+-- C1a · KPIs 1 and 2 by month
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -22,7 +22,7 @@
 
 
 -- ============================================================
--- C1 · KPI 3, average order value by channel
+-- C1b · KPI 3, average order value by channel
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -30,7 +30,7 @@
 
 
 -- ============================================================
--- C2 · KPI 4, cancellation rate by month
+-- C2a · KPI 4, cancellation rate by month
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -38,7 +38,7 @@
 
 
 -- ============================================================
--- C2 · KPI 5, months with a cancellation rate above 9%
+-- C2b · KPI 5, months with a cancellation rate above 9%
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -47,15 +47,24 @@
 
 -- ============================================================
 -- C3 · "Is the typical order getting bigger?"
+-- ============================================================
+
+-- C3a · average order value by year, with the months of data in each year
 -- One row is:
 -- Result check:
--- Interpretation (which grain answers the question, and why):
--- ============================================================
--- by year
 
--- by month
 
--- two comparable 12-month periods
+-- C3b · average order value by month
+-- One row is:
+-- Result check:
+
+
+-- C3c · two comparable 12-month periods
+-- One row is:
+-- Result check:
+
+
+-- C3d · Interpretation (which grain answers the question, and why):
 
 
 -- ============================================================

@@ -22,6 +22,7 @@ In this activity, you will filter three tables, then run a query that fails and 
 | 2 | 2 | orders 1004 and 1005 |
 | 3 | 7 | first row is item 9010, qty 4 |
 | 4 | error | `Unrecognized name: order_number` |
+| 4 (fixed) | 1 | `order_number` 1003, completed |
 
 ## Why query 4 fails
 

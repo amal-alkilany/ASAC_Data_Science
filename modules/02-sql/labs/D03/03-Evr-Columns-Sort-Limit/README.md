@@ -12,7 +12,7 @@ In this activity, you will type four queries that choose columns, rename one, so
 
 3. Show every row of `D03.order_items`, most expensive unit price first.
 
-4. Show the three order lines with the largest quantity. Add `item_id` as a second sort column so everyone gets the same three rows.
+4. Show the three order lines with the largest quantity. Add `item_id` as a second sort column so everyone gets the three rows in the same order.
 
 ## Check yourself
 
@@ -20,7 +20,7 @@ In this activity, you will type four queries that choose columns, rename one, so
 |---|---:|---|
 | 1 | 5 | three columns only |
 | 2 | 5 | first column is headed `order_number` |
-| 3 | 12 | first row has `price` 42.00 |
+| 3 | 12 | first row has `price` 42.00 (BigQuery shows `42.0`) |
 | 4 | 3 | item 9010, qty 4, is first |
 
 ## Hint

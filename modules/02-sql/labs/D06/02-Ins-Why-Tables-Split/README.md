@@ -50,7 +50,7 @@ In this activity, you will see why a database keeps customers and orders in sepa
     2. **Which key joins them?** `orders.customer_id = customers.customer_id`: the column on each side that holds the same value.
     3. **Is the key unique on the "one" side?** Every `customer_id` should appear once in `customers`. Steps 5 and 6 check it.
     4. **How many rows should come out?** Each order finds at most one customer, so at most 5 rows: the grain of the "many" side.
-    5. **What happens to rows with no match?** C-377 and C-455 have no orders. `INNER JOIN` drops them; `LEFT JOIN` keeps them with empty (`NULL`) columns.
+    5. **What happens to rows with no match?** C-377 and C-455 have no orders. `INNER JOIN` drops them; `customers LEFT JOIN orders` keeps them, with empty (`NULL`) order columns.
 
 5. Open `Solved/five_checks.sql`. Predict the two numbers, then run query 1, check 3 on the "one" side. You should see 5 and 5. Equal counts mean every ID appears once: the key is unique.
 

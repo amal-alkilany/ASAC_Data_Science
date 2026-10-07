@@ -4,8 +4,8 @@
 -- 1. All orders, and the cancelled ones, in one row. Use COUNTIF.
 
 
--- 2. The cancellation rate as AVG of a 0/1 column.
+-- 2. The cancellation rate as AVG of a 0/1 column, rounded to 4 decimals.
 
 
--- 3. The cancellation rate for each channel.
+-- 3. For each channel: orders, cancelled orders and the cancellation rate.
 

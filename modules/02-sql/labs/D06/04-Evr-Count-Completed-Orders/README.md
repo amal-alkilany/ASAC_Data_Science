@@ -36,7 +36,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 3. Say what one row is after the join. Change the count so it answers the question.
 
-4. "How many completed orders included at least one item priced 20 or more?" This question needs both tables: `status` is in `orders` and `price` is in `order_items`. Write it with `COUNT(*)` first, then with `COUNT(DISTINCT o.order_id)`. Which one answers the question?
+4. "How many completed orders included at least one item priced 20 or more?" Here "priced" means the unit `price`, not `qty * price`. This question needs both tables: `status` is in `orders` and `price` is in `order_items`. Write it with `COUNT(*)` first (4a), then with `COUNT(DISTINCT o.order_id)` (4b). Which one answers the question?
 
 ## Check yourself
 
@@ -45,7 +45,8 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 | 1 | 1 | 4 |
 | 2 | 1 | 10 |
 | 3 | 1 | 4 |
-| 4 | 1 | 3 with `COUNT(*)`, 2 with `COUNT(DISTINCT o.order_id)`: 2 is the answer |
+| 4a | 1 | 3 with `COUNT(*)` |
+| 4b | 1 | 2 with `COUNT(DISTINCT o.order_id)`: 2 is the answer |
 
 ## Why 10 is wrong, and when you need the join
 

@@ -1,8 +1,10 @@
 # D01's answer, in SQL
 
-In this activity, you will answer the first question of the programme, "which product category produced the most completed-order revenue last month?", with a three-table join, and check it against the answer you worked out by hand on D01.
+In this activity, you will answer the first question of the programme, "which product category produced the most completed-order revenue last month?" (August 2026), with a three-table join, and check it against the answer you worked out by hand on D01.
 
 **Time:** 22 minutes · **Data:** `D03.order_items`, `D03.orders`, `D03.products` · **Starter:** `Unsolved/d01_category_revenue.sql`
+
+Imagine it is September 2026, the setting of D01, so "last month" means 1–31 August 2026. Every order in `D03.orders` was placed between 3 and 24 August 2026. The data never changes, so the answer stays the same whenever you take this course.
 
 ## How the tables connect
 
@@ -42,9 +44,11 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 3. Join `products` to get each line's `category`. Record them again.
 
-4. Keep completed orders, group by category, and sum `qty * price`.
+4. Keep completed orders placed last month, group by category, and sum `qty * price`.
 
-5. Run it once more without the status filter. Which category wins now?
+    Translate: `WHERE o.status = 'completed' AND o.order_date BETWEEN '2026-08-01' AND '2026-08-31'`. Written as dates, "last month" gives the same answer whenever the query runs; "last month" counted from today's date would move every month.
+
+5. Run it once more without the status filter. Keep the `orders` join and the date filter, and delete only the status test, so the `WHERE` keeps just the `BETWEEN` line. Which category wins now?
 
 ## Check yourself
 
@@ -54,7 +58,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 | 2 | 1 | 12 rows; 487.00 |
 | 3 | 1 | 12 rows; 487.00 |
 | 4 | 3 | Accessories 166.00; Shoes 136.50; Outerwear 84.00 |
-| 5 | 3 | Shoes 195.00 |
+| 5 | 3 | Shoes 195.00; Accessories 166.00; Outerwear 126.00 |
 
 Query 4 must match D01 exactly: Accessories, 166.00.
 

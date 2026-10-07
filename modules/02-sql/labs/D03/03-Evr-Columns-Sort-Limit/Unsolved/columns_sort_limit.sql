@@ -10,5 +10,5 @@
 -- 3. Every row of D03.order_items, most expensive unit price first.
 
 
--- 4. The three order lines with the largest quantity.
+-- 4. The three order lines with the largest quantity. Add item_id as a second sort column.
 
