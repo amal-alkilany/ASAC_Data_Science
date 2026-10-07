@@ -37,7 +37,7 @@ FROM D03.orders
 WHERE status = 'completed'
 ORDER BY customer_id;
 
--- Planned dead end. BIGQUERY-SPECIFIC: a bare UNION is a syntax error in BigQuery:
+-- This one fails on purpose. BIGQUERY-SPECIFIC: a bare UNION is a syntax error in BigQuery:
 --   Syntax error: Expected keyword ALL or keyword DISTINCT but got keyword SELECT
 -- Most other databases (PostgreSQL, SQL Server, MySQL, Snowflake) accept a bare UNION and read it as DISTINCT.
 -- @skip error on purpose: BigQuery rejects a bare UNION

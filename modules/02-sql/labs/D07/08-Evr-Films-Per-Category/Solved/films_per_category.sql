@@ -1,5 +1,5 @@
 -- D07 · 5.1 Everyone Do: A bridge table: films per category
--- Tables: pagila.film, pagila.film_category, pagila.category (moved from the old D06 lab, C3)
+-- Tables: pagila.film, pagila.film_category, pagila.category
 -- film: one film. category: one category. film_category: one film in one category (the bridge table).
 
 -- Step 2. Film 1, ACADEMY DINOSAUR, in the bridge table: three rows, one per category. (3 rows: Games, New, Travel)
