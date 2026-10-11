@@ -63,7 +63,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
     You should see 6,946 lines and 315,085.50. Order 101664's 5 lines, worth 938.00, are gone.
 
-4. Power BI will meet this order too. When you relate `fact_sales` to `dim_customer` in Power BI (D18), those 5 lines will have no customer. Checkpoint C3 of the lab, [Reporting views for Power BI and for D10](../10-Lab-Reporting-Views/README.md), fixes it at the source, in a view.
+4. Power BI will meet this order too. When you relate `fact_sales` to `dim_customer` in Power BI (D18), those 5 lines will have no customer. Checkpoint C3 of the lab, [Reporting views for Power BI and for D11](../10-Lab-Reporting-Views/README.md), fixes it at the source, in a view.
 
 ## Check yourself
 

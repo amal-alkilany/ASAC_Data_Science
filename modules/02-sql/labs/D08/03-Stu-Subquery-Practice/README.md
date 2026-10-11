@@ -4,6 +4,8 @@ In this activity, you will answer four manager questions with a subquery: the pr
 
 **Time:** 12 minutes · **Data:** `nakheel.products`, `nakheel.customers`, `nakheel.orders`, `nakheel.order_items` · **Starter:** `Unsolved/subquery_practice.sql`
 
+**When:** done after class on D09 (Sunday 11 October), before the D08 lab. The Solved folder is released with the lab's.
+
 For every question, write the inner query first and run it on its own. Only when it gives what you expect, put it in brackets inside the outer query.
 
 ## How the tables connect

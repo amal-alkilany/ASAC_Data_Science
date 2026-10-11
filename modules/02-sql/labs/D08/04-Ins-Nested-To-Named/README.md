@@ -85,7 +85,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 4. Read the result as a manager would. A wholesale customer spends about six and a half times what a retail customer does (2,658.69 against 409.37). The D07 totals did not show this: wholesale had far fewer customers but nearly half the revenue.
 
-5. Which customers does the average count? Only those who have bought from us. If you start from `customers` and count the 49 customers with no completed order as 0, every customer is in the average and the numbers drop: wholesale 65 customers, 2,372.37; retail 435, 369.84. Neither answer is wrong; say which one you report. X1 in the lab, [Reporting views for Power BI and for D10](../10-Lab-Reporting-Views/README.md), uses the second kind: the average of every customer.
+5. Which customers does the average count? Only those who have bought from us. If you start from `customers` and count the 49 customers with no completed order as 0, every customer is in the average and the numbers drop: wholesale 65 customers, 2,372.37; retail 435, 369.84. Neither answer is wrong; say which one you report. X1 in the lab, [Reporting views for Power BI and for D11](../10-Lab-Reporting-Views/README.md), uses the second kind: the average of every customer.
 
 A CTE is not saved anywhere. It exists only while this one query runs. To save a query under a name, you make a view: see [Save a query as a view](../07-Ins-First-View/README.md).
 

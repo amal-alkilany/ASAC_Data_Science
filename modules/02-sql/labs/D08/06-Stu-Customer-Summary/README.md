@@ -51,7 +51,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
     Then compare the revenue with completed revenue on `orders` alone, 316,023.50. Explain the difference in a comment.
 
-Keep this query. You save it as a view in the lab, [Reporting views for Power BI and for D10](../10-Lab-Reporting-Views/README.md), and D10's first machine-learning model starts from it.
+Keep this query. You save it as a view in the lab, [Reporting views for Power BI and for D11](../10-Lab-Reporting-Views/README.md), and D11's first machine-learning model starts from it.
 
 ## Check yourself
 

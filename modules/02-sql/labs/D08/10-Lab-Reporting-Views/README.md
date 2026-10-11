@@ -1,4 +1,4 @@
-# Lab: Reporting views for Power BI and for D10
+# Lab: Reporting views for Power BI and for D11
 
 In this lab, you will save three more views in `bi`, each with an audit: a one-row-per-customer summary, completed revenue by category and month, and a customer list that also covers the customer ID that has orders but no record.
 
@@ -8,9 +8,9 @@ In this lab, you will save three more views in `bi`, each with an audit: a one-r
 
 **When:** you start the lab in class and finish it after class. The Solved folder is released afterwards.
 
-**What you hand in:** nothing. Save your `.sql` file with the audit table filled in. It is the fifth of the files you choose from for Assignment 1, which is issued on D09 (Sunday 11 October).
+**What you hand in:** nothing. Save your `.sql` file with the audit table filled in. Keep it with your other `.sql` files as a reference for Assignment 1, which is issued on D10 (Monday 12 October) and uses a new dataset.
 
-**Keep the `bi` views.** D09 and D10 read them, and Power BI reads them from D17. Do not delete the `bi` dataset. In the BigQuery sandbox a view expires 60 days after it is created, which is after the course ends.
+**Keep the `bi` views.** D11's first machine-learning model reads `bi.customer_summary`, and Power BI reads the views from D17. Do not delete the `bi` dataset. In the BigQuery sandbox a view expires 60 days after it is created, which is after the course ends.
 
 ## How the tables connect
 
@@ -70,7 +70,7 @@ If a number differs from the one above it and you cannot say why, stop and find 
 
 2. Audit the view: the number of customers, `SUM(completed_orders)`, the revenue and `COUNTIF(completed_orders = 0)`, reading from `bi.customer_summary`.
 
-**Checkpoint C1:** 500 customers; 2,770 completed orders; 315,085.50; 49 customers with none. The gaps to `orders` (1 order and 938.00, against 2,771 and 316,023.50) are order 101664, as in One row per customer. D10's first machine-learning model starts from this view.
+**Checkpoint C1:** 500 customers; 2,770 completed orders; 315,085.50; 49 customers with none. The gaps to `orders` (1 order and 938.00, against 2,771 and 316,023.50) are order 101664, as in One row per customer. D11's first machine-learning model starts from this view.
 
 ## C2 · bi.category_month
 
