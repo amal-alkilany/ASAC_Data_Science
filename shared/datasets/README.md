@@ -9,6 +9,7 @@ These are the datasets you use in the labs and assignments. Each folder holds th
 | [`nakheel/`](nakheel/README.md) | Nakheel Retail, a clothing and footwear retailer in Jordan: customers, products, orders and order lines over 24 months. Synthetic, written for this course | From D04 through SQL and Power BI, and in the graded assignments |
 | [`owid_life_expectancy/`](owid_life_expectancy/README.md) | Life expectancy at birth for countries and regions, 1950–2023, from Our World in Data | D03 lab and D04 practice questions |
 | [`pagila/`](pagila/README.md) | Films, film categories and the table that links them, from the Pagila sample database | D07 activity 08 and the D07 lab |
+| [`intl_football/`](intl_football/README.md) | Every men's international football match since 1872, with goal scorers and penalty shootouts, to 30 September 2026 | Assignment 1 (SQL), loaded on D10 |
 
 Two more datasets live elsewhere:
 
@@ -17,7 +18,7 @@ Two more datasets live elsewhere:
 
 ## Why more than one dataset
 
-Most of your work uses Nakheel Retail, including every graded assignment unless its brief says otherwise. Staying with one business lets you follow the same data from raw tables to a finished Power BI report.
+Most of your work uses Nakheel Retail, including the graded assignments unless a brief says otherwise. Assignment 1 is the exception: it uses the international football results, so you apply the SQL to data you have not seen. Staying with one business lets you follow the same data from raw tables to a finished Power BI report.
 
 Other datasets appear when an idea is easier to see somewhere else: life expectancy to practise filtering and sorting on real public data, and a film catalogue for a join through a linking table. Databases look different in health, media and every other sector, and working with more than one shape of data prepares you for that. You meet at most one new dataset in a session.
 
@@ -34,6 +35,7 @@ Other datasets appear when an idea is easier to see somewhere else: life expecta
 | Nakheel Retail, D01 retail tables | Written for this course. No real people or businesses are in them |
 | Life expectancy | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (Our World in Data) and [CC BY 3.0 IGO](https://creativecommons.org/licenses/by/3.0/igo/) (United Nations) |
 | Pagila | The permission notice in [`pagila/LICENSE.txt`](pagila/LICENSE.txt) |
+| International football results | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain), Mart Jürisoo |
 
 If you reuse the life expectancy or Pagila data outside the course, for example in a portfolio project, copy the attribution from its README.
 
