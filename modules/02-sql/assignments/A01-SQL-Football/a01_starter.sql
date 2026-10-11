@@ -102,19 +102,27 @@ FROM both_sides;
 -- Answer:
 
 
--- Q11. The Golden Boot race: the top three places.
+-- =====================================================================
+-- Bonus (not graded)
+-- =====================================================================
+
+-- B1. The Golden Boot race: the top three places.
 
 ;
 -- Rows:
 -- Answer:
 
 
--- Q12. Jordan's goals per year since 2015: change on the year before, and running total.
+-- B2. Jordan's goals per year since 2015: change on the year before, and running total.
 
 ;
 -- Rows:
 -- Answer:
 
 
--- Bonus (not graded). Penalty shootouts.
+-- B3. Penalty shootouts.
+
+;
+-- Rows:
+-- Answer:
 
