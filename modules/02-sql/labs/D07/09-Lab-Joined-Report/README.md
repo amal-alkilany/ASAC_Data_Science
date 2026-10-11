@@ -76,7 +76,7 @@ If a number changed and you cannot say why, stop and find out before you go on.
 ## C2 · Size band and HAVING
 
 4. "Split each segment's completed revenue by order size." Keep completed orders only, as in step 3. Use the D04 rule: an order is large from 200, medium from 50, otherwise small. Show the number of completed orders and the revenue. One row is one segment and band. Largest revenue first.
-5. "Only the groups worth more than 20,000." Which groups remain? Write one sentence on what that says about retail's large orders and wholesale's.
+5. "Only the groups worth more than 20,000." Keep the columns and the sort from step 4. Which groups remain? Write one sentence on what that says about retail's large orders and wholesale's.
 
 **Checkpoint C2:** 7 rows in step 4, 3 rows in step 5.
 
@@ -115,7 +115,7 @@ Not required, not checked. `bigquery-public-data.thelook_ecommerce` has `users` 
 
 - X1 "How many customers who never ordered does each city have?" Group by the city as typed.
 - X2 "Completed revenue by customer segment." Clean the segment with `LOWER(TRIM(...))` and use an `INNER JOIN` to customers. Audit: which completed order does the `INNER JOIN` lose, and what is it worth?
-- X3 Pagila: films per rating, with the average running time.
+- X3 Pagila: films per rating, with the average running time (`length`) rounded to one decimal.
 
 ## Check yourself: more practice
 

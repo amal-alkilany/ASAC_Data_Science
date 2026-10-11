@@ -9,7 +9,7 @@ WHERE status = 'completed'
 GROUP BY customer_id
 ORDER BY completed_orders DESC;
 
--- 2. The shortcut that does not work: Aggregations of aggregations are not allowed.
+-- 2. The shortcut that does not work: Multi-level aggregation requires the enclosing aggregate function to have one or more GROUP BY modifiers.
 -- @skip
 SELECT AVG(COUNT(*)) AS avg_orders
 FROM nakheel.orders

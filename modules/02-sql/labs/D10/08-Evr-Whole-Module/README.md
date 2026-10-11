@@ -10,7 +10,7 @@ In this activity, you will answer one manager question with everything from D03 
 
 1. **Plan the steps in comments before any SQL.** Say what one row of each step is.
 
-    - Step 1, `customer_revenue`: one row per customer with a completed order. Join `orders` to `customers` (D06); clean the city with D07's `CASE` and the segment with `LOWER(TRIM(...))` (D04); `SUM(order_total)` per customer (`GROUP BY`). Check: 451 rows.
+    - Step 1, `customer_revenue`: one row per customer with a completed order. Join `orders` to `customers` (D06); clean the city with D07's `CASE` and the segment with `LOWER(TRIM(...))` (D04); `SUM(order_total) AS revenue` per customer (`GROUP BY`). Check: 451 rows.
     - Step 2, `ranked`: every row of step 1, plus the customer's rank inside the segment (`RANK`) and its share of the segment's revenue (`SUM ... OVER (PARTITION BY ...)`). Check: 451 rows.
     - The answer: ranks 1 to 3 in each segment.
 
@@ -33,7 +33,7 @@ In this activity, you will answer one manager question with everything from D03 
     ROUND(100 * revenue / SUM(revenue) OVER (PARTITION BY segment_clean), 1) AS share_of_segment
     ```
 
-4. **The answer.** Keep `segment_rank <= 3`, sorted by segment and rank. You should see 6 rows.
+4. **The answer.** Show `segment_clean`, `segment_rank`, `customer_id`, `customer_name`, `city_clean`, `revenue` and `share_of_segment`. Keep `segment_rank <= 3`, sorted by segment and rank (`ORDER BY segment_clean, segment_rank`). You should see 6 rows.
 
 5. Say the finding in one sentence. One customer, Leen Najjar in Amman, brings 22.9% of all wholesale revenue. What would you tell the sales manager?
 

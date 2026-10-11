@@ -3,7 +3,7 @@
 -- C1 · step 1. Audit before: completed orders on orders alone. (1 row: 2,771; 316,023.50)
 -- @check 1
 SELECT COUNT(*) AS completed_orders,
-       ROUND(SUM(order_total), 2) AS revenue
+       SUM(order_total) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed';
 
@@ -11,7 +11,7 @@ WHERE status = 'completed';
 -- @check 2
 SELECT COUNT(*) AS row_count,
        COUNT(DISTINCT o.order_id) AS different_orders,
-       ROUND(SUM(o.order_total), 2) AS revenue
+       SUM(o.order_total) AS revenue
 FROM nakheel.orders AS o
 LEFT JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
@@ -22,7 +22,7 @@ WHERE o.status = 'completed';
 SELECT COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
        o.channel,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(o.order_total), 2) AS revenue
+       SUM(o.order_total) AS revenue
 FROM nakheel.orders AS o
 LEFT JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
@@ -39,7 +39,7 @@ SELECT COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
          ELSE 'small'
        END AS size_band,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(o.order_total), 2) AS revenue
+       SUM(o.order_total) AS revenue
 FROM nakheel.orders AS o
 LEFT JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
@@ -56,7 +56,7 @@ SELECT COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
          ELSE 'small'
        END AS size_band,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(o.order_total), 2) AS revenue
+       SUM(o.order_total) AS revenue
 FROM nakheel.orders AS o
 LEFT JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
@@ -98,8 +98,7 @@ FROM `bigquery-public-data.thelook_ecommerce.users` AS u
 LEFT JOIN `bigquery-public-data.thelook_ecommerce.orders` AS o
   ON u.id = o.user_id
 WHERE o.order_id IS NULL
-GROUP BY u.traffic_source
-ORDER BY users_without_orders DESC;
+GROUP BY u.traffic_source;
 
 -- ============================================================
 -- More practice (not checked, not submitted)
@@ -113,20 +112,18 @@ FROM nakheel.customers AS c
 LEFT JOIN nakheel.orders AS o
   ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL
-GROUP BY c.city
-ORDER BY customers_without_orders DESC, c.city;
+GROUP BY c.city;
 
 -- X2 Completed revenue by customer segment, cleaned. Audit: the orphan order is lost by INNER JOIN.
 -- @check X2
 SELECT LOWER(TRIM(c.segment)) AS segment_clean,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(o.order_total), 2) AS revenue
+       SUM(o.order_total) AS revenue
 FROM nakheel.orders AS o
 INNER JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
 WHERE o.status = 'completed'
-GROUP BY segment_clean
-ORDER BY revenue DESC;
+GROUP BY segment_clean;
 
 -- X2 audit: the completed order that has no customer, and its value.
 -- @check X2a
@@ -141,5 +138,4 @@ WHERE o.status = 'completed'
 -- @check X3
 SELECT rating, COUNT(*) AS films, ROUND(AVG(length), 1) AS average_minutes
 FROM pagila.film
-GROUP BY rating
-ORDER BY films DESC;
+GROUP BY rating;

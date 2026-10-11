@@ -17,7 +17,7 @@ Our data runs from September 2024 to August 2026, so the two years are:
 
 1. **Branch 1 alone: completed revenue per category in year 1.** Before you run it, say what one row is and predict the row count.
 
-    Translate: the D06 three-table join (`order_items`, `orders`, `products`), completed orders with `order_date` between the two year 1 dates, `SUM(i.qty * i.price) AS revenue`, `GROUP BY p.category`. Write it inside `WITH year_one AS ( ... )`, then `SELECT * FROM year_one`.
+    Translate: the D06 three-table join (`order_items`, `orders`, `products`), completed orders with `order_date` between the two year 1 dates, `SUM(i.qty * i.price) AS revenue`, `GROUP BY p.category`. Write it inside `WITH year_one AS ( ... )`, then `SELECT * FROM year_one`, largest revenue first (`ORDER BY revenue DESC`).
 
     You should see 6 rows. Outerwear is first with 36,318.00.
 
@@ -29,7 +29,7 @@ Our data runs from September 2024 to August 2026, so the two years are:
 
 3. **The answer: "Which categories grew most from year 1 to year 2?"** Put both CTEs in one `WITH`, with a comma between them and none after the last. Join them on category and work out the growth.
 
-    Translate: `FROM year_one AS y1 INNER JOIN year_two AS y2 ON y1.category = y2.category`. Show the category, both revenues rounded to 2 decimals, and `ROUND(100 * (y2.revenue - y1.revenue) / y1.revenue, 1) AS growth_pct`, highest growth first.
+    Translate: `FROM year_one AS y1 INNER JOIN year_two AS y2 ON y1.category = y2.category`. Show the category, both revenues rounded to 2 decimals, and `ROUND(100 * (y2.revenue - y1.revenue) / y1.revenue, 1) AS growth_pct`, highest growth first (`ORDER BY growth_pct DESC`).
 
     You should see 6 rows. Shoes grew most, 37.3%.
 
@@ -53,7 +53,7 @@ Each branch is a complete query of its own. Write `year_one`, check it, and only
 
 ## Bonus
 
-Percent is not the whole story. Add `ROUND(y2.revenue - y1.revenue, 2) AS growth_money` and sort by it. Which category added the most money, and where does Outerwear land now?
+Percent is not the whole story. Show the category, `ROUND(y2.revenue - y1.revenue, 2) AS growth_money` and `growth_pct`, and sort by `growth_money`, largest first (`ORDER BY growth_money DESC`). Which category added the most money, and where does Outerwear land now?
 
 ## References
 

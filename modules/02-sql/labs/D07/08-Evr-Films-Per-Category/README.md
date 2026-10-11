@@ -48,17 +48,17 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 2. "Can a film be in more than one category?" Look at film 1, ACADEMY DINOSAUR: show its rows in `film_category` with the category names.
 
-    Translate: `film_category INNER JOIN category` on `category_id`, `WHERE fc.film_id = 1`, sorted by category name.
+    Translate: `film_category INNER JOIN category` on `category_id`, `WHERE fc.film_id = 1`; show `fc.film_id` and the category name as `category`, sorted by `category`.
 
 3. Audit, before: the number of rows in `film`.
 
 4. Audit, after `film INNER JOIN film_category`: the number of rows and the number of different films. Is the join wrong? What is one row now?
 
-5. "How many films do we have in each category?" Join `category` as well, and group by its `name`. Sort by the count, largest first, then by name.
+5. "How many films do we have in each category?" Join `category` as well, and group by its `name`. Show the name as `category` and the count as `films`. Sort by `films`, largest first, then by `category`.
 
 6. Add up your 16 category counts, in your head, on paper or with the Hint. Compare the sum with the number of films. Write one line in your file explaining the difference.
 
-7. "What is the catalogue's total `rental_rate`?" Sum `rental_rate` on `film` alone. Then sum `f.rental_rate` after the join to `film_category`. Which number is the catalogue's total? What happened to the other one?
+7. "What is the catalogue's total `rental_rate`?" Sum `rental_rate` on `film` alone. Then sum `f.rental_rate` after the join to `film_category`. Round both sums to 2 decimals with `ROUND(..., 2)`. Which number is the catalogue's total? What happened to the other one?
 
 ## Check yourself
 

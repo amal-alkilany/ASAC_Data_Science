@@ -59,7 +59,7 @@ If rows or totals differ, check the `ON` condition and which table supplied the 
 
 ## Bonus
 
-Which order had its total copied onto the most rows? Expect one row. Many orders tie at six lines, so add `order_id` as a second sort column to get the same answer as everyone else: order 100013.
+Which order had its total copied onto the most rows? Show `order_id`, `order_total` and the number of rows as `copies`; sort by `copies`, largest first, and keep one row (`LIMIT 1`). Many orders tie at six lines, so add `order_id` as a second sort column to get the same answer as everyone else: order 100013.
 
 ## References
 

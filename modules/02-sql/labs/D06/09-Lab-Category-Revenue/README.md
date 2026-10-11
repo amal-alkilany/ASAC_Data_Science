@@ -65,7 +65,7 @@ If a number changed and you cannot say why, stop and find out before you go on.
 1. Run the Five Checks for `order_items` and `products`. Is `product_id` unique in `products`? Prove it with `COUNT(*)` and `COUNT(DISTINCT product_id)`.
 2. Audit, before: the rows in `order_items` and `SUM(qty * price)`.
 3. Audit, after `order_items INNER JOIN products`: the same two numbers.
-4. "Which product category has brought in the most revenue?" All orders for now. Group by `category`.
+4. "Which product category has brought in the most revenue?" All orders for now. Group by `category`, sum `i.qty * i.price` as `revenue`, and sort by `revenue`, largest first.
 
 **Checkpoint C1:** the audit shows 7,516 rows and 340,370.00 before and after the join, and the query returns 6 categories.
 
@@ -76,7 +76,7 @@ If a number changed and you cannot say why, stop and find out before you go on.
 7. Cross-check the total against the orders table on its own: `SUM(order_total)` for completed orders, with no join. The two totals must be equal.
 8. "Over the whole two years, which category brings in the most completed revenue?"
 
-    Translate: completed orders; group by category; sum `i.qty * i.price`.
+    Translate: completed orders; group by category; sum `i.qty * i.price` as `revenue`; sort by `revenue`, largest first.
 
 **Checkpoint C2:** the completed total after the joins equals the orders table's completed total, and Outerwear is first.
 
@@ -84,7 +84,7 @@ If a number changed and you cannot say why, stop and find out before you go on.
 
 9. "Show me completed revenue for each category, month by month."
 
-    Translate: the query from step 8, grouped by category and by `DATE_TRUNC(o.order_date, MONTH)`.
+    Translate: the query from step 8, grouped by category and by `DATE_TRUNC(o.order_date, MONTH)` called `month`; sort by `month`, then `revenue` largest first (`ORDER BY month, revenue DESC`).
 
 **Checkpoint C3:** 144 rows: 6 categories × 24 months.
 
@@ -110,15 +110,15 @@ In C2, write the joins first and check the audit before you add `WHERE` and `GRO
 
 ## Stretch card
 
-Not required, not checked. `bigquery-public-data.thelook_ecommerce` has `order_items` and `products` tables too. First check that `id` is unique in `products`. Then read the bytes estimate, and calculate revenue (`sale_price`) by product category for order items with `status = 'Complete'`. The public data changes, so there is no fixed answer.
+Not required, not checked. `bigquery-public-data.thelook_ecommerce` has `order_items` and `products` tables too. First check that `id` is unique in `products`. Then read the bytes estimate, and calculate revenue (`sale_price`, rounded to 2 decimals) by product category for order items with `status = 'Complete'`. Show the top 10 categories, largest first (`ORDER BY revenue DESC LIMIT 10`). The public data changes, so there is no fixed answer.
 
 ## More practice
 
 **Not checked and not submitted.** Solutions are in the Solved file. Each join question needs its own audit.
 
-- X1 "Units sold per category, completed orders."
-- X2 "Omar Nasser from Irbid has two customer IDs. What has he spent on completed orders under each ID? Add the two rows to get his total."
-- X3 Transfer: in `thelook_ecommerce`, orders per user country. Read the bytes estimate before you run.
+- X1 "Units sold per category, completed orders." Sum `qty` as `units`; sort by `units`, largest first.
+- X2 "Omar Nasser from Irbid has two customer IDs. What has he spent on completed orders under each ID? Add the two rows to get his total." Show `customer_id`, the number of orders and `SUM(o.order_total)`.
+- X3 Transfer: in `thelook_ecommerce`, orders per user country. Show the top 10 countries, most orders first (`ORDER BY orders DESC LIMIT 10`). Read the bytes estimate before you run.
 
 ## Check yourself: more practice
 

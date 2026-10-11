@@ -39,7 +39,7 @@ Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab
 3. In Explorer, choose **Create table** from the `owid` dataset's **⋮** menu. Set **Create table from** to **Upload** and select `life_expectancy.csv`. Name the table `life_expectancy_data`, not `life_expectancy` ([why](#bigquery-note-a-table-and-a-column-with-the-same-name)), tick **Auto detect**, set **Header rows to skip** to `1` under Advanced options, then click **Create table**. These are the same controls you used in the [D03 dataset activity](../01-Evr-Create-Your-Dataset/README.md).
 4. Open the Details tab. The table should have **19,314** rows.
 5. Open the Schema tab. `year` should be `INTEGER` and `life_expectancy` `FLOAT`.
-6. Write down what you think one row is. Then check it: ask for Jordan in 2023. If one row is one place in one year, you get exactly one row.
+6. Write down what you think one row is. Then check it: ask for Jordan in 2023, showing `entity`, `code`, `year` and `life_expectancy`. If one row is one place in one year, you get exactly one row.
 
 **Checkpoint C1:** the table has 19,314 rows, and your Jordan 2023 query returns one row.
 
@@ -51,7 +51,7 @@ Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab
 
 8. **Q3.** "Which ten places had the highest life expectancy in 2023?"
 
-    Translate: rows for 2023, sorted by `life_expectancy`, largest first, the first ten.
+    Translate: rows for 2023, columns `entity`, `code` and `life_expectancy`, sorted by `life_expectancy`, largest first, the first ten.
 
 **Checkpoint C2:** both queries run, and your results match the Check yourself table.
 
@@ -59,11 +59,11 @@ Open `Unsolved/life_expectancy.sql` in BigQuery (or copy it into a new query tab
 
 A colleague runs your 2023 query without `LIMIT` and writes back: "There are 193 UN member states. Why does 2023 have 261 rows?"
 
-9. **C3a.** Show every row for 2023. Confirm 261 rows. Scroll through them: which entities are not countries?
-10. **C3b.** Show the 2023 rows where `code` is empty. What kind of entity has no code?
-11. **C3c.** Remove those rows. How many are left?
-12. **C3d.** Search the result for `World`. It is still there. Show the 2023 rows whose `code` starts with `OWID`. What are they?
-13. **C3e.** Write one query that keeps countries and territories only, highest life expectancy first. One of the `OWID_` rows is a country: keep it.
+9. **C3a.** Show every row for 2023, with `entity`, `code` and `life_expectancy`. Confirm 261 rows. Scroll through them: which entities are not countries?
+10. **C3b.** Show `entity` and `code` for the 2023 rows where `code` is empty. What kind of entity has no code?
+11. **C3c.** Remove those rows, keeping the C3a columns. How many are left?
+12. **C3d.** Search the result for `World`. It is still there. Show `entity` and `code` for the 2023 rows whose `code` starts with `OWID`. What are they?
+13. **C3e.** Write one query that keeps countries and territories only, with `entity`, `code` and `life_expectancy`, highest life expectancy first. One of the `OWID_` rows is a country: keep it.
 14. In your interpretation line, explain why your final count is still above 193.
 
 **Checkpoint C3:** your final query returns 237 rows, and your interpretation explains the difference from 193.
@@ -103,12 +103,12 @@ Which change made the estimate smaller: naming columns, or `LIMIT`? What does th
 
 **Not checked and not submitted.** For anyone who wants more. The Solved file includes these, and nothing in D04 assumes you did them.
 
-- P1 "Compare Jordan with its neighbours in 2023: Egypt, Iraq, Lebanon, Palestine, Saudi Arabia and Syria. Highest first."
-- P2 "Which countries had a life expectancy below 60 in 2023?"
-- P3 "Which ten countries had the lowest life expectancy in 1950?"
-- P4 "In which year did Japan first pass 80?"
-- P5 "Which places have a name starting with 'South'? Use 2023 only."
-- P6 "Between 2015 and 2023, in which years was Jordan below 76?"
+- P1 "Compare Jordan with its neighbours in 2023: Egypt, Iraq, Lebanon, Palestine, Saudi Arabia and Syria. Highest first." Show `entity` and `life_expectancy`.
+- P2 "Which countries had a life expectancy below 60 in 2023?" Use your C3e filter for countries. Show `entity` and `life_expectancy`.
+- P3 "Which ten countries had the lowest life expectancy in 1950?" Use your C3e filter for countries. Show `entity` and `life_expectancy`, sorted by `life_expectancy`, smallest first, the first ten.
+- P4 "In which year did Japan first pass 80?" Show `year` and `life_expectancy`, sorted by `year`, oldest first, the first row only (`LIMIT 1`).
+- P5 "Which places have a name starting with 'South'? Use 2023 only." Show `entity` and `code`.
+- P6 "Between 2015 and 2023, in which years was Jordan below 76?" Show `year` and `life_expectancy`.
 
 ## Check yourself: more practice
 

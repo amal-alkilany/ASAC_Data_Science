@@ -5,7 +5,7 @@
 -- @check 1
 SELECT channel,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(order_total), 2) AS revenue
+       SUM(order_total) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY channel
@@ -15,7 +15,7 @@ ORDER BY revenue DESC;
 -- One row of the result is one month.
 -- @check 2
 SELECT DATE_TRUNC(order_date, MONTH) AS month,
-       ROUND(SUM(order_total), 2) AS revenue
+       SUM(order_total) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed'
   AND order_date BETWEEN '2025-01-01' AND '2025-12-31'

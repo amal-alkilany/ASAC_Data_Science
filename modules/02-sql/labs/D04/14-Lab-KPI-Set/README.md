@@ -32,17 +32,17 @@ Fill in the definition table at the top of the starter file before you write any
 
 ## C1 · Group correctly
 
-**C1a.** KPIs 1 and 2 in one query, one row per month.
+**C1a.** KPIs 1 and 2 in one query, one row per month: revenue rounded to 2 decimals, sorted by month.
 
-**C1b.** KPI 3, one row per channel.
+**C1b.** KPI 3, one row per channel, rounded to 2 decimals, sorted by `channel`.
 
 **Checkpoint C1:** 24 rows for KPIs 1–2 and 2 rows for KPI 3, matching the Check yourself table.
 
 ## C2 · A conditional aggregate and a filter on groups
 
-**C2a.** KPI 4: for each month, show orders placed, cancelled orders and the cancellation rate. Count cancelled orders with `COUNTIF`. For the rate, divide cancelled orders by orders placed. Keep every order in the query: do not filter out the orders that were not cancelled.
+**C2a.** KPI 4: for each month, show orders placed, cancelled orders and the cancellation rate. Count cancelled orders with `COUNTIF`. For the rate, divide cancelled orders by orders placed, rounded to 4 decimals with `ROUND(…, 4)`. Keep every order in the query: do not filter out the orders that were not cancelled. Sort by month.
 
-**C2b.** KPI 5: show only the months where the rate is above 0.09.
+**C2b.** KPI 5: show the month and the rate, only for the months where the rate is above 0.09, sorted by month.
 
 **Checkpoint C2:** C2a returns 24 rows and C2b returns 6.
 
@@ -50,11 +50,11 @@ Fill in the definition table at the top of the starter file before you write any
 
 The commercial manager asks: "Is the typical order getting bigger?"
 
-**C3a.** Calculate average order value (completed orders) by **year**. What would you tell the manager from this result alone? Then add a column to the same query that counts how many months of data each year has: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Are the three years built from the same number of months? Does that change your answer?
+**C3a.** Calculate average order value (completed orders) by **year**, rounded to 2 decimals and sorted by year. What would you tell the manager from this result alone? Then add a column to the same query that counts how many months of data each year has: `COUNT(DISTINCT DATE_TRUNC(order_date, MONTH))`. Are the three years built from the same number of months? Does that change your answer?
 
-**C3b.** Calculate average order value (completed orders) by **month**. Is there a steady trend?
+**C3b.** Calculate average order value (completed orders) by **month**, rounded to 2 decimals and sorted by month. Is there a steady trend?
 
-**C3c.** Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label each order with its period, then group by the label. You get both periods side by side in one result.
+**C3c.** Compare like with like: September 2024–August 2025 against September 2025–August 2026. Use a `CASE` on `order_date` to label each order with its period, then group by the label. Name the label column `period`, label the periods `'Sep 2024 - Aug 2025'` and `'Sep 2025 - Aug 2026'`, and sort by `period` so the earlier one comes first. Round the average to 2 decimals. You get both periods side by side in one result.
 
 **C3d.** In your interpretation line, say which result answers the manager's question, and why the yearly one could mislead.
 
@@ -80,18 +80,18 @@ For C2, a `WHERE status = 'cancelled'` would remove the orders you need to divid
 
 ## Stretch card
 
-Not required, not checked. In `bigquery-public-data.thelook_ecommerce.orders`, count the orders of each status. Write down the bytes estimate before you run it. The answer changes as the public dataset is updated, so there is no fixed value to check.
+Not required, not checked. In `bigquery-public-data.thelook_ecommerce.orders`, count the orders of each status, largest first. Write down the bytes estimate before you run it. The answer changes as the public dataset is updated, so there is no fixed value to check.
 
 ## More practice
 
 **Not checked and not submitted.** Solutions are in the Solved file. Nothing on D06 assumes you did these.
 
-- M1 "Which ten products sold the most units?" (`order_items`, all statuses)
+- M1 "Which ten products sold the most units?" (`order_items`, all statuses; sort by units, largest first, then by `product_id`; `LIMIT 10`)
 - M2 "How many completed orders were delivered on the day they were placed?"
-- M3 "How much did we collect in shipping fees each year, on completed orders?"
-- M4 "How many new customer accounts did we open each year?"
-- O1 Back to life expectancy (`owid.life_expectancy_data`): each country's lowest and highest value since 1950. Keep countries and territories only, as in the D03 lab. If your D03 table is still called `life_expectancy`, `MIN(life_expectancy)` fails with `MIN is not defined for arguments of type STRUCT`: upload it again as `life_expectancy_data` (D03 lab, step 3).
-- O2 The average life expectancy of all countries in 2023, and the `World` row for 2023. Why are they different?
+- M3 "How much did we collect in shipping fees each year, on completed orders?" (rounded to 2 decimals, sorted by year)
+- M4 "How many new customer accounts did we open each year?" (year of `signup_date`, sorted by year)
+- O1 Back to life expectancy (`owid.life_expectancy_data`): each country's lowest and highest value since 1950, sorted by `entity`. Keep countries and territories only, as in the D03 lab. If your D03 table is still called `life_expectancy`, `MIN(life_expectancy)` fails with `MIN is not defined for arguments of type STRUCT`: upload it again as `life_expectancy_data` (D03 lab, step 3).
+- O2 The average life expectancy of all countries in 2023 (rounded to 2 decimals, with the number of countries), and the `World` row for 2023. Why are they different?
 
 ## Check yourself: more practice
 

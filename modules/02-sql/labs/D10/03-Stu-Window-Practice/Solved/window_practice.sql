@@ -30,8 +30,7 @@ with_segment_average AS (
   FROM customer_revenue
 )
 SELECT segment_clean,
-       COUNT(*) AS customers_above_average,
-       ROUND(MAX(segment_avg), 2) AS segment_avg
+       COUNT(*) AS customers_above_average
 FROM with_segment_average
 WHERE revenue > segment_avg
 GROUP BY segment_clean

@@ -11,6 +11,7 @@
 -- | orders table, completed only          |  –   |                  |  (SUM(order_total))
 
 -- Q1 Audit: completed order lines after joining products, orders and customers.
+--    INNER JOIN products and orders; LEFT JOIN customers.
 
 
 -- Q2 Units and revenue by category and cleaned segment, largest revenue first.
@@ -18,7 +19,7 @@
 --    Rows expected:
 
 
--- Q3 Only the combinations worth more than 20,000.
+-- Q3 Only the combinations worth more than 20,000. Same columns and sort as Q2.
 
 
 -- Bonus

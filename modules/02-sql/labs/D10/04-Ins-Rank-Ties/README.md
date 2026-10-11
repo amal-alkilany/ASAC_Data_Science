@@ -57,6 +57,8 @@ In this activity, you will rank the Sportswear products by units sold with `ROW_
     RANK() OVER (PARTITION BY category ORDER BY units DESC) AS rank_num
     ```
 
+    Add `category` as the first column, so you can see which category each rank belongs to, and sort by category, then rank, then name, so tied products always print in the same order: `ORDER BY category, rank_num, product_name`.
+
     The numbering starts again at 1 in each category. You should see 56 rows; each category's best seller has `rank_num` 1.
 
 ## Check yourself

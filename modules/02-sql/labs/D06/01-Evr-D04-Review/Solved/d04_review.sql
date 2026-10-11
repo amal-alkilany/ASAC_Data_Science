@@ -20,8 +20,7 @@ SELECT channel,
        ROUND(SUM(order_total), 2) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed'
-GROUP BY channel
-ORDER BY channel;
+GROUP BY channel;
 
 -- 4. Add the D04 size rule as a CASE and group by it too: one row per channel and band. (6 rows)
 -- @check 4

@@ -7,7 +7,7 @@
 -- | film alone                 |      |                 |                  |
 -- | + film_category            |      |                 |                  |
 
--- Step 2. Film 1 in film_category, with its category names, sorted by name.
+-- Step 2. Film 1 in film_category: fc.film_id and the category name AS category, sorted by category.
 
 
 -- Step 3. Audit: rows in film.
@@ -16,7 +16,7 @@
 -- Step 4. Audit: rows and different films after film INNER JOIN film_category.
 
 
--- Step 5. Films per category. Largest count first, then by name.
+-- Step 5. Films per category: the name AS category, the count AS films. Largest count first, then by category.
 -- One row is:
 -- Result check:
 
@@ -25,6 +25,6 @@
 --
 
 
--- Step 7. SUM(rental_rate) on film alone, then after the join to film_category.
+-- Step 7. SUM(rental_rate) on film alone, then after the join to film_category. Round both to 2 decimals.
 -- Interpretation:
 

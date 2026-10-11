@@ -1,4 +1,4 @@
--- D10 · 4.2 Student Do: Window practice: rank and trend
+-- D10 · 4.3 Student Do: Window practice: rank and trend
 
 -- 1. The three biggest completed orders in each channel. (6 rows)
 -- @check 1

@@ -14,7 +14,7 @@ In this activity, you will filter rows with `WHERE`, then meet two filters writt
 
 4. Run query 6, `WHERE segment = 'retail'`. It returns one customer, but there are three retail customers.
 
-5. Run query 7 to see why: they are typed `Retail`, `retail` and `RETAIL ` (with a space at the end). Text comparison is exact. Look at every spelling in a column before you filter on it.
+5. Run query 7 to see why. It shows `customer_id` and `segment`, sorted by `segment` (`ORDER BY segment`). They are typed `Retail`, `retail` and `RETAIL ` (with a space at the end). Text comparison is exact. Look at every spelling in a column before you filter on it.
 
 ## Check yourself
 

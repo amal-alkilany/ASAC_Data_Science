@@ -1,5 +1,5 @@
 -- ============================================================
--- D08 · 5.3 Lab: Reporting views for Power BI and for D11
+-- D08 · Lab: Reporting views for Power BI and for D11
 -- Name:
 -- ============================================================
 --

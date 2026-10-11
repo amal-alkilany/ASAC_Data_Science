@@ -24,5 +24,5 @@ ORDER BY revenue DESC;
 --   Answer:
 
 
--- Bonus: which segment are the big customers in?
+-- Bonus: which segment are the big customers in? Customers and revenue per segment, most customers first.
 

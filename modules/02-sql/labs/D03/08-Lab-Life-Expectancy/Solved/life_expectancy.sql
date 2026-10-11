@@ -59,8 +59,7 @@ WHERE year = 2023;
 SELECT entity, code
 FROM owid.life_expectancy_data
 WHERE year = 2023
-  AND code IS NULL
-ORDER BY entity;
+  AND code IS NULL;
 
 -- C3c Remove them.
 -- @check C3c
@@ -74,8 +73,7 @@ WHERE year = 2023
 SELECT entity, code
 FROM owid.life_expectancy_data
 WHERE year = 2023
-  AND code LIKE 'OWID%'
-ORDER BY entity;
+  AND code LIKE 'OWID%';
 
 -- C3e Countries and territories only, highest life expectancy first.
 -- Kosovo also has an OWID_ code but is a country, so keep it.
@@ -83,7 +81,6 @@ ORDER BY entity;
 SELECT entity, code, life_expectancy
 FROM owid.life_expectancy_data
 WHERE year = 2023
-  AND code IS NOT NULL
   AND (code NOT LIKE 'OWID%' OR code = 'OWID_KOS')
 ORDER BY life_expectancy DESC;
 
@@ -115,23 +112,20 @@ WHERE year = 2023
   AND entity IN ('Jordan', 'Egypt', 'Iraq', 'Lebanon', 'Palestine', 'Saudi Arabia', 'Syria')
 ORDER BY life_expectancy DESC;
 
--- P2 Which countries had a life expectancy below 60 in 2023?
+-- P2 Which countries had a life expectancy below 60 in 2023? Countries: the C3e filter.
 -- @check P2
 SELECT entity, life_expectancy
 FROM owid.life_expectancy_data
 WHERE year = 2023
   AND life_expectancy < 60
-  AND code IS NOT NULL
-  AND code NOT LIKE 'OWID%'
-ORDER BY life_expectancy;
+  AND (code NOT LIKE 'OWID%' OR code = 'OWID_KOS');
 
--- P3 The ten countries with the lowest life expectancy in 1950.
+-- P3 The ten countries with the lowest life expectancy in 1950. Countries: the C3e filter.
 -- @check P3
 SELECT entity, life_expectancy
 FROM owid.life_expectancy_data
 WHERE year = 1950
-  AND code IS NOT NULL
-  AND code NOT LIKE 'OWID%'
+  AND (code NOT LIKE 'OWID%' OR code = 'OWID_KOS')
 ORDER BY life_expectancy
 LIMIT 10;
 
@@ -149,8 +143,7 @@ LIMIT 1;
 SELECT entity, code
 FROM owid.life_expectancy_data
 WHERE year = 2023
-  AND entity LIKE 'South%'
-ORDER BY entity;
+  AND entity LIKE 'South%';
 
 -- P6 Between 2015 and 2023, in which years was Jordan below 76?
 -- @check P6
@@ -158,5 +151,4 @@ SELECT year, life_expectancy
 FROM owid.life_expectancy_data
 WHERE entity = 'Jordan'
   AND year BETWEEN 2015 AND 2023
-  AND life_expectancy < 76
-ORDER BY year;
+  AND life_expectancy < 76;

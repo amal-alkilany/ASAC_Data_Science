@@ -45,11 +45,11 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 2. Use the list in the outer query. Count the completed orders and add up their `order_total`, keeping only the orders whose `customer_id` is in the list.
 
-    Translate: `WHERE status = 'completed' AND customer_id IN (` the query from step 1 `)`.
+    Translate: `WHERE status = 'completed' AND customer_id IN (` the query from step 1 `)`. Name the two columns `completed_orders` and `revenue`, with the revenue rounded to 2 decimals.
 
     `IN` keeps a row when its value is anywhere in the list. You should see 377 orders and 154,204.00, the wholesale figure from [Group by a column from the other table](../../D07/04-Ins-Segment-After-Join/README.md).
 
-3. The same answer with a join, as on D07: `orders INNER JOIN customers`, completed orders, cleaned segment `'wholesale'`. You should see 377 orders and 154,204.00 again.
+3. The same answer with a join, as on D07: `orders INNER JOIN customers`, completed orders, cleaned segment `'wholesale'`, the same two columns as step 2. You should see 377 orders and 154,204.00 again.
 
 4. Go back to step 2, change `IN` to `=` and run. You should see an error: `Scalar subquery produced more than one element`. `=` needs exactly one value, and the inner query returned 65. Put `IN` back.
 

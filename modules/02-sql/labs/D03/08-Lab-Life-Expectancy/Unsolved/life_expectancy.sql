@@ -35,15 +35,15 @@
 -- Result check:
 -- Interpretation:
 -- ============================================================
--- C3a every row for 2023
+-- C3a every row for 2023: entity, code, life_expectancy
 
--- C3b 2023 rows with no code
+-- C3b 2023 rows with no code: entity, code
 
--- C3c 2023 rows with a code
+-- C3c 2023 rows with a code: entity, code, life_expectancy
 
--- C3d 2023 rows whose code starts with OWID
+-- C3d 2023 rows whose code starts with OWID: entity, code
 
--- C3e countries and territories only, highest life expectancy first
+-- C3e countries and territories only (entity, code, life_expectancy), highest life expectancy first
 
 
 -- ============================================================

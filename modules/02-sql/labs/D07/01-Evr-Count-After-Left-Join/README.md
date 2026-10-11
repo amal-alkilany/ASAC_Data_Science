@@ -37,7 +37,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 1. "How many orders has each customer placed? Include the ones with none." Decide which join keeps every customer, and say what one row of the result is.
 
-    Translate: `customers LEFT JOIN orders`, `GROUP BY c.customer_id`. Show both `COUNT(*)` and `COUNT(o.order_id)`. Sort by the order count, smallest first, then by `customer_id`. Look at the first rows.
+    Translate: `customers LEFT JOIN orders`, `GROUP BY c.customer_id`. Show `c.customer_id`, `COUNT(*) AS rows_counted` and `COUNT(o.order_id) AS orders`. Sort by the order count, smallest first, then by `customer_id`. Look at the first rows.
 
 2. Change the sort to `ORDER BY rows_counted, c.customer_id` and look at the first rows again. Every customer with no orders and every customer with exactly one order now shows 1 in `rows_counted`: 39 plus 126 customers, 165 rows that look the same. A report built on `COUNT(*)` would say nobody has zero orders. Put the sort back.
 

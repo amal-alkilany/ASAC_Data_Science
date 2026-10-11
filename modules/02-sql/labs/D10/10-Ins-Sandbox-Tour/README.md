@@ -27,7 +27,7 @@ In this activity, you will look at four things the free BigQuery sandbox gives y
     ORDER BY ordinal_position;
     ```
 
-    You should see 8 rows, `order_id` first. This is how you check a schema without clicking through the explorer, and how tools such as Power BI find out what is in a dataset.
+    You should see 9 rows, `order_id` first. This is how you check a schema without clicking through the explorer, and how tools such as Power BI find out what is in a dataset.
 
 4. **Other people's data.** In the explorer, **+ Add** → **Star a project by name** → `bigquery-public-data`. Hundreds of public datasets appear, from weather to football. Queries against them count against your 1 TiB a month, so check the bytes estimate before you run one.
 
@@ -53,7 +53,7 @@ You can do most of a data analyst's daily work without them. In a company accoun
 | Step | Rows returned | One value to check |
 |---|---:|---|
 | 3 | 4 | customers, order_items, orders, products |
-| 3, columns | 8 | order_id first |
+| 3, columns | 9 | order_id first |
 
 ## References
 

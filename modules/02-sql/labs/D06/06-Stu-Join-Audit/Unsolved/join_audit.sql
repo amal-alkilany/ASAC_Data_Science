@@ -16,5 +16,6 @@
 
 
 -- Bonus: which order had its total copied onto the most rows?
---    Sort by the number of rows from largest, then by order_id. Expect one row.
+--    Show order_id, order_total and the number of rows as copies.
+--    Sort by copies from largest, then by order_id. Keep one row (LIMIT 1).
 

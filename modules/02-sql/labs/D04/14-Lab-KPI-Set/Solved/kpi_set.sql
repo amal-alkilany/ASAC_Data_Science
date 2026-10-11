@@ -48,8 +48,7 @@ ORDER BY month;
 -- ============================================================
 -- @check C1b
 SELECT channel,
-       ROUND(AVG(order_total), 2) AS average_order_value,
-       COUNT(*) AS completed_orders
+       ROUND(AVG(order_total), 2) AS average_order_value
 FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY channel
@@ -147,7 +146,6 @@ ORDER BY month;
 -- @check C3a
 SELECT EXTRACT(YEAR FROM order_date) AS year,
        ROUND(AVG(order_total), 2) AS average_order_value,
-       COUNT(*) AS completed_orders,
        COUNT(DISTINCT DATE_TRUNC(order_date, MONTH)) AS months_of_data
 FROM nakheel.orders
 WHERE status = 'completed'
@@ -179,8 +177,7 @@ ORDER BY month;
 -- @check C3c
 SELECT CASE WHEN order_date < '2025-09-01' THEN 'Sep 2024 - Aug 2025'
             ELSE 'Sep 2025 - Aug 2026' END AS period,
-       ROUND(AVG(order_total), 2) AS average_order_value,
-       COUNT(*) AS completed_orders
+       ROUND(AVG(order_total), 2) AS average_order_value
 FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY period
@@ -193,8 +190,7 @@ ORDER BY period;
 -- again, and compare the two results yourself.
 -- Use WHERE to remove rows you do not need. Use CASE with GROUP BY
 -- when you want to compare groups in one result.
-SELECT ROUND(AVG(order_total), 2) AS average_order_value,
-       COUNT(*) AS completed_orders
+SELECT ROUND(AVG(order_total), 2) AS average_order_value
 FROM nakheel.orders
 WHERE status = 'completed'
   AND order_date BETWEEN '2024-09-01' AND '2025-08-31';

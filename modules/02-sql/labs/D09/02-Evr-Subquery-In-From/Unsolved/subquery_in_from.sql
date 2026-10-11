@@ -17,5 +17,5 @@ FROM (
 
      ) AS per_customer;
 
--- 4. How many customers bought once, and how many came back?
+-- 4. How many customers bought once, and how many came back? Sort by kind.
 

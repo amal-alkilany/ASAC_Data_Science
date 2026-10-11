@@ -12,7 +12,7 @@ ORDER BY orders DESC;
 --    the date functions come properly in 4.2. One row of the result is one month.
 -- @check 2
 SELECT DATE_TRUNC(order_date, MONTH) AS month,
-       ROUND(SUM(order_total), 2) AS revenue
+       SUM(order_total) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY month

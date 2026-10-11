@@ -20,7 +20,7 @@ Every join on D06 changes what one row is. This review makes sure `GROUP BY` is 
 
 3. Fix it. "Completed revenue by channel, with the number of completed orders." One row of the result is one ___? How many rows?
 
-    Translate: `WHERE status = 'completed'`, `GROUP BY channel`, `COUNT(*)` and `ROUND(SUM(order_total), 2)`.
+    Translate: `WHERE status = 'completed'`, `GROUP BY channel`, `COUNT(*)` called `completed_orders` and `ROUND(SUM(order_total), 2)` called `revenue`.
 
 4. "Split each channel by order size." Start from query 3, so it still counts completed orders only. Use the D04 rule: an order is large from 200, medium from 50, otherwise small. One row is one ___? How many rows?
 

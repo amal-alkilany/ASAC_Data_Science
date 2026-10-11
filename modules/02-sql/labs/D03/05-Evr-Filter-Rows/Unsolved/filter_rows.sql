@@ -1,13 +1,13 @@
 -- D03 · 4.4 Everyone Do: filter rows
 -- Before each query: one row of the table is one ___ ? How many rows will come back?
 
--- 1. Customers in Irbid.
+-- 1. Customers in Irbid: customer_id, customer_name, city.
 
 
--- 2. Orders placed on or after 15 August 2026.
+-- 2. Orders placed on or after 15 August 2026: order_id, order_date, status.
 
 
--- 3. Order lines with a quantity of 2 or more, largest quantity first.
+-- 3. Order lines with a quantity of 2 or more, largest quantity first: item_id, order_id, product_id, qty.
 
 
 -- 4. Try this one and read the error message. Why does it fail? Then fix it.

@@ -17,4 +17,5 @@ ORDER BY month;
 
 
 -- 3. The answer: the months above the average, using average_month as a one-number subquery.
+--    Show month and revenue (rounded to 2 decimals), sorted by month.
 

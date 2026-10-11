@@ -34,13 +34,13 @@ Before you start, run the Five Checks out loud for `orders` and `customers`, and
 
 1. Show each order with its customer's name and city.
 
-    Translate: `orders` `INNER JOIN` `customers` `ON o.customer_id = c.customer_id`.
+    Translate: `orders` `INNER JOIN` `customers` `ON o.customer_id = c.customer_id`; show `order_id`, `customer_name` and `city`.
 
 2. Show every customer, with their orders if they have any.
 
-    Translate: `customers` `LEFT JOIN` `orders`, customers on the left.
+    Translate: `customers` `LEFT JOIN` `orders`, customers on the left; show `c.customer_id`, `customer_name`, `order_id` and `status`.
 
-3. Copy query 2 and change `LEFT JOIN` to `INNER JOIN`. Which customers disappear, and why?
+3. Copy query 2, with the same four columns, and change `LEFT JOIN` to `INNER JOIN`. Which customers disappear, and why?
 
 ## Check yourself
 

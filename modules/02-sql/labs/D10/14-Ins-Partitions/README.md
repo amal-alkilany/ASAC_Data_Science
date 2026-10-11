@@ -58,7 +58,7 @@ In class you watch on Tarek's screen. Step 9 is optional, for after class. Nothi
 
 8. **The sandbox catch.** In the sandbox, tables, views and partitions expire after 60 days. For a table partitioned by date, each partition expires 60 days after its date. Nakheel's orders end on 31 August 2026, so a copy partitioned by `order_date` would lose almost every partition as soon as it was made. In the sandbox, partition by ingestion time or by an integer range, or only look.
 
-9. **Optional, after class: an integer-range copy.** The Solved file builds `nakheel.orders_by_month` with `order_month` as a whole number (202409 to 202608) and `PARTITION BY RANGE_BUCKET(order_month, GENERATE_ARRAY(202409, 202609, 1))`, one partition per month number. The 60-day rule does not apply to integer ranges. Compare the estimate for `WHERE order_month = 202604` with the estimate for the whole table. Delete the table when you have finished.
+9. **Optional, after class: an integer-range copy.** The Solved file builds `nakheel.orders_by_month` with `order_month` as a whole number (202409 to 202608) and `PARTITION BY RANGE_BUCKET(order_month, GENERATE_ARRAY(202409, 202609, 1))`, one partition per month number. The 60-day rule does not apply to integer ranges. Compare the estimate for `WHERE order_month = 202604` with the estimate for the whole table. Delete the table when you have finished. The last query in the Solved file counts the orders each month number would hold (`order_month` and `COUNT(*) AS orders`, sorted by `order_month`); it runs on `nakheel.orders`, no copy needed.
 
 ## Check yourself
 

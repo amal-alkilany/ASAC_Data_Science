@@ -1,4 +1,4 @@
--- D10 · 4.4 Everyone Do: One query that uses the whole module
+-- D10 · 4.5 Everyone Do: One query that uses the whole module
 
 -- 1. Step 1 alone. (451 rows)
 -- @check 1
@@ -19,8 +19,7 @@ WITH customer_revenue AS (
   GROUP BY o.customer_id, c.customer_name, city_clean, segment_clean
 )
 SELECT *
-FROM customer_revenue
-ORDER BY revenue DESC;
+FROM customer_revenue;
 
 -- 4. The answer: the top three in each segment, with their share. (6 rows)
 -- @check 4

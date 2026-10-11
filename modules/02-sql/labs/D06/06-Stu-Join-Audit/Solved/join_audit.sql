@@ -4,21 +4,21 @@
 -- @check 1
 SELECT COUNT(*) AS row_count,
        COUNT(DISTINCT order_id) AS different_orders,
-       ROUND(SUM(order_total), 2) AS sum_of_order_total
+       SUM(order_total) AS sum_of_order_total
 FROM nakheel.orders;
 
 -- Q2 After the join. One row is one product on one order.
 -- @check 2
 SELECT COUNT(*) AS row_count,
        COUNT(DISTINCT o.order_id) AS different_orders,
-       ROUND(SUM(o.order_total), 2) AS sum_of_order_total
+       SUM(o.order_total) AS sum_of_order_total
 FROM nakheel.orders AS o
 INNER JOIN nakheel.order_items AS i
   ON o.order_id = i.order_id;
 
 -- Q3 The same money, summed at the grain where it lives after the join: the order line.
 -- @check 3
-SELECT ROUND(SUM(i.qty * i.price), 2) AS sum_of_line_values
+SELECT SUM(i.qty * i.price) AS sum_of_line_values
 FROM nakheel.orders AS o
 INNER JOIN nakheel.order_items AS i
   ON o.order_id = i.order_id;

@@ -38,4 +38,5 @@ ORDER BY month;
 
 
 -- Bonus: the biggest customer's name, as two CTEs.
+--    top_customer: largest revenue first, one row. Show customer_id, customer_name and revenue.
 

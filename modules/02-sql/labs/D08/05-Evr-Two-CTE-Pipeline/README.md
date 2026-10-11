@@ -27,7 +27,7 @@ Before you type anything, plan the steps in a comment: (1) completed revenue per
 
 3. The answer: change the final `SELECT` to read `monthly` again and keep only the months above the average.
 
-    Translate: `WHERE revenue > (SELECT avg_revenue FROM average_month)`. This is the subquery from [A question in two steps](../01-Ins-Two-Steps/README.md), reading a CTE instead of a table. Round the revenue and sort by month.
+    Translate: `WHERE revenue > (SELECT avg_revenue FROM average_month)`. This is the subquery from [A question in two steps](../01-Ins-Two-Steps/README.md), reading a CTE instead of a table. Show `month` and `revenue`, with the revenue rounded to 2 decimals, and sort by month, oldest first (`ORDER BY month`).
 
     You should see 8 rows. April 2026 is the best month, 20,237.00. September 2025 is 17,472.00.
 

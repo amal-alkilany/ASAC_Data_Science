@@ -44,11 +44,11 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 3. Join `products` to get each line's `category`. Record them again.
 
-4. Keep completed orders placed last month, group by category, and sum `qty * price`.
+4. Keep completed orders placed last month, group by category, and sum `qty * price` as `revenue`.
 
-    Translate: `WHERE o.status = 'completed' AND o.order_date BETWEEN '2026-08-01' AND '2026-08-31'`. Written as dates, "last month" gives the same answer whenever the query runs; "last month" counted from today's date would move every month.
+    Translate: `WHERE o.status = 'completed' AND o.order_date BETWEEN '2026-08-01' AND '2026-08-31'`; sort by `revenue`, largest first (`ORDER BY revenue DESC`). Written as dates, "last month" gives the same answer whenever the query runs; "last month" counted from today's date would move every month.
 
-5. Run it once more without the status filter. Keep the `orders` join and the date filter, and delete only the status test, so the `WHERE` keeps just the `BETWEEN` line. Which category wins now?
+5. Run it once more without the status filter. Keep the `orders` join and the date filter, and delete only the status test, so the `WHERE` keeps just the `BETWEEN` line. Keep the sort by `revenue`, largest first. Which category wins now?
 
 ## Check yourself
 

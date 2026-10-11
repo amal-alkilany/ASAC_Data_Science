@@ -29,8 +29,8 @@ ORDER BY revenue DESC;
 
 
 -- 3. The answer: both CTEs in one WITH (a comma between them, none after the last),
---    then join them on category and work out the growth in percent.
+--    then join them on category and work out the growth in percent. Highest growth first.
 
 
--- Bonus: growth in money as well as in percent.
+-- Bonus: growth in money as well as in percent. Largest growth in money first.
 

@@ -6,11 +6,11 @@ In this activity, you will answer "what does a typical order cost?" twice, at tw
 
 ## Instructions
 
-1. Open `Solved/misleading_average.sql`. Run query 1: the average value of one order **line** (one product on one order), completed orders only. You should see 45.46 dinars.
+1. Open `Solved/misleading_average.sql`. Run query 1: the average value of one order **line** (one product on one order), completed orders only, rounded to 2 decimals, with the number of lines. You should see 45.46 dinars.
 
     The query uses `IN (SELECT …)` to keep the lines of completed orders, because `order_items` has no status. That is a subquery, and D08 covers it. For now, read it as "the order IDs of completed orders".
 
-2. Run query 2: the average value of one **order**, completed orders only. You should see 114.05 dinars.
+2. Run query 2: the average value of one **order**, completed orders only, rounded to 2 decimals, with the number of orders. You should see 114.05 dinars.
 
 3. Both are averages of the same money. They differ because one row means something different in each table. Before you report an average, say what one row is.
 

@@ -56,19 +56,19 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 1. "Which products cost more than our average list price?"
 
-    Translate: products whose `list_price` is greater than the average `list_price` of all products; most expensive first. The inner query returns one number, so `>` works.
+    Translate: products whose `list_price` is greater than the average `list_price` of all products. Show `product_id`, `product_name`, `category` and `list_price`; sort by `list_price`, most expensive first (`ORDER BY list_price DESC`). The inner query returns one number, so `>` works.
 
 2. "Which customers have never placed an order? This time without a join."
 
-    Translate: customers whose `customer_id` is `NOT IN` the list of `customer_id` values in `orders`. `NOT IN` keeps a row when its value is nowhere in the list. You found the same customers on D07 with a `LEFT JOIN` in [Never ordered, never sold](../../D07/02-Stu-Never-Ordered/README.md).
+    Translate: customers whose `customer_id` is `NOT IN` the list of `customer_id` values in `orders`. Show `customer_id` and `customer_name`; sort by `customer_id` (`ORDER BY customer_id`). `NOT IN` keeps a row when its value is nowhere in the list. You found the same customers on D07 with a `LEFT JOIN` in [Never ordered, never sold](../../D07/02-Stu-Never-Ordered/README.md).
 
 3. "Which products have never been sold?"
 
-    Translate: products whose `product_id` is `NOT IN` the list of `product_id` values in `order_items`.
+    Translate: products whose `product_id` is `NOT IN` the list of `product_id` values in `order_items`. Show `product_id` and `product_name`; sort by `product_id` (`ORDER BY product_id`).
 
 4. "Who is our biggest customer by completed revenue? I want the name, not just the ID."
 
-    Translate: the inner query finds one `customer_id`: completed orders, grouped by customer, sorted by `SUM(order_total)` from largest, first row only. The outer query looks that customer up in `customers`.
+    Translate: the inner query finds one `customer_id`: completed orders, grouped by customer, sorted by `SUM(order_total)` from largest, first row only. The outer query looks that customer up in `customers` and shows `customer_id` and `customer_name`.
 
 ## Check yourself
 

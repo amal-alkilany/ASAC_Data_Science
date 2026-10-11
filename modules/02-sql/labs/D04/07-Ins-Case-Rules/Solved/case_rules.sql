@@ -22,7 +22,7 @@ SELECT CASE
          ELSE 'small'
        END AS size_band,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(order_total), 2) AS revenue
+       SUM(order_total) AS revenue
 FROM nakheel.orders
 WHERE status = 'completed'
 GROUP BY size_band

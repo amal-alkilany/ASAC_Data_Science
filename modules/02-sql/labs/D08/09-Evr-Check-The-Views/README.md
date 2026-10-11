@@ -49,17 +49,17 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 1. "Completed revenue by product category." Answer it from the views.
 
-    Translate: `bi.fact_sales INNER JOIN bi.dim_product` on `product_id`; completed lines only; `ROUND(SUM(f.revenue), 2)`; largest first. You do not need `orders`: `fact_sales` already carries the status.
+    Translate: `bi.fact_sales INNER JOIN bi.dim_product` on `product_id`; completed lines only; show `p.category` and `ROUND(SUM(f.revenue), 2) AS revenue`; sort by `revenue`, largest first (`ORDER BY revenue DESC`). You do not need `orders`: `fact_sales` already carries the status.
 
     You should see 6 rows, Outerwear first with 76,637.00: the answer to the D06 lab, [Revenue by category, with a join audit](../../D06/09-Lab-Category-Revenue/README.md).
 
 2. "Completed revenue by customer segment."
 
-    Translate: `bi.fact_sales LEFT JOIN bi.dim_customer` on `customer_id`; completed lines only; group by `c.segment`.
+    Translate: `bi.fact_sales LEFT JOIN bi.dim_customer` on `customer_id`; completed lines only; group by `c.segment`. Show `c.segment` and the revenue rounded to 2 decimals as `revenue`; sort by `revenue`, largest first (`ORDER BY revenue DESC`).
 
     You should see retail 160,881.50, wholesale 154,204.00, and a row with a `NULL` segment worth 938.00. These are the numbers from [Group by a column from the other table](../../D07/04-Ins-Segment-After-Join/README.md), with order 101664 once more. The segment is `NULL` rather than `unknown` because `dim_customer` has no row for C-0999, so the `LEFT JOIN` fills its columns with `NULL`.
 
-3. The same join as an `INNER JOIN`, audited: count the completed lines and add up their revenue.
+3. The same join as an `INNER JOIN`, audited: count the completed lines and add up their revenue, rounded to 2 decimals.
 
     You should see 6,946 lines and 315,085.50. Order 101664's 5 lines, worth 938.00, are gone.
 

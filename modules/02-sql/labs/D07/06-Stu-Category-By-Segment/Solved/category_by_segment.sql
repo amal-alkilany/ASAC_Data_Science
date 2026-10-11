@@ -3,7 +3,7 @@
 -- 1. Audit: completed order lines after all three joins. (1 row: 6,951 rows; 316,023.50)
 -- @check 1
 SELECT COUNT(*) AS row_count,
-       ROUND(SUM(i.qty * i.price), 2) AS line_value
+       SUM(i.qty * i.price) AS line_value
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -19,7 +19,7 @@ WHERE o.status = 'completed';
 SELECT p.category,
        COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
        SUM(i.qty) AS units,
-       ROUND(SUM(i.qty * i.price), 2) AS revenue
+       SUM(i.qty * i.price) AS revenue
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -36,7 +36,7 @@ ORDER BY revenue DESC;
 SELECT p.category,
        COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
        SUM(i.qty) AS units,
-       ROUND(SUM(i.qty * i.price), 2) AS revenue
+       SUM(i.qty * i.price) AS revenue
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -50,13 +50,13 @@ HAVING SUM(i.qty * i.price) > 20000
 ORDER BY revenue DESC;
 
 -- Bonus (not checked). For each category, what share of completed revenue comes from wholesale?
--- The CASE inside SUM keeps a line's value only when the customer is wholesale, and 0 otherwise.
+-- The CASE inside SUM keeps a line's value only when the cleaned segment is wholesale, and 0 otherwise.
 -- (6 rows: Shoes first, 53.5% wholesale; Accessories last, 45.2%)
 -- @check Bonus
 SELECT p.category,
-       ROUND(SUM(CASE WHEN LOWER(TRIM(c.segment)) = 'wholesale' THEN i.qty * i.price ELSE 0 END), 2) AS wholesale_revenue,
+       ROUND(SUM(CASE WHEN COALESCE(LOWER(TRIM(c.segment)), 'unknown') = 'wholesale' THEN i.qty * i.price ELSE 0 END), 2) AS wholesale_revenue,
        ROUND(SUM(i.qty * i.price), 2) AS revenue,
-       ROUND(100 * SUM(CASE WHEN LOWER(TRIM(c.segment)) = 'wholesale' THEN i.qty * i.price ELSE 0 END)
+       ROUND(100 * SUM(CASE WHEN COALESCE(LOWER(TRIM(c.segment)), 'unknown') = 'wholesale' THEN i.qty * i.price ELSE 0 END)
              / SUM(i.qty * i.price), 1) AS wholesale_pct
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p

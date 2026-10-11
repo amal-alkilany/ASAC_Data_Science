@@ -27,5 +27,4 @@ FROM nakheel.customers AS c
 LEFT JOIN nakheel.orders AS o
   ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL
-GROUP BY c.city
-ORDER BY customers_without_orders DESC, c.city;
+GROUP BY c.city;

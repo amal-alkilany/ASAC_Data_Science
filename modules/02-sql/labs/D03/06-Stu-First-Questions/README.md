@@ -14,15 +14,15 @@ For every question: write down what one row of the table is, predict how many ro
 
 2. "Show me every order line that sold for more than 15 dinars a unit, most expensive first."
 
-    Translate: `order_items`, the rows where `price` is over 15, sorted by `price`, largest first.
+    Translate: `order_items`, the rows where `price` is over 15, columns `item_id`, `order_id`, `product_id` and `price`, sorted by `price`, largest first.
 
 3. "Which customers have we got no city for?"
 
-    Translate: `customers`, the rows where `city` is empty.
+    Translate: `customers`, the rows where `city` is empty, columns `customer_id` and `customer_name`.
 
 4. "Which orders has customer C-118 placed with us? Newest first."
 
-    Translate: `orders`, the rows for one `customer_id`, sorted by `order_date`, newest first.
+    Translate: `orders`, the rows for one `customer_id`, columns `order_id`, `order_date` and `status`, sorted by `order_date`, newest first.
 
 ## Check yourself
 
@@ -41,7 +41,7 @@ For question 3, `= NULL` stops with `Operands of = cannot be literal NULL`. You 
 
 ## Bonus
 
-Find every retail customer, however "retail" was typed, without typing any of the three spellings. Expect 3 rows. When would your query give the wrong answer?
+Find every retail customer, however "retail" was typed, without typing any of the three spellings. Show `customer_id`, `customer_name` and `segment`. Expect 3 rows. When would your query give the wrong answer?
 
 ## References
 

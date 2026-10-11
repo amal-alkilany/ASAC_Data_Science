@@ -19,13 +19,13 @@ FROM nakheel.products;
 -- Step 2. Audit, before: order_items alone.
 -- @check 2
 SELECT COUNT(*) AS row_count,
-       ROUND(SUM(qty * price), 2) AS line_value
+       SUM(qty * price) AS line_value
 FROM nakheel.order_items;
 
 -- Step 3. Audit, after joining products: same rows, same total.
 -- @check 3
 SELECT COUNT(*) AS row_count,
-       ROUND(SUM(i.qty * i.price), 2) AS line_value
+       SUM(i.qty * i.price) AS line_value
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id;
@@ -34,7 +34,7 @@ INNER JOIN nakheel.products AS p
 -- One row is: one category
 -- @check 4
 SELECT p.category,
-       ROUND(SUM(i.qty * i.price), 2) AS revenue
+       SUM(i.qty * i.price) AS revenue
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -48,7 +48,7 @@ ORDER BY revenue DESC;
 -- Step 5. Audit after joining orders as well: still 7,516 rows and the same total.
 -- @check 5
 SELECT COUNT(*) AS row_count,
-       ROUND(SUM(i.qty * i.price), 2) AS line_value
+       SUM(i.qty * i.price) AS line_value
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -58,7 +58,7 @@ INNER JOIN nakheel.orders AS o
 -- Step 6. Audit after keeping completed orders only.
 -- @check 6
 SELECT COUNT(*) AS row_count,
-       ROUND(SUM(i.qty * i.price), 2) AS line_value
+       SUM(i.qty * i.price) AS line_value
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -68,7 +68,7 @@ WHERE o.status = 'completed';
 
 -- Step 7. Cross-check: completed revenue from the orders table alone must be the same number.
 -- @check 7
-SELECT ROUND(SUM(order_total), 2) AS completed_revenue
+SELECT SUM(order_total) AS completed_revenue
 FROM nakheel.orders
 WHERE status = 'completed';
 
@@ -76,7 +76,7 @@ WHERE status = 'completed';
 -- One row is: one category
 -- @check 8
 SELECT p.category,
-       ROUND(SUM(i.qty * i.price), 2) AS revenue
+       SUM(i.qty * i.price) AS revenue
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -95,7 +95,7 @@ ORDER BY revenue DESC;
 -- @check 9
 SELECT p.category,
        DATE_TRUNC(o.order_date, MONTH) AS month,
-       ROUND(SUM(i.qty * i.price), 2) AS revenue
+       SUM(i.qty * i.price) AS revenue
 FROM nakheel.order_items AS i
 INNER JOIN nakheel.products AS p
   ON i.product_id = p.product_id
@@ -144,14 +144,13 @@ ORDER BY units DESC;
 -- @check X2
 SELECT c.customer_id,
        COUNT(*) AS completed_orders,
-       ROUND(SUM(o.order_total), 2) AS spent
+       SUM(o.order_total) AS spent
 FROM nakheel.customers AS c
 INNER JOIN nakheel.orders AS o
   ON c.customer_id = o.customer_id
 WHERE c.customer_name = 'Omar Nasser'
   AND o.status = 'completed'
-GROUP BY c.customer_id
-ORDER BY c.customer_id;
+GROUP BY c.customer_id;
 
 -- X3 Transfer (thelook_ecommerce, no fixed answer): read the bytes estimate, then run.
 -- @skip public dataset

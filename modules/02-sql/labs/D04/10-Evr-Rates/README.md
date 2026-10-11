@@ -10,7 +10,7 @@ In this activity, you will count the cancelled orders without filtering the othe
 
 2. The cancellation rate as the average of a 0/1 column: `AVG(CASE WHEN status = 'cancelled' THEN 1 ELSE 0 END)`, wrapped in `ROUND(…, 4)`. Why does the average of zeros and ones give a share?
 
-3. The same counts and rate for each channel: orders, cancelled orders and the cancellation rate. Which channel cancels more?
+3. The same counts and rate for each channel: orders, cancelled orders and the cancellation rate (rounded to 4 decimals); sort by `channel`. Which channel cancels more?
 
 ## Check yourself
 

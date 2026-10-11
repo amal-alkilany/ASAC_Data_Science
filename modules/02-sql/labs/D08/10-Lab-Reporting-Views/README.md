@@ -64,11 +64,11 @@ If a number differs from the one above it and you cannot say why, stop and find 
 
 ## C1 · bi.customer_summary
 
-1. Save your query from [One row per customer](../06-Stu-Customer-Summary/README.md) as a view named `bi.customer_summary`. Build it on `bi.dim_customer` instead of `nakheel.customers`, so the city and segment arrive already cleaned. Columns: `customer_id`, `customer_name`, `segment`, `city`, `completed_orders`, `revenue`, `first_order`, `last_order`. The two dates are the first and last completed order. No `ORDER BY`.
+1. Save your query from [One row per customer](../06-Stu-Customer-Summary/README.md) as a view named `bi.customer_summary`. Build it on `bi.dim_customer` instead of `nakheel.customers`, so the city and segment arrive already cleaned. Columns: `customer_id`, `customer_name`, `segment`, `city`, `completed_orders`, `revenue`, `first_order`, `last_order`. The two dates are the first and last completed order. The revenue uses `COALESCE` and is rounded to 2 decimals, as in One row per customer. No `ORDER BY`.
 
     Translate: `CREATE OR REPLACE VIEW bi.customer_summary AS`, then your `WITH completed AS (...)` and a `SELECT` from `bi.dim_customer LEFT JOIN completed`. A view can start with `WITH`.
 
-2. Audit the view: the number of customers, `SUM(completed_orders)`, the revenue and `COUNTIF(completed_orders = 0)`, reading from `bi.customer_summary`.
+2. Audit the view: the number of customers, `SUM(completed_orders)`, the revenue rounded to 2 decimals and `COUNTIF(completed_orders = 0)`, reading from `bi.customer_summary`. Name them `customers`, `completed_orders`, `revenue` and `customers_with_none`.
 
 **Checkpoint C1:** 500 customers; 2,770 completed orders; 315,085.50; 49 customers with none. The gaps to `orders` (1 order and 938.00, against 2,771 and 316,023.50) are order 101664, as in One row per customer. D11's first machine-learning model starts from this view.
 
@@ -91,7 +91,7 @@ If a number differs from the one above it and you cannot say why, stop and find 
 
     Both halves return the same five columns in the same order as `dim_customer`: `customer_id`, `customer_name`, `city`, `segment`, `signup_date`.
 
-6. Audit: join `bi.fact_sales INNER JOIN bi.dim_customer_complete` on `customer_id`, completed lines only, and record the lines and the revenue. Compare them with step 3 of [Prove the views give the numbers you know](../09-Evr-Check-The-Views/README.md): 6,946 lines and 315,085.50. Then read the whole view with `SELECT *` and look at its rows (6b in Check yourself).
+6. Audit: join `bi.fact_sales INNER JOIN bi.dim_customer_complete` on `customer_id`, completed lines only, and record the lines (`COUNT(*)`) and the revenue, rounded to 2 decimals. Compare them with step 3 of [Prove the views give the numbers you know](../09-Evr-Check-The-Views/README.md): 6,946 lines and 315,085.50. Then read the whole view with `SELECT *` and look at its rows (6b in Check yourself).
 
 **Checkpoint C3:** the view has 501 rows, and the audit shows 6,951 lines and 316,023.50. The `INNER JOIN` no longer loses anything.
 
@@ -112,15 +112,15 @@ For C1, start from the table that has every customer, and `LEFT JOIN` the CTE to
 
 ## Stretch card (S1)
 
-Not required, not checked. "Completed units and revenue by customer segment and month." Save it as `bi.segment_month`, on the pattern of `bi.category_month`, but joined to `bi.dim_customer_complete` so order 101664 gets the segment `unknown`. Predict the rows before you audit: 2 segments × 24 months, plus the months in which the unknown customer ordered. Audit with the number of rows and the rounded total.
+Not required, not checked. "Completed units and revenue by customer segment and month." Save it as `bi.segment_month`, on the pattern of `bi.category_month`, but joined to `bi.dim_customer_complete` so order 101664 gets the segment `unknown`. Predict the rows before you audit: 2 segments × 24 months, plus the months in which the unknown customer ordered. Audit with the number of rows and the total revenue, rounded to 2 decimals.
 
 ## More practice
 
 **Not checked and not submitted.** Solutions are in the Solved file. Each uses a view you made today.
 
-- X1 "Which customers spent more than the average customer?" Use `bi.customer_summary` and a subquery. The average includes the customers who spent 0.
-- X2 "Completed revenue by city, now that every order line has a customer." Use `bi.fact_sales` and `bi.dim_customer_complete`, and count the different orders as well as the revenue. Compare with [A cleaning rule of your own](../../D07/05-Evr-City-Rule/README.md).
-- X3 "In which months did Outerwear do better than its own average month?" Use `bi.category_month`. The category filter goes inside the brackets as well as outside.
+- X1 "Which customers spent more than the average customer?" Use `bi.customer_summary` and a subquery. The average includes the customers who spent 0. Show `customer_id`, `customer_name`, `segment` and `revenue`; sort by `revenue`, largest first (`ORDER BY revenue DESC`).
+- X2 "Completed revenue by city, now that every order line has a customer." Use `bi.fact_sales` and `bi.dim_customer_complete`, and count the different orders as well as the revenue. Show `city`, `COUNT(DISTINCT f.order_id) AS completed_orders` and the revenue rounded to 2 decimals; sort by `revenue`, largest first (`ORDER BY revenue DESC`). Compare with [A cleaning rule of your own](../../D07/05-Evr-City-Rule/README.md).
+- X3 "In which months did Outerwear do better than its own average month?" Use `bi.category_month`. The category filter goes inside the brackets as well as outside. Show `month` and `revenue`, rounded to 2 decimals; sort by `month`, oldest first (`ORDER BY month`).
 
 ## Check yourself: stretch card and more practice
 

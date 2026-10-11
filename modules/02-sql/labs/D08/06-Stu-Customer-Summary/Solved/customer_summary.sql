@@ -30,7 +30,7 @@ WITH completed AS (
 )
 SELECT c.customer_id,
        c.customer_name,
-       COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean,
+       LOWER(TRIM(c.segment)) AS segment_clean,
        COALESCE(x.completed_orders, 0) AS completed_orders,
        ROUND(COALESCE(x.revenue, 0), 2) AS revenue,
        x.first_order,

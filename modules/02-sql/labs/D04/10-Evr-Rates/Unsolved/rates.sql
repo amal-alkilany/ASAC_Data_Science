@@ -7,5 +7,5 @@
 -- 2. The cancellation rate as AVG of a 0/1 column, rounded to 4 decimals.
 
 
--- 3. For each channel: orders, cancelled orders and the cancellation rate.
+-- 3. For each channel: orders, cancelled orders and the cancellation rate (rounded to 4). Sort by channel.
 

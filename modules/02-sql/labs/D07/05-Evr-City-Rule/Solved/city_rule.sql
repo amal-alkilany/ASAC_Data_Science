@@ -9,8 +9,7 @@ FROM nakheel.orders AS o
 LEFT JOIN nakheel.customers AS c
   ON o.customer_id = c.customer_id
 WHERE o.status = 'completed'
-GROUP BY c.city
-ORDER BY completed_orders DESC;
+GROUP BY c.city;
 
 -- 3. The rule, written as a CASE: no city is 'unknown'; Al Zarqa is Zarqa; everything else is
 -- trimmed and lower-cased. Without the IS NULL line, the ELSE line would give NULL, not 'unknown'.

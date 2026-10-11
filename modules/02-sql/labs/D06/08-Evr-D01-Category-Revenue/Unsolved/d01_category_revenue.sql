@@ -20,8 +20,9 @@
 
 
 -- 4. The answer: completed orders placed in August 2026, grouped by category.
+--    Sum qty * price as revenue. Sort by revenue, largest first.
 --    Write "last month" as dates: o.order_date BETWEEN '2026-08-01' AND '2026-08-31'
 
 
--- 5. The same without the status filter. Keep the orders join and the date filter.
+-- 5. The same without the status filter. Keep the orders join, the date filter and the sort.
 

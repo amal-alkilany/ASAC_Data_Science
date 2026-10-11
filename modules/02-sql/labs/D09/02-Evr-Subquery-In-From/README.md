@@ -23,7 +23,7 @@ The question is about customers, but the data is one row per order. So the answe
     GROUP BY customer_id;
     ```
 
-    BigQuery stops with `Aggregations of aggregations are not allowed`. `COUNT(*)` and `AVG` belong to two different grains: `COUNT(*)` collapses each customer's orders, and `AVG` should then collapse the customers. One `SELECT` has only one grain, so the first step has to finish before the second starts.
+    BigQuery stops with `Multi-level aggregation requires the enclosing aggregate function to have one or more GROUP BY modifiers`. In plain words: you put one aggregate (`COUNT`) inside another (`AVG`) in a single `SELECT`. `COUNT(*)` and `AVG` belong to two different grains: `COUNT(*)` collapses each customer's orders, and `AVG` should then collapse the customers. One `SELECT` has only one grain, so the first step has to finish before the second starts.
 
 3. **Step 2: put step 1 in `FROM`.** "On average, how many completed orders does a customer place, and what are the fewest and the most?"
 
@@ -33,7 +33,7 @@ The question is about customers, but the data is one row per order. So the answe
 
 4. **The manager's question: "How many customers bought once, and how many came back?"** Keep step 1 in `FROM`. In the outer query, label each customer with `CASE`: `'one order'` when `completed_orders = 1`, otherwise `'came back'`. Then count the customers in each group.
 
-    Translate: `CASE WHEN completed_orders = 1 THEN 'one order' ELSE 'came back' END AS kind`, `COUNT(*) AS customers`, `GROUP BY kind`.
+    Translate: `CASE WHEN completed_orders = 1 THEN 'one order' ELSE 'came back' END AS kind`, `COUNT(*) AS customers`, `GROUP BY kind`. Sort by `kind` (`ORDER BY kind`), so `came back` comes first.
 
     You should see 2 rows: came back 323, one order 129.
 

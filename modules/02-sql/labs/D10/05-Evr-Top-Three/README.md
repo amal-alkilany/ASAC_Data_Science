@@ -6,7 +6,7 @@ In this activity, you will answer "What are the three best-selling products by r
 
 ## Instructions
 
-1. **Rank the products inside each category by revenue.** Start from the `product_revenue` CTE in the starter (one row per product, 56 rows) and add:
+1. **Rank the products inside each category by revenue.** Start from the `product_revenue` CTE in the starter (one row per product, 56 rows). Select `category`, `product_name` and `revenue`, and add:
 
     ```sql
     RANK() OVER (PARTITION BY category ORDER BY revenue DESC) AS revenue_rank

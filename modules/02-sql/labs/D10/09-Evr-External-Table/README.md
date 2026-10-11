@@ -2,7 +2,7 @@
 
 In this activity, you will create an **external table**: a table in BigQuery whose rows stay in a CSV file in Google Cloud Storage. BigQuery reads the file every time you query it.
 
-**Time:** 13 minutes · **Data:** a public Google sample file, `gs://cloud-samples-data/bigquery/us-states/us-states.csv` (the 50 US states and their postal codes) · **Starter:** `Unsolved/external_table.sql`
+**Time:** 11 minutes · **Data:** a public Google sample file, `gs://cloud-samples-data/bigquery/us-states/us-states.csv` (the 50 US states and their postal codes) · **Starter:** `Unsolved/external_table.sql`
 
 ## Native or external?
 

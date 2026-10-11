@@ -54,13 +54,13 @@ Before you start, answer three questions in a comment: which table has the amoun
 
 1. Join `products`, `orders` and `customers` to `order_items`, keep completed orders, and record the audit: the number of rows and `SUM(i.qty * i.price)`. Compare the total with completed `SUM(order_total)` on `orders` alone, which you found in [Group by a column from the other table](../04-Ins-Segment-After-Join/README.md).
 
-    Translate: line → product on `product_id`; line → order on `order_id`; order → customer on `customer_id`. Use `LEFT JOIN` for `customers`, so order 101664, which has no customer, stays in.
+    Translate: line → product on `product_id`; line → order on `order_id`; order → customer on `customer_id`. Use `INNER JOIN` for `products` and `orders`, and `LEFT JOIN` for `customers`, so order 101664, which has no customer, stays in.
 
 2. "Show me completed units and revenue for every product category and customer segment." Say what one row is and predict the row count before you run.
 
-    Translate: clean the segment with `COALESCE(LOWER(TRIM(c.segment)), 'unknown')`; `GROUP BY` category and cleaned segment; `SUM(i.qty)` and `SUM(i.qty * i.price)`; largest revenue first.
+    Translate: clean the segment with `COALESCE(LOWER(TRIM(c.segment)), 'unknown') AS segment_clean`; `GROUP BY` category and cleaned segment; `SUM(i.qty) AS units` and `SUM(i.qty * i.price) AS revenue`; sort by `revenue`, largest first.
 
-3. "Only the combinations worth more than 20,000."
+3. "Only the combinations worth more than 20,000." Keep the columns and the sort from question 2.
 
 ## Check yourself
 
@@ -78,7 +78,7 @@ The test in question 3 is on a group's total, so it goes in `HAVING`. `WHERE SUM
 
 ## Bonus
 
-Not required, not checked. "For each category, what share of completed revenue comes from wholesale customers?" Use a `CASE` inside `SUM` that keeps a line's value only when the cleaned segment is `wholesale`, and 0 otherwise. Keep the `LEFT JOIN` to `customers` from question 2. Expect 6 rows; Shoes has the largest wholesale share, 53.5%.
+Not required, not checked. "For each category, what share of completed revenue comes from wholesale customers?" Use a `CASE` inside `SUM` that keeps a line's value only when the cleaned segment is `wholesale`, and 0 otherwise. Keep the `LEFT JOIN` to `customers` from question 2. Show each category's wholesale revenue and total revenue, both rounded to 2 decimals, and the wholesale share as a percentage, rounded to 1 decimal; sort by the share, largest first. Expect 6 rows; Shoes has the largest wholesale share, 53.5%.
 
 ## References
 

@@ -6,11 +6,11 @@ In this activity, you will filter three tables, then run a query that fails and 
 
 ## Instructions
 
-1. Show the customers in Irbid.
+1. Show the customers in Irbid: `customer_id`, `customer_name` and `city`.
 
-2. Show the orders placed on or after 15 August 2026.
+2. Show the orders placed on or after 15 August 2026: `order_id`, `order_date` and `status`.
 
-3. Show the order lines with a quantity of 2 or more, largest quantity first.
+3. Show the order lines with a quantity of 2 or more, largest quantity first: `item_id`, `order_id`, `product_id` and `qty`.
 
 4. Run query 4 in the starter file as it is. Read the error message aloud, then fix the query.
 

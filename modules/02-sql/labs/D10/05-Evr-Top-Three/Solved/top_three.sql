@@ -18,8 +18,7 @@ SELECT category,
        product_name,
        revenue,
        RANK() OVER (PARTITION BY category ORDER BY revenue DESC) AS revenue_rank
-FROM product_revenue
-ORDER BY category, revenue_rank;
+FROM product_revenue;
 
 -- 2. The top three, the long way: a second CTE, then WHERE. (18 rows)
 -- @check 2

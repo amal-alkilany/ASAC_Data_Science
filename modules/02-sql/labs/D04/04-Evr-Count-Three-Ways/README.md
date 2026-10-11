@@ -8,11 +8,11 @@ In this activity, you will group Nakheel's orders by status and by month, then c
 
 1. "How many orders do we have of each status?"
 
-    Translate: `orders`, grouped by `status`, counted.
+    Translate: `orders`, grouped by `status`, counted as `orders`; sort by `orders`, largest first.
 
 2. "What was completed revenue each month?"
 
-    Translate: completed orders only, grouped by month (`DATE_TRUNC(order_date, MONTH)`), `order_total` summed.
+    Translate: completed orders only, grouped by month (`DATE_TRUNC(order_date, MONTH) AS month`), `order_total` summed as `revenue`; sort by `month`, earliest first.
 
 3. On the whole table, in one query: `COUNT(*)`, `COUNT(delivered_date)` and `COUNT(DISTINCT customer_id)`. Predict which is largest and which is smallest before you run. Then say which question each number answers.
 

@@ -17,7 +17,7 @@ WHERE order_date >= '2026-08-15';
 SELECT item_id, order_id, product_id, qty
 FROM D03.order_items
 WHERE qty >= 2
-ORDER BY qty DESC, item_id;
+ORDER BY qty DESC;
 
 -- 4. Error: Unrecognized name: order_number.
 --    WHERE runs before SELECT, so the new name does not exist yet when WHERE runs.

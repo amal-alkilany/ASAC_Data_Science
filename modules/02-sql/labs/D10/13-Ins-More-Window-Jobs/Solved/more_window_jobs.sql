@@ -119,7 +119,7 @@ WITH monthly AS (
 )
 SELECT month,
        revenue,
-       ROUND(AVG(revenue) OVER (ORDER BY month
-                                ROWS BETWEEN 2 PRECEDING AND CURRENT ROW), 2) AS moving_avg_3m
+       AVG(revenue) OVER (ORDER BY month
+                          ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS moving_avg_3m
 FROM monthly
 ORDER BY month;

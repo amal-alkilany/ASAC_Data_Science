@@ -8,7 +8,7 @@ In this activity, you will add two columns to monthly revenue: a running total, 
 
 1. **Start from the `monthly` CTE** (D08, D09 and today's 2.1): 24 rows, one per month.
 
-2. **A running total.** Add:
+2. **A running total.** Select `month` and `revenue` from `monthly`, add this column, and sort by month (`ORDER BY month`):
 
     ```sql
     SUM(revenue) OVER (ORDER BY month) AS running_total
@@ -19,7 +19,7 @@ In this activity, you will add two columns to monthly revenue: a running total, 
 
     You should see 24 rows. September 2024 is 11,268.00 and **August 2026 is 316,023.50**: completed revenue for the whole period, the number you have checked since D04. If the last row does not match it, the running total is wrong.
 
-3. **The month before, with `LAG`.** Add:
+3. **The month before, with `LAG`.** Keep the query from step 2, still sorted by month, and add two columns:
 
     ```sql
     LAG(revenue) OVER (ORDER BY month) AS previous_month,
@@ -31,7 +31,7 @@ In this activity, you will add two columns to monthly revenue: a running total, 
 
     You should see 24 rows. April 2026 is up 5,792.50 on March; May 2026 is down 7,473.00.
 
-4. **A running total that restarts every year.** Add `PARTITION BY` before the `ORDER BY`:
+4. **A running total that restarts every year.** Write a new final `SELECT` on the same `monthly` CTE with three columns, `month`, `revenue` and `year_to_date`, sorted by month (`ORDER BY month`). `year_to_date` is step 2's running total with `PARTITION BY` added before the `ORDER BY`:
 
     ```sql
     SUM(revenue) OVER (PARTITION BY EXTRACT(YEAR FROM month) ORDER BY month) AS year_to_date

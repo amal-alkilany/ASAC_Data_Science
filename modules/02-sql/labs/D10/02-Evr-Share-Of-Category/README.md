@@ -32,11 +32,11 @@ erDiagram
 
 ## Instructions
 
-1. **Step 1, one row per product.** In a CTE named `product_revenue`: completed revenue (`qty * price`) per category and product, with the D06 three-table join.
+1. **Step 1, one row per product.** In a CTE named `product_revenue`: completed revenue per category and product, with the D06 three-table join. Three columns: `category`, `product_name` and `SUM(i.qty * i.price) AS revenue`.
 
     Read it with `SELECT * FROM product_revenue`. You should see 56 rows: 4 of the 60 products have never been sold (D07).
 
-2. **The category total on every row.** Add a column to the final `SELECT`:
+2. **The category total on every row.** In the final `SELECT`, keep `category`, `product_name` and `revenue`, and add a column:
 
     ```sql
     SUM(revenue) OVER (PARTITION BY category) AS category_revenue

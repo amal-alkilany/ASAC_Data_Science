@@ -44,19 +44,19 @@ erDiagram
 
     Plan first, in three comment lines, before any SQL: what is one row of each step?
 
-    - Step 1, `category_revenue`: one row per category, its completed revenue. It needs the D06 three-table join: `order_items` to `orders` (for `status`) to `products` (for `category`). Check it: 6 rows.
-    - Step 2, `average_category`: one row, the average of step 1's revenue. Check it: 52,670.58.
-    - The answer: the categories from step 1 above the number in step 2, best first.
+    - Step 1, `category_revenue`: one row per category, its completed revenue. It needs the D06 three-table join: `order_items` to `orders` (for `status`) to `products` (for `category`). Name the columns `category` and `revenue`. Check it: 6 rows, read largest first (`ORDER BY revenue DESC`).
+    - Step 2, `average_category`: one row, the average of step 1's revenue, named `avg_revenue`. Check it, rounded to 2 decimals: 52,670.58.
+    - The answer: the categories from step 1 above the number in step 2. Show `category` and `revenue`, rounded to 2 decimals; best first (`ORDER BY revenue DESC`).
 
     You should see 2 rows: Outerwear 76,637.00 and Shoes 62,373.50.
 
 2. **"How many customers spent more than the average customer, and what share of our completed revenue do they bring?"** Swap roles. Plan the steps in comments first.
 
     Translate:
-    - Step 1, `customer_revenue`: one row per customer, `SUM(order_total)` of completed orders. Check: 452 rows.
+    - Step 1, `customer_revenue`: one row per customer, `customer_id` and `SUM(order_total) AS revenue` of completed orders. Check: 452 rows.
     - Step 2, `average_customer`: one row, the average of step 1. Check: 699.17.
-    - Step 3, `big_customers`: the rows of step 1 above step 2. Check: 91 rows.
-    - The answer, one row: the number of big customers, their revenue, and their share of all completed revenue as a percentage with one decimal.
+    - Step 3, `big_customers`: the rows of step 1 above step 2, with `customer_id` and `revenue`. Check: 91 rows, read largest revenue first (`ORDER BY revenue DESC`).
+    - The answer, one row: the number of big customers, their revenue, and their share of all completed revenue as a percentage with one decimal. Name them `big_customers`, `their_revenue` (rounded to 2 decimals) and `share_pct`.
 
     For the share, divide by the total of **step 1**, not by a number you type: `(SELECT SUM(revenue) FROM customer_revenue)`.
 
@@ -82,7 +82,7 @@ Every step after the first reads the one before it by name: `FROM customer_reven
 
 ## Bonus
 
-Which segment are the 91 big customers in? Add one more step: `big_customers` `LEFT JOIN nakheel.customers`, with the D07 segment cleaning (`COALESCE(LOWER(TRIM(segment)), 'unknown')`). You should see retail 55, wholesale 35 and unknown 1. Which group is more surprising, and why?
+Which segment are the 91 big customers in? Add one more step: `big_customers` `LEFT JOIN nakheel.customers`, with the D07 segment cleaning (`COALESCE(LOWER(TRIM(segment)), 'unknown')`). Show `segment_clean`, `COUNT(*) AS customers` and their revenue rounded to 2 decimals; most customers first (`ORDER BY customers DESC`). You should see retail 55, wholesale 35 and unknown 1. Which group is more surprising, and why?
 
 ## References
 

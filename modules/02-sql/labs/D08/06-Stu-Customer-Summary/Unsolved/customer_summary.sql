@@ -10,7 +10,7 @@ WITH completed AS (
 SELECT *
 FROM completed;
 
--- 2. Every customer, with their completed orders; 0 for those with none. Largest revenue first.
+-- 2. Every customer, with their completed orders; 0 for those with none. Revenue rounded to 2 decimals. Largest revenue first.
 --    Rows expected:
 
 
@@ -19,4 +19,5 @@ FROM completed;
 
 
 -- Bonus (not checked). Customers who have placed orders, but none of them completed.
+--    Show customer_id and customer_name, sorted by customer_id.
 

@@ -6,11 +6,11 @@ In this activity, you will group Nakheel orders by year, by month and by weekday
 
 ## Instructions
 
-1. Orders per year, with `EXTRACT(YEAR FROM order_date)`. Why does 2024 have so few?
+1. Orders per year, with `EXTRACT(YEAR FROM order_date)`, sorted by year. Why does 2024 have so few?
 
-2. Orders per month, with `DATE_TRUNC(order_date, MONTH)`. What date does every row of September 2024 become?
+2. Orders per month, with `DATE_TRUNC(order_date, MONTH)`, sorted by month. What date does every row of September 2024 become?
 
-3. Orders per weekday, with `FORMAT_DATE('%A', order_date)`. Which day is quietest, and why might that be in Jordan?
+3. Orders per weekday, with `FORMAT_DATE('%A', order_date)`, sorted by the count, largest first. Which day is quietest, and why might that be in Jordan?
 
 ## Check yourself
 
@@ -22,7 +22,7 @@ In this activity, you will group Nakheel orders by year, by month and by weekday
 
 ## Hint
 
-`EXTRACT` returns a number. `DATE_TRUNC` returns a date. `FORMAT_DATE` returns text, so `'%Y-%m'` gives `2024-09`, which sorts correctly as text.
+`EXTRACT` returns a number. `DATE_TRUNC` returns a date. `FORMAT_DATE` returns text.
 
 ## References
 

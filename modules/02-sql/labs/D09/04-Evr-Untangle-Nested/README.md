@@ -70,7 +70,7 @@ A CTE can be read more than once in the same query. `WHERE revenue > (SELECT AVG
 
 ## Bonus
 
-D08's subquery practice, question 4, found the name of our biggest customer with a subquery inside `WHERE`. Rewrite it as two CTEs: `customer_revenue` (one row per customer) and `top_customer` (the one row with the most revenue), then join `top_customer` to `nakheel.customers` for the name. You should get C-1380, Leen Najjar.
+"Who is our biggest customer by completed revenue? I want the name." Question 4 of D08's [Subquery practice](../../D08/03-Stu-Subquery-Practice/README.md) (tonight's after-class work) answers it with a subquery inside `WHERE`. Here, answer it with two CTEs instead: `customer_revenue` (one row per customer) and `top_customer` (the one row with the most revenue: sort by `revenue`, largest first, and keep the first row with `ORDER BY revenue DESC LIMIT 1`), then join `top_customer` to `nakheel.customers` for the name. Show `customer_id`, `customer_name` and `revenue`. You should get C-1380, Leen Najjar.
 
 ## References
 

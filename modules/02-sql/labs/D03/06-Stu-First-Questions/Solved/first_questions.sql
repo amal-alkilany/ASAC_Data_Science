@@ -13,7 +13,7 @@ WHERE status = 'cancelled';
 SELECT item_id, order_id, product_id, price
 FROM D03.order_items
 WHERE price > 15
-ORDER BY price DESC, item_id;
+ORDER BY price DESC;
 
 -- Q3 Which customers have we got no city for?
 -- One row is one customer record.

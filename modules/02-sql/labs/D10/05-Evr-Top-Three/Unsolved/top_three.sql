@@ -16,11 +16,11 @@ WITH product_revenue AS (
 SELECT *
 FROM product_revenue;
 
--- 1. Rank the products inside each category by revenue.
+-- 1. Rank the products inside each category by revenue: category, product_name, revenue, revenue_rank.
 
 
--- 2. Keep the top three: a second CTE, ranked, then WHERE.
+-- 2. Keep the top three: a second CTE, ranked, then WHERE. ORDER BY category, revenue_rank.
 
 
--- 3. The same with QUALIFY.
+-- 3. The same with QUALIFY. ORDER BY category, revenue_rank.
 

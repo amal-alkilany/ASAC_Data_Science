@@ -1,6 +1,6 @@
 -- D07 · 2.1 Everyone Do: COUNT(*) against COUNT(column) after a LEFT JOIN
 
--- 1. For every customer: COUNT(*) and COUNT(o.order_id), customers LEFT JOIN orders.
+-- 1. For every customer: c.customer_id, COUNT(*) AS rows_counted and COUNT(o.order_id) AS orders, customers LEFT JOIN orders.
 --    Sort by the order count, smallest first, then by customer_id.
 
 

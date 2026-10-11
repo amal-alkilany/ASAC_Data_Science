@@ -11,7 +11,7 @@ FROM nakheel.orders;
 
 
 -- 3. Fix query 2: completed orders only, one row per channel, with the number of orders
---    and the revenue rounded to 2 decimals. One row is one ___? How many rows?
+--    (completed_orders) and the revenue rounded to 2 decimals (revenue). One row is one ___? How many rows?
 
 
 -- 4. Start from query 3 (completed orders only). Add the D04 size rule as a CASE

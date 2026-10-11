@@ -37,7 +37,7 @@ PK is the primary key: it names one row. FK is a foreign key: it points to a row
 
 ## Instructions
 
-1. Open `Solved/sum_where_it_lives.sql`. Run query 1, the inflated version: `SUM(o.order_total)` after `orders INNER JOIN order_items`.
+1. Open `Solved/sum_where_it_lives.sql`. Run query 1, the inflated version: `SUM(o.order_total)` after `orders INNER JOIN order_items`. Queries 1 to 4 each give one row per channel, sorted by `channel` (`ORDER BY channel`), so online comes first.
 
     You should see online 351,733.50 and store 637,238.00. That is about three times the truth, and nothing warns you. After the join, one row is one order line, and each order's `order_total` is copied onto every one of its lines.
 

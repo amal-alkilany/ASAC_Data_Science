@@ -25,7 +25,7 @@
 -- Step 3. Audit, after order_items INNER JOIN products.
 
 
--- Step 4. Revenue by category, all orders.
+-- Step 4. Revenue by category, all orders. Sort by revenue, largest first.
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -44,7 +44,7 @@
 -- Step 7. Cross-check: SUM(order_total) for completed orders on the orders table alone.
 
 
--- Step 8. Completed revenue by category, whole period.
+-- Step 8. Completed revenue by category, whole period. Sort by revenue, largest first.
 -- One row is:
 -- Result check:
 -- Interpretation:
@@ -55,6 +55,7 @@
 -- ============================================================
 
 -- Step 9. Completed revenue by category and month.
+--         Sort by month, then revenue largest first.
 -- One row is:
 -- Result check:
 -- Interpretation:

@@ -6,11 +6,11 @@ In this activity, you will filter Nakheel orders before grouping with `WHERE`, t
 
 ## Instructions
 
-1. Open `Solved/where_vs_having.sql`. Run query 1. `WHERE status = 'completed'` removes rows **before** they are grouped: completed orders per channel.
+1. Open `Solved/where_vs_having.sql`. Run query 1. `WHERE status = 'completed'` removes rows **before** they are grouped: completed orders per channel, sorted by `channel`.
 
-2. Run query 2. `HAVING COUNT(*) > 20` removes groups **after** they are counted: 25 customers have more than 20 orders.
+2. Run query 2. `HAVING COUNT(*) > 20` removes groups **after** they are counted: 25 customers have more than 20 orders, sorted by the count, largest first, then by `customer_id`.
 
-3. Run query 3. It uses both: `WHERE` keeps the completed orders, then `HAVING` keeps the customers with more than 20 of them. 22 customers.
+3. Run query 3. It uses both: `WHERE` keeps the completed orders, then `HAVING` keeps the customers with more than 20 of them. 22 customers, sorted the same way.
 
 4. Run query 4. It stops with `Aggregate function COUNT not allowed in WHERE clause`. There is nothing to count yet when `WHERE` runs.
 

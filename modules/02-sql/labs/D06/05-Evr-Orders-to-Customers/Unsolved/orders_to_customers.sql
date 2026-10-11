@@ -12,4 +12,5 @@
 
 -- 4. Find the order that the INNER JOIN dropped.
 --    After the LEFT JOIN, test the key: WHERE c.customer_id IS NULL (not c.city).
+--    Show o.order_id, o.customer_id, o.order_date, o.status and o.order_total.
 

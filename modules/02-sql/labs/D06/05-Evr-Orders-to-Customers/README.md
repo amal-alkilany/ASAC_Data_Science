@@ -42,7 +42,7 @@ Before you start, run the Five Checks for `orders` and `customers`. Is `customer
 3. Count the rows after `orders LEFT JOIN customers`.
 4. Find the order the `INNER JOIN` dropped: after the `LEFT JOIN`, its customer columns are `NULL`.
 
-    Translate: the `LEFT JOIN` from query 3, then `WHERE c.customer_id IS NULL`. Test the key, not `city`: six Nakheel customers have no city, so `WHERE c.city IS NULL` also returns their orders, 39 rows in all.
+    Translate: the `LEFT JOIN` from query 3, then `WHERE c.customer_id IS NULL`; show `o.order_id`, `o.customer_id`, `o.order_date`, `o.status` and `o.order_total`. Test the key, not `city`: six Nakheel customers have no city, so `WHERE c.city IS NULL` also returns their orders, 39 rows in all.
 
 ## Check yourself
 

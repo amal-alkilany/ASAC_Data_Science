@@ -35,8 +35,7 @@ SELECT category,
        product_name,
        revenue,
        SUM(revenue) OVER (PARTITION BY category) AS category_revenue
-FROM product_revenue
-ORDER BY category, revenue DESC;
+FROM product_revenue;
 
 -- 3. The share. (56 rows; White thobe first, 24.1)
 -- @check 3
