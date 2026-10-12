@@ -65,7 +65,19 @@ You have answered this question twice. On D08 you used two CTEs, `monthly` and `
 
     You should see 8 rows, the same 8 months as on D08 and D09: April 2026 the best with 20,237.00.
 
-4. **The dead end.** Try the filter directly: `WHERE revenue > AVG(revenue) OVER ()` in the same `SELECT` as the window. BigQuery refuses: analytic (window) functions are not allowed in `WHERE`. That is why step 3 needs the second CTE. (Later today you meet `QUALIFY`, BigQuery's shortcut for exactly this.)
+4. **The dead end.** Try the filter directly: `WHERE revenue > AVG(revenue) OVER ()` in the same `SELECT` as the window. BigQuery refuses: analytic (window) functions are not allowed in `WHERE`. That is why step 3 needs the second CTE.
+
+5. **A preview: `QUALIFY`.** BigQuery has a shortcut for exactly this. `QUALIFY` filters on a window's result, the way `HAVING` filters on a group. Keep the `monthly` CTE and replace everything after it:
+
+    ```sql
+    SELECT month,
+           ROUND(revenue, 2) AS revenue
+    FROM monthly
+    QUALIFY revenue > AVG(revenue) OVER ()
+    ORDER BY month;
+    ```
+
+    You should see the same 8 months as step 3, with no second CTE. You will use `QUALIFY` properly after ranking, in activity 05.
 
 ## Check yourself
 
@@ -74,6 +86,7 @@ You have answered this question twice. On D08 you used two CTEs, `monthly` and `
 | 1 | 1 | 13,167.65 |
 | 2 | 24 | 13,167.65 on every row |
 | 3 | 8 | April 2026, 20,237.00 |
+| 5 | 8 | the same 8 months as step 3 |
 
 ## References
 

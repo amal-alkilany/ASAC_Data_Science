@@ -60,3 +60,18 @@ WITH monthly AS (
 SELECT month, revenue
 FROM monthly
 WHERE revenue > AVG(revenue) OVER ();
+
+-- 5. A preview: QUALIFY filters on the window, so no second CTE. (8 rows; April 2026, 20,237.00)
+-- @check 5
+WITH monthly AS (
+  SELECT DATE_TRUNC(order_date, MONTH) AS month,
+         SUM(order_total) AS revenue
+  FROM nakheel.orders
+  WHERE status = 'completed'
+  GROUP BY month
+)
+SELECT month,
+       ROUND(revenue, 2) AS revenue
+FROM monthly
+QUALIFY revenue > AVG(revenue) OVER ()
+ORDER BY month;

@@ -25,7 +25,7 @@ In this activity, you will answer "What are the three best-selling products by r
 
     You should see 18 rows: three per category.
 
-3. **The same, with `QUALIFY`.** `QUALIFY` filters on a window function's result, the way `HAVING` filters on an aggregate. Remove the `ranked` CTE and write:
+3. **The same, with `QUALIFY`.** In activity 01 you saw `QUALIFY` keep the months above average. Now use it with a rank. `QUALIFY` filters on a window function's result, the way `HAVING` filters on an aggregate. Remove the `ranked` CTE and write:
 
     ```sql
     SELECT category,
@@ -41,6 +41,14 @@ In this activity, you will answer "What are the three best-selling products by r
 
     - The clauses run in this order: `FROM`, `WHERE`, `GROUP BY`, `HAVING`, the window, `QUALIFY`, `ORDER BY`.
     - `QUALIFY` is BigQuery-specific. Snowflake and Databricks have it too; PostgreSQL and SQL Server do not, so there you use the CTE from step 2.
+
+    You now have three filters. Choose by what you are testing:
+
+    | Clause | Filters | Can test | Example |
+    |---|---|---|---|
+    | `WHERE` | rows, before grouping | a row's own columns | `status = 'completed'` |
+    | `HAVING` | groups, after `GROUP BY` | aggregates: `SUM`, `COUNT` | `SUM(order_total) > 50000` |
+    | `QUALIFY` | rows, after the window | window results: `RANK`, `AVG() OVER` | `revenue_rank <= 3` |
 
 4. Why `RANK` and not `ROW_NUMBER`? If two products tied for third, `RANK` would keep both and `ROW_NUMBER` would drop one at random. Here there is no tie in the top three, so both give 18 rows.
 
