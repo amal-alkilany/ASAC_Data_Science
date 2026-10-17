@@ -1,5 +1,5 @@
 -- Assignment 1: Jordan on the world stage, in SQL
--- Name:
+-- Name: AMAL OMAR MOHAMMAD ALKILANY
 -- TA group:
 --
 -- Save this file as A01_<FirstName>_<LastName>.sql.
@@ -12,9 +12,14 @@
 -- =====================================================================
 
 -- Q1. Row counts of the three tables, and the first and last match_date, in one row.
-
+select
+(select count(*) from football.matches) as matches,
+(select count(*) from football.goals) as goals,
+(select count(*) from football.shootouts) as shootouts,
+(select min(match_date)from football.matches) as first_match,
+(select max(match_date) from football.matches) as last_match;
 ;
--- Rows:
+-- Rows:1
 -- Answer:
 
 
