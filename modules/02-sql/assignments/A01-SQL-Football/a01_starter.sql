@@ -12,10 +12,15 @@
 -- =====================================================================
 
 -- Q1. Row counts of the three tables, and the first and last match_date, in one row.
-
+select
+(select count(*) from football.matches) as matches,
+(select count(*) from football.goals) as goals,
+(select count(*) from football.shootouts) as shootouts,
+(select min(match_date)from football.matches) as first_match,
+(select max(match_date) from football.matches) as last_match;
 ;
--- Rows:
--- Answer:
+-- Rows:1
+-- Answer:The football dataset is successfully validated with 49,807 matches, 47,914 goala, and 694 shootouts, ranging from November 30.1872, to september 30.2026.
 
 
 -- Q2. The view football.team_matches: one row per team per match.
