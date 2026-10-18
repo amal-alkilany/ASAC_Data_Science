@@ -34,6 +34,7 @@ LIMIT 5;
 
 -- 4. Score it on the 20% held aside.
 SELECT ROUND(mean_absolute_error) AS mae,
+       ROUND(SQRT(mean_squared_error)) AS rmse,
        ROUND(r2_score, 3) AS r2
 FROM ML.EVALUATE(MODEL ml.insurance_model);
 

@@ -39,11 +39,12 @@ You need the dataset `ml` from activity 02. Download [`insurance.csv`](../../../
     | Column | Read it as |
     |---|---|
     | `mean_absolute_error` (MAE) | the average miss, in dollars, signs dropped |
-    | `r2_score` (R²) | how much better than guessing the average for everyone: 0 no better, 1 perfect |
+    | `SQRT(mean_squared_error)` (RMSE) | the average miss in dollars, with big misses counting more (MSE itself is in dollars squared) |
+    | `r2_score` (R²) | the share of the variation in charges the model explains, against guessing the average for everyone: 0 no better, 1 perfect |
 
-    Expect an MAE of about 4,200 dollars and an R² of about 0.75. Your numbers can differ a little from your neighbour's.
+    Expect an MAE of about 4,200 dollars, an RMSE of about 6,100 dollars and an R² of about 0.75. Your numbers can differ a little from your neighbour's. RMSE is above MAE because a few people are missed by a lot (about 1 in 11 by more than 10,000 dollars).
 
-5. **The guess to beat (block 5).** A model must beat a guess that uses no features at all. The simplest: the average charges, about 13,270, for everyone. Its MAE is about 9,091 dollars. The model's miss is less than half of the guess's. That comparison is what R² puts in one number.
+5. **The guess to beat (block 5).** A model must beat a guess that uses no features at all. The simplest: the average charges, about 13,270, for everyone. That guess misses people by about 9,091 dollars on average (its MAE; 13,270 is the guess, 9,091 its miss). The model's miss is less than half of the guess's. R² puts the comparison in one number, using squared misses: 1 − (model's RMSE ÷ guess's RMSE)² ≈ 1 − (6,100 ÷ 12,100)² ≈ 0.75. The model explains about three-quarters of why charges differ from person to person.
 
 6. **Seen rows against unseen rows (block 6).** The same model scored on all 1,338 rows, most of which it trained on. If the two scores are close, the model learned a pattern. If it were far better on the rows it saw, it would have memorised them: **overfitting**. Here: about 0.75 against 0.75.
 
@@ -56,8 +57,8 @@ You need the dataset `ml` from activity 02. Download [`insurance.csv`](../../../
 | Block | Rows returned | One value to check |
 |---|---:|---|
 | 1 | 2 | smokers 274, ≈ 32,050 · non-smokers 1,064, ≈ 8,434 |
-| 4 | 1 | MAE ≈ 4,200 (3,850 to 4,550) · R² ≈ 0.75 (0.70 to 0.79) |
-| 5 | 1 | guess ≈ 13,270 · MAE ≈ 9,091 |
+| 4 | 1 | MAE ≈ 4,200 (3,900 to 4,550) · RMSE ≈ 6,100 (5,650 to 6,600) · R² ≈ 0.75 (0.70 to 0.79) |
+| 5 | 1 | the guess is 13,270; its average miss (MAE) ≈ 9,091 |
 | 6 | 2 | both R² ≈ 0.75 |
 | 8 | 2 | non-smoker ≈ 7,960 · smoker ≈ 31,810 |
 
