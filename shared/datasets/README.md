@@ -10,12 +10,12 @@ These are the datasets you use in the labs and assignments. Each folder holds th
 | [`owid_life_expectancy/`](owid_life_expectancy/README.md) | Life expectancy at birth for countries and regions, 1950–2023, from Our World in Data | D03 lab and D04 practice questions |
 | [`pagila/`](pagila/README.md) | Films, film categories and the table that links them, from the Pagila sample database | D07 activity 08 and the D07 lab |
 | [`intl_football/`](intl_football/README.md) | Every men's international football match since 1872, with goal scorers and penalty shootouts, to 30 September 2026 | Assignment 1 (SQL), loaded on D10 |
-| [`ml_classics/`](ml_classics/README.md) | Five small, well-known machine-learning datasets: salaries, medical insurance costs, car fuel economy (Auto MPG), telecom customer churn and employee attrition | D11 and D12, to learn regression and classification in BigQuery ML |
+| [`ml_classics/`](ml_classics/README.md) | Eight small, well-known machine-learning datasets: salaries, medical insurance costs, car fuel economy (Auto MPG), telecom customer churn, employee attrition, mall shoppers, Palmer penguins and a wholesaler's clients | D11, D12 and D13, to learn regression, classification and clustering in BigQuery ML |
 
 Three more datasets live elsewhere:
 
 - **D01 retail tables.** Four small tables used on D01, kept in [module 01](../../modules/01-data-foundations/datasets/w01_retail/README.md). In Week 2 you load them into BigQuery as the dataset `D03`.
-- **`bigquery-public-data.ml_datasets.penguins`.** The Palmer penguins (344 penguins, three species), hosted by Google. Used in D12 lab 05, with nothing to download. Source: [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/), CC0.
+- **`bigquery-public-data.ml_datasets.penguins`.** The Palmer penguins (344 penguins, three species), hosted by Google. Used in D12 lab 05 and D13 activity 03, with nothing to download. Source: [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/), CC0. A fixed copy with the same columns is in [`ml_classics/penguins.csv`](ml_classics/penguins.csv), for reference.
 - **`bigquery-public-data.thelook_ecommerce`.** A large online-store dataset that Google hosts. You query it where it is, with nothing to download, when a lesson needs a realistic number of rows. Google can update it, so your results may differ from a classmate's on another day. No graded answer depends on it.
 
 ## Why more than one dataset
@@ -38,7 +38,7 @@ Other datasets appear when an idea is easier to see somewhere else: life expecta
 | Life expectancy | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (Our World in Data) and [CC BY 3.0 IGO](https://creativecommons.org/licenses/by/3.0/igo/) (United Nations) |
 | Pagila | The permission notice in [`pagila/LICENSE.txt`](pagila/LICENSE.txt) |
 | International football results | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain), Mart Jürisoo |
-| Classic ML datasets | Per file, in [`ml_classics/README.md`](ml_classics/README.md#sources): Auto MPG is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the others link to their public pages |
+| Classic ML datasets | Per file, in [`ml_classics/README.md`](ml_classics/README.md#sources): Auto MPG and Wholesale customers are [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the penguins [CC0](https://creativecommons.org/publicdomain/zero/1.0/); the others link to their public pages |
 
 If you reuse the life expectancy or Pagila data outside the course, for example in a portfolio project, copy the attribution from its README.
 
