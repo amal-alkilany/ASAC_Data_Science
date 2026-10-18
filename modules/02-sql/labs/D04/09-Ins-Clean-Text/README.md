@@ -12,7 +12,7 @@ In this activity, you will fix the D01 problem, "retail" typed three ways, on Na
 
 3. Run query 3. `COALESCE(LOWER(TRIM(city)), 'unknown')` cleans each city's spelling first, then shows `unknown` instead of `NULL`. It is sorted by the count, largest first.
 
-4. Look at the cities in query 3. `TRIM` and `LOWER` fix `amman`. They cannot know that `Al Zarqa` is Zarqa. That needs a rule you write yourself, as a `CASE` like the size bands in activity 07, or a cleaning step in Power Query in Module 3.
+4. Look at the cities in query 3. `TRIM` and `LOWER` fix `amman`. They cannot know that `Al Zarqa` is Zarqa. That needs a rule you write yourself, as a `CASE` like the size bands in activity 07, or a cleaning step in Power Query in Module 4.
 
 ## Check yourself
 
