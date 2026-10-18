@@ -1,0 +1,1471 @@
+EmployeeID,Age,Gender,DistanceFromHome,JobLevel,Department,MonthlyIncome,PerformanceRating,JobSatisfaction,Attrition
+1001,41,Female,1,2,Sales,5993,3,4,Yes
+1002,49,Male,8,2,Research & Development,5130,4,2,No
+1004,37,Male,2,1,Research & Development,2090,3,3,Yes
+1005,33,Female,3,1,Research & Development,2909,3,3,No
+1007,27,Male,2,1,Research & Development,3468,3,2,No
+1008,32,Male,2,1,Research & Development,3068,3,4,No
+1010,59,Female,3,1,Research & Development,2670,4,1,No
+1011,30,Male,24,1,Research & Development,2693,4,3,No
+1012,38,Male,23,3,Research & Development,9526,4,3,No
+1013,36,Male,27,2,Research & Development,5237,3,3,No
+1014,35,Male,16,1,Research & Development,2426,3,2,No
+1015,29,Female,15,2,Research & Development,4193,3,3,No
+1016,31,Male,26,1,Research & Development,2911,3,3,No
+1018,34,Male,19,1,Research & Development,2661,3,4,No
+1019,28,Male,24,1,Research & Development,2028,3,3,Yes
+1020,29,Female,21,3,Research & Development,9980,3,1,No
+1021,32,Male,5,1,Research & Development,3298,3,2,No
+1022,22,Male,16,1,Research & Development,2935,3,4,No
+1023,53,Female,2,4,Sales,15427,3,4,No
+1024,38,Male,2,1,Research & Development,3944,3,4,No
+1026,24,Female,11,2,Research & Development,4011,3,3,No
+1027,36,Male,9,1,Sales,3407,4,1,Yes
+1028,34,Female,7,3,Research & Development,11994,3,2,No
+1030,21,Male,15,1,Research & Development,1232,3,4,No
+1031,34,Male,6,1,Research & Development,2960,3,1,Yes
+1032,53,Female,5,5,Research & Development,19094,3,3,No
+1033,32,Female,16,1,Research & Development,3919,4,1,Yes
+1035,42,Male,8,2,Sales,6825,3,2,No
+1036,44,Female,7,3,Research & Development,10248,3,4,No
+1038,46,Female,2,5,Sales,18947,3,1,No
+1039,33,Male,2,1,Research & Development,2496,3,4,No
+1040,44,Male,10,2,Research & Development,6465,3,4,No
+1041,30,Male,9,1,Research & Development,2206,3,3,No
+1042,39,Male,5,2,Sales,2086,3,4,Yes
+1045,24,Male,1,1,Research & Development,2293,3,4,Yes
+1046,43,Female,2,1,Research & Development,2645,3,3,No
+1047,50,Male,3,1,Sales,2683,3,3,Yes
+1049,35,Female,2,1,Sales,2014,3,4,No
+1051,36,Female,5,1,Research & Development,3419,3,1,No
+1052,33,Female,1,2,Sales,5376,3,1,No
+1053,35,Male,4,1,Research & Development,1951,3,4,No
+1054,27,Female,2,1,Research & Development,2341,3,1,No
+1055,26,Male,25,1,Research & Development,2293,3,3,Yes
+1056,27,Male,8,3,Sales,8726,3,3,No
+1057,30,Female,1,2,Research & Development,4011,4,4,No
+1058,41,Female,12,5,Research & Development,19545,3,3,Yes
+1060,34,Male,23,2,Sales,4568,4,3,No
+1061,37,Male,19,1,Research & Development,3022,4,2,No
+1062,46,Male,5,2,Sales,5772,4,4,No
+1063,35,Male,8,1,Research & Development,2269,3,4,No
+1064,48,Male,1,3,Research & Development,5381,3,3,Yes
+1065,28,Male,5,1,Research & Development,3441,3,3,Yes
+1068,44,Female,1,2,Sales,5454,4,1,No
+1070,35,Male,11,3,Research & Development,9884,3,1,No
+1072,26,Female,23,2,Sales,4157,3,4,No
+1073,33,Female,1,3,Research & Development,13458,3,4,No
+1074,35,Male,18,3,Sales,9069,4,1,No
+1075,35,Female,23,1,Research & Development,4014,3,1,No
+1076,31,Male,7,2,Research & Development,5915,4,4,No
+1077,37,Male,1,2,Research & Development,5993,3,3,No
+1078,32,Male,1,2,Research & Development,6162,4,4,No
+1079,38,Female,29,2,Research & Development,2406,3,4,No
+1080,50,Female,7,5,Research & Development,18740,3,3,No
+1081,59,Female,25,3,Sales,7637,3,1,No
+1083,36,Female,8,3,Research & Development,10096,3,3,No
+1084,55,Female,8,4,Research & Development,14756,3,3,No
+1085,36,Male,11,2,Research & Development,6499,3,2,No
+1086,45,Male,7,3,Research & Development,9724,3,1,No
+1088,35,Male,1,1,Research & Development,2194,3,1,No
+1090,36,Male,9,1,Research & Development,3388,3,3,Yes
+1091,59,Female,1,2,Sales,5473,3,3,No
+1094,29,Male,2,1,Research & Development,2703,4,2,No
+1095,31,Male,1,1,Research & Development,2501,3,2,No
+1096,32,Male,1,2,Research & Development,6220,3,2,No
+1097,36,Female,6,1,Research & Development,3038,3,4,No
+1098,31,Female,8,2,Research & Development,4424,4,4,No
+1100,35,Male,1,2,Sales,4312,3,1,No
+1101,45,Male,6,3,Research & Development,13245,3,1,No
+1102,37,Male,7,3,Research & Development,13664,3,3,No
+1103,46,Male,5,2,Human Resources,5021,4,2,No
+1104,30,Male,1,2,Research & Development,5126,3,4,No
+1105,35,Male,1,1,Research & Development,2859,3,3,No
+1106,55,Male,1,3,Sales,10239,3,4,No
+1107,38,Female,6,2,Research & Development,5329,3,4,No
+1110,34,Male,1,2,Research & Development,4325,3,2,No
+1112,56,Male,7,3,Research & Development,7260,3,4,No
+1113,23,Male,2,1,Sales,2322,3,1,No
+1116,51,Male,9,1,Research & Development,2075,4,4,No
+1117,30,Male,2,2,Research & Development,4152,3,4,No
+1118,46,Male,9,3,Sales,9619,3,4,Yes
+1119,40,Male,1,4,Research & Development,13503,4,2,No
+1120,51,Male,21,2,Sales,5441,4,4,No
+1121,30,Female,4,2,Sales,5209,3,2,No
+1124,46,Male,1,3,Research & Development,10673,3,1,No
+1125,32,Male,6,2,Sales,5010,3,3,No
+1126,54,Female,2,3,Research & Development,13549,3,3,No
+1128,24,Female,3,2,Sales,4999,4,3,No
+1129,28,Male,4,2,Sales,4221,3,3,No
+1131,58,Male,10,4,Sales,13872,3,3,No
+1132,44,Male,23,2,Research & Development,2042,3,2,No
+1133,37,Male,6,1,Human Resources,2073,4,1,Yes
+1134,32,Male,1,1,Research & Development,2956,3,1,No
+1137,20,Female,6,1,Research & Development,2926,3,4,Yes
+1138,34,Female,6,2,Research & Development,4809,3,3,No
+1139,37,Male,2,2,Research & Development,5163,3,4,No
+1140,59,Female,2,5,Human Resources,18844,4,4,No
+1141,50,Female,1,5,Research & Development,18172,3,2,No
+1142,25,Male,5,2,Sales,5744,3,3,Yes
+1143,25,Male,7,1,Research & Development,2889,3,4,No
+1144,22,Female,15,1,Research & Development,2871,3,4,No
+1145,51,Female,1,3,Research & Development,7484,4,1,No
+1147,34,Male,7,2,Research & Development,6074,4,3,Yes
+1148,54,Female,26,4,Human Resources,17328,3,4,No
+1150,24,Male,18,1,Research & Development,2774,3,3,No
+1151,34,Female,6,2,Research & Development,4505,3,2,No
+1152,37,Male,3,3,Sales,7428,3,4,No
+1153,34,Female,5,3,Research & Development,11631,3,1,No
+1154,36,Female,11,3,Sales,9738,3,4,No
+1155,36,Female,3,1,Research & Development,2835,4,4,No
+1158,43,Male,26,4,Sales,16959,3,4,No
+1159,30,Male,23,1,Research & Development,2613,4,3,No
+1160,33,Male,22,2,Sales,6146,3,2,No
+1161,56,Female,14,1,Research & Development,4963,3,2,Yes
+1162,51,Male,6,5,Research & Development,19537,3,3,No
+1163,31,Male,6,2,Sales,6172,3,3,Yes
+1164,26,Female,6,1,Research & Development,2368,3,2,No
+1165,58,Female,23,3,Research & Development,10312,3,4,Yes
+1167,19,Male,22,1,Sales,1675,3,3,Yes
+1169,22,Male,2,1,Research & Development,2523,3,4,No
+1170,49,Female,20,2,Research & Development,6567,3,1,No
+1171,43,Female,28,1,Research & Development,4739,3,3,No
+1174,50,Female,12,3,Sales,9208,3,4,No
+1175,31,Female,20,2,Sales,4559,3,3,Yes
+1176,41,Male,9,3,Sales,8189,3,3,No
+1177,26,Female,25,1,Human Resources,2942,4,3,No
+1178,36,Male,6,2,Research & Development,4941,4,2,No
+1179,51,Male,8,3,Research & Development,10650,3,4,Yes
+1182,39,Female,4,2,Sales,5902,3,3,No
+1183,25,Male,28,2,Sales,8639,3,3,No
+1184,30,Male,9,2,Human Resources,6347,3,4,No
+1190,32,Female,9,1,Research & Development,4200,4,1,Yes
+1192,45,Male,29,1,Research & Development,3452,3,4,No
+1193,38,Female,3,2,Research & Development,4317,4,3,No
+1194,30,Female,18,1,Research & Development,2632,3,3,No
+1195,32,Male,9,2,Sales,4668,3,4,No
+1197,30,Female,5,1,Research & Development,3204,3,1,No
+1198,30,Male,2,1,Research & Development,2720,3,4,No
+1199,41,Male,10,4,Research & Development,17181,3,1,No
+1200,41,Male,9,1,Research & Development,2238,4,1,No
+1201,19,Female,3,1,Research & Development,1483,3,2,No
+1202,40,Female,26,2,Research & Development,5605,3,2,No
+1204,35,Male,1,3,Sales,7295,3,2,No
+1205,53,Male,6,2,Sales,2306,4,3,No
+1206,45,Male,9,2,Research & Development,2348,3,2,No
+1207,32,Female,8,3,Sales,8998,3,4,No
+1208,29,Male,1,2,Research & Development,4319,3,3,No
+1211,51,Male,7,2,Research & Development,6132,3,3,No
+1214,58,Female,9,1,Research & Development,3346,4,2,No
+1215,40,Male,4,3,Sales,10855,3,4,No
+1216,34,Female,2,1,Sales,2231,3,3,No
+1217,22,Male,19,1,Research & Development,2323,4,4,No
+1218,27,Male,9,1,Research & Development,2024,3,2,No
+1221,28,Male,21,1,Research & Development,2713,3,4,No
+1223,57,Male,24,3,Research & Development,9439,3,4,No
+1224,27,Male,3,1,Research & Development,2566,3,3,No
+1226,50,Female,11,5,Research & Development,19926,3,2,No
+1227,41,Male,14,1,Research & Development,2451,3,3,No
+1228,30,Female,5,3,Sales,9419,3,4,No
+1230,38,Female,1,2,Sales,8686,4,4,No
+1231,32,Male,6,1,Research & Development,3038,4,3,No
+1233,27,Male,17,1,Research & Development,3058,3,2,No
+1235,19,Female,1,1,Sales,2325,4,1,Yes
+1238,36,Male,3,1,Research & Development,2088,3,2,No
+1239,30,Male,9,2,Research & Development,3072,3,1,No
+1240,45,Female,4,2,Sales,5006,3,1,No
+1241,56,Female,8,1,Research & Development,4257,3,1,No
+1242,33,Male,2,1,Research & Development,2500,3,4,No
+1243,19,Male,2,1,Research & Development,1102,4,4,Yes
+1244,46,Female,1,3,Sales,10453,4,1,No
+1245,38,Female,9,1,Research & Development,2288,3,4,No
+1246,31,Female,12,1,Research & Development,3929,4,4,No
+1247,34,Female,27,1,Research & Development,2311,3,2,No
+1248,41,Female,20,1,Sales,3140,4,2,Yes
+1249,50,Male,1,1,Research & Development,3690,3,3,No
+1250,53,Female,13,2,Research & Development,4450,3,1,No
+1252,33,Female,14,1,Research & Development,2756,3,2,No
+1253,40,Female,4,5,Research & Development,19033,3,3,No
+1254,55,Male,14,5,Research & Development,18722,3,2,No
+1256,34,Male,2,2,Research & Development,9547,3,3,No
+1258,51,Female,3,4,Research & Development,13734,3,2,No
+1259,52,Male,1,5,Research & Development,19999,3,3,No
+1260,27,Female,9,1,Research & Development,2279,3,2,No
+1261,35,Male,23,2,Research & Development,5916,3,3,Yes
+1262,43,Male,7,1,Research & Development,2089,3,4,No
+1264,45,Male,2,4,Research & Development,16792,4,4,No
+1267,37,Male,21,1,Research & Development,3564,3,1,No
+1269,35,Female,2,2,Research & Development,4425,3,2,No
+1270,42,Female,21,2,Research & Development,5265,3,3,No
+1271,38,Male,2,2,Research & Development,6553,3,3,No
+1273,38,Male,29,2,Research & Development,6261,3,4,No
+1274,27,Male,1,2,Research & Development,4298,3,1,No
+1275,49,Male,18,2,Research & Development,6804,3,4,No
+1277,34,Male,10,1,Research & Development,3815,3,3,No
+1281,40,Male,19,2,Research & Development,2741,3,4,No
+1282,38,Male,29,2,Research & Development,6673,3,1,Yes
+1283,29,Female,27,3,Sales,7639,4,4,Yes
+1284,22,Male,5,1,Research & Development,2328,3,2,No
+1286,36,Female,18,1,Research & Development,2153,3,4,No
+1287,40,Male,9,2,Research & Development,4876,3,4,No
+1288,46,Male,1,3,Research & Development,9396,3,1,No
+1291,32,Male,4,3,Sales,10400,3,4,Yes
+1292,30,Male,1,3,Research & Development,8474,4,3,No
+1293,27,Female,20,2,Sales,9981,3,3,No
+1296,51,Male,8,3,Research & Development,12490,3,2,No
+1297,30,Female,3,1,Research & Development,2657,3,1,Yes
+1298,41,Female,6,3,Sales,13591,3,4,No
+1299,30,Female,26,2,Sales,6696,3,1,Yes
+1300,29,Male,1,1,Research & Development,2058,3,3,Yes
+1302,45,Female,6,3,Sales,8865,3,4,No
+1303,54,Female,3,2,Sales,5940,3,1,No
+1304,36,Male,5,2,Research & Development,5914,3,2,No
+1305,33,Female,4,1,Research & Development,2622,4,2,No
+1306,37,Male,11,3,Research & Development,12185,3,4,No
+1307,38,Male,3,3,Sales,10609,3,3,No
+1308,31,Male,1,2,Research & Development,4345,3,3,No
+1309,59,Male,3,1,Research & Development,2177,3,4,No
+1311,37,Male,4,1,Sales,2793,3,4,No
+1312,29,Female,1,3,Sales,7918,3,4,No
+1314,35,Female,1,3,Sales,8789,3,3,No
+1315,29,Male,18,1,Research & Development,2389,3,4,Yes
+1316,52,Female,2,1,Research & Development,3212,3,4,No
+1319,42,Male,4,5,Research & Development,19232,3,4,No
+1321,59,Male,6,1,Human Resources,2267,3,3,No
+1323,50,Female,1,5,Sales,19517,3,4,No
+1325,33,Male,14,1,Research & Development,2436,3,4,Yes
+1327,43,Female,16,4,Sales,16064,4,4,No
+1328,33,Female,2,1,Research & Development,2707,4,1,Yes
+1329,52,Male,2,5,Sales,19068,3,3,No
+1330,32,Female,4,1,Sales,3931,3,2,No
+1331,32,Male,1,1,Research & Development,3730,3,3,Yes
+1332,39,Female,1,1,Research & Development,2232,3,3,No
+1333,32,Male,26,2,Sales,4465,3,4,No
+1334,41,Male,19,2,Research & Development,3072,3,1,No
+1335,40,Male,24,2,Research & Development,3319,3,4,No
+1336,45,Male,1,5,Research & Development,19202,3,4,No
+1337,31,Male,3,3,Research & Development,13675,3,3,No
+1338,33,Female,5,1,Research & Development,2911,3,4,No
+1339,34,Male,2,2,Research & Development,5957,3,1,No
+1340,37,Female,1,1,Research & Development,3920,3,1,No
+1341,45,Male,7,2,Research & Development,6434,3,3,No
+1342,37,Male,10,3,Research & Development,10048,3,3,Yes
+1343,39,Female,2,3,Research & Development,10938,4,3,No
+1346,29,Male,15,1,Research & Development,2340,3,4,No
+1347,42,Female,17,2,Research & Development,6545,3,1,No
+1349,29,Male,20,2,Sales,6931,3,4,No
+1350,25,Female,1,2,Research & Development,4898,3,3,No
+1351,42,Female,2,1,Research & Development,2593,3,1,No
+1352,40,Male,2,5,Research & Development,19436,3,3,No
+1353,51,Male,1,1,Research & Development,2723,3,4,No
+1355,31,Male,29,1,Research & Development,3479,3,2,Yes
+1359,32,Male,7,1,Research & Development,2794,4,2,No
+1361,38,Male,2,2,Sales,5249,3,4,No
+1362,32,Male,2,2,Research & Development,2176,3,1,No
+1363,46,Female,2,4,Sales,16872,3,2,No
+1364,28,Male,2,1,Research & Development,3485,3,3,Yes
+1366,29,Male,2,2,Sales,6644,3,2,No
+1367,31,Male,23,2,Research & Development,5582,4,4,No
+1369,25,Male,5,2,Research & Development,4000,3,1,No
+1372,45,Male,20,4,Research & Development,13496,3,4,No
+1373,36,Male,6,1,Research & Development,3210,3,4,No
+1374,55,Male,1,5,Research & Development,19045,3,1,No
+1376,47,Male,29,3,Research & Development,11849,3,2,Yes
+1377,28,Male,9,1,Research & Development,2070,4,4,No
+1378,37,Male,6,2,Sales,6502,3,4,No
+1379,21,Male,3,1,Research & Development,3230,3,3,No
+1380,37,Female,1,3,Research & Development,13603,3,4,No
+1381,35,Female,22,3,Research & Development,11996,3,2,No
+1382,38,Female,7,2,Sales,5605,4,1,No
+1384,26,Female,1,2,Research & Development,6397,4,2,No
+1385,50,Male,4,5,Research & Development,19144,3,2,No
+1386,53,Male,3,4,Research & Development,17584,3,3,No
+1387,42,Male,1,2,Sales,4907,4,3,No
+1388,29,Male,2,2,Sales,4554,3,4,No
+1389,55,Male,20,2,Research & Development,5415,3,4,No
+1390,26,Male,11,2,Research & Development,4741,3,1,No
+1391,37,Female,1,1,Research & Development,2115,3,4,No
+1392,44,Male,24,1,Research & Development,3161,4,3,Yes
+1393,38,Male,23,2,Research & Development,5745,3,4,No
+1394,26,Male,16,1,Research & Development,2373,3,2,Yes
+1395,28,Female,8,1,Research & Development,3310,4,4,No
+1396,49,Female,10,5,Research & Development,18665,3,1,No
+1397,36,Male,3,2,Research & Development,4485,3,2,No
+1399,31,Female,5,1,Sales,2789,3,2,No
+1401,26,Male,4,2,Sales,5828,3,4,Yes
+1403,37,Male,9,1,Research & Development,2326,3,4,No
+1404,42,Female,26,4,Sales,13525,3,2,No
+1405,18,Male,3,1,Research & Development,1420,3,3,Yes
+1406,35,Male,16,3,Sales,8020,3,2,No
+1407,36,Male,18,1,Research & Development,3688,3,4,No
+1408,51,Male,2,2,Research & Development,5482,3,2,No
+1410,41,Male,2,4,Sales,16015,3,2,No
+1411,18,Female,10,1,Sales,1200,3,3,No
+1412,28,Male,16,2,Research & Development,5661,3,1,No
+1416,31,Male,7,2,Sales,6929,3,4,No
+1417,39,Male,1,3,Research & Development,9613,3,4,No
+1419,36,Female,24,2,Research & Development,5674,3,2,No
+1420,32,Male,7,2,Sales,5484,3,3,No
+1421,38,Female,25,3,Research & Development,12061,3,2,No
+1422,58,Male,1,2,Research & Development,5660,3,3,No
+1423,31,Male,5,1,Research & Development,4821,3,4,No
+1424,31,Male,2,2,Human Resources,6410,3,1,No
+1425,45,Male,7,3,Research & Development,5210,3,1,No
+1426,31,Male,2,1,Research & Development,2695,3,4,No
+1428,33,Female,5,3,Research & Development,11878,3,2,No
+1429,39,Male,10,4,Research & Development,17068,3,1,No
+1430,43,Female,10,1,Research & Development,2455,3,4,No
+1431,49,Female,1,4,Research & Development,13964,3,3,No
+1433,52,Male,8,2,Research & Development,4941,3,2,Yes
+1434,27,Female,5,1,Research & Development,2478,3,2,No
+1436,32,Female,8,2,Sales,5228,3,2,No
+1437,27,Male,2,2,Sales,4478,3,3,No
+1438,31,Male,7,2,Sales,7547,3,4,No
+1439,32,Female,2,2,Research & Development,5055,3,4,No
+1440,28,Male,2,1,Research & Development,3464,3,4,Yes
+1441,30,Female,28,2,Research & Development,5775,3,4,No
+1442,31,Female,7,3,Research & Development,8943,4,3,No
+1444,39,Male,7,5,Research & Development,19272,3,4,No
+1445,39,Female,3,2,Sales,5238,3,3,Yes
+1446,33,Male,10,2,Sales,4682,3,4,No
+1447,47,Male,5,5,Research & Development,18300,3,3,No
+1448,43,Female,10,2,Research & Development,5257,3,3,No
+1449,27,Male,1,2,Sales,6349,3,2,No
+1450,54,Female,20,2,Research & Development,4869,3,3,No
+1451,43,Female,7,3,Research & Development,9985,3,1,No
+1452,45,Male,8,2,Research & Development,3697,3,4,No
+1453,40,Male,1,2,Sales,7457,4,4,No
+1454,29,Male,8,1,Research & Development,2119,3,1,Yes
+1455,29,Male,9,1,Research & Development,3983,3,4,No
+1456,30,Female,5,2,Sales,6118,3,3,No
+1458,27,Female,8,2,Sales,6214,3,2,No
+1460,37,Male,5,2,Research & Development,6347,3,4,No
+1461,38,Male,15,3,Research & Development,11510,3,4,No
+1462,31,Female,7,3,Research & Development,7143,3,4,No
+1463,29,Female,10,2,Sales,8268,3,2,No
+1464,35,Male,5,3,Research & Development,8095,3,2,No
+1465,23,Male,26,1,Research & Development,2904,3,4,No
+1466,41,Male,6,2,Research & Development,6032,3,2,No
+1467,47,Male,4,2,Sales,2976,3,3,No
+1468,42,Female,23,4,Research & Development,15992,3,4,No
+1469,29,Male,2,2,Sales,4649,3,3,No
+1470,42,Male,2,1,Human Resources,2696,3,3,No
+1471,32,Female,2,1,Research & Development,2370,3,2,No
+1473,48,Female,29,3,Sales,12504,4,3,No
+1474,37,Male,6,2,Research & Development,5974,3,1,No
+1475,30,Female,25,2,Sales,4736,3,3,No
+1476,26,Male,1,2,Sales,5296,3,3,No
+1477,42,Male,2,2,Research & Development,6781,4,4,No
+1478,21,Female,1,1,Sales,2174,3,2,Yes
+1479,36,Female,1,2,Sales,6653,3,4,No
+1481,36,Male,3,3,Sales,9699,3,4,No
+1482,57,Male,1,2,Research & Development,6755,3,3,No
+1483,40,Female,10,1,Research & Development,2213,3,3,No
+1484,21,Male,9,1,Sales,2610,4,4,No
+1485,33,Female,5,1,Sales,2851,3,3,Yes
+1486,37,Female,10,1,Research & Development,3452,4,1,No
+1487,46,Female,7,2,Research & Development,5258,3,3,No
+1488,41,Male,4,2,Sales,9355,3,2,Yes
+1491,50,Male,10,3,Research & Development,10496,3,4,No
+1492,40,Male,22,2,Sales,6380,3,3,Yes
+1493,31,Male,9,1,Research & Development,2657,3,2,No
+1494,21,Female,12,1,Sales,2716,3,2,Yes
+1495,29,Male,23,1,Research & Development,2201,3,4,No
+1496,35,Male,9,2,Research & Development,6540,3,2,No
+1497,27,Male,1,1,Research & Development,3816,3,2,No
+1498,28,Male,9,2,Sales,5253,3,4,No
+1499,49,Male,7,3,Research & Development,10965,4,3,No
+1500,51,Female,14,2,Sales,4936,3,4,No
+1501,36,Female,2,1,Research & Development,2543,3,3,No
+1502,34,Male,19,2,Sales,5304,3,4,Yes
+1505,55,Female,2,4,Research & Development,16659,3,4,No
+1507,24,Female,10,2,Sales,4260,3,3,No
+1508,30,Male,2,1,Sales,2476,3,2,No
+1510,26,Male,3,1,Research & Development,3102,4,1,Yes
+1511,22,Female,11,1,Research & Development,2244,3,2,No
+1513,36,Male,2,3,Sales,7596,3,3,No
+1514,30,Male,4,1,Research & Development,2285,4,4,Yes
+1515,37,Female,14,1,Research & Development,3034,3,1,No
+1516,40,Female,2,2,Sales,5715,3,2,No
+1517,42,Female,1,1,Research & Development,2576,3,1,No
+1518,37,Male,10,2,Research & Development,4197,3,2,No
+1520,43,Male,12,4,Research & Development,14336,3,2,No
+1521,40,Female,2,2,Research & Development,3448,4,3,No
+1522,54,Male,5,5,Research & Development,19406,3,1,No
+1523,34,Female,4,2,Sales,6538,3,3,No
+1524,31,Female,7,2,Research & Development,4306,3,1,No
+1525,43,Male,21,1,Research & Development,2258,4,4,No
+1526,43,Female,8,2,Research & Development,4522,3,3,No
+1527,25,Female,4,2,Sales,4487,3,4,No
+1529,37,Female,25,2,Research & Development,4449,3,3,No
+1530,31,Male,1,1,Research & Development,2218,3,1,No
+1531,39,Male,1,5,Research & Development,19197,3,3,No
+1532,56,Female,6,4,Sales,13212,3,1,No
+1533,30,Female,12,2,Sales,6577,3,3,No
+1534,41,Male,1,3,Sales,8392,3,1,No
+1536,28,Male,17,2,Research & Development,4558,3,1,No
+1538,25,Male,3,1,Research & Development,4031,3,1,Yes
+1543,52,Male,3,3,Research & Development,7969,3,3,No
+1544,45,Male,10,1,Research & Development,2654,4,4,No
+1546,52,Female,4,4,Research & Development,16555,3,4,No
+1547,42,Female,29,2,Research & Development,4556,3,3,No
+1548,30,Female,2,2,Research & Development,6091,4,4,No
+1549,60,Female,7,5,Research & Development,19566,3,1,No
+1550,46,Female,18,2,Research & Development,4810,3,3,No
+1551,42,Female,28,2,Research & Development,4523,3,4,No
+1554,24,Female,1,1,Sales,3202,3,2,Yes
+1555,34,Female,6,1,Sales,2351,3,3,Yes
+1556,38,Male,2,1,Research & Development,1702,4,4,No
+1558,40,Female,2,5,Sales,18041,3,3,No
+1560,26,Female,23,1,Research & Development,2886,4,4,No
+1562,30,Male,3,1,Research & Development,2097,3,4,No
+1564,29,Male,3,3,Research & Development,11935,3,3,No
+1565,29,Female,25,1,Research & Development,2546,3,2,Yes
+1566,19,Male,2,1,Human Resources,2564,3,4,Yes
+1567,30,Female,22,3,Sales,8412,3,1,No
+1568,57,Male,29,4,Sales,14118,3,4,No
+1569,50,Male,29,4,Research & Development,17046,3,3,No
+1571,30,Female,2,1,Research & Development,2564,3,4,No
+1573,60,Female,28,3,Sales,10266,3,1,No
+1574,47,Female,2,2,Research & Development,5070,3,4,No
+1575,46,Male,2,4,Research & Development,17861,3,3,No
+1577,35,Male,22,1,Research & Development,4230,3,3,No
+1578,54,Female,8,2,Research & Development,3780,3,3,No
+1579,34,Male,2,1,Research & Development,2768,3,3,No
+1580,46,Female,10,3,Sales,9071,3,4,No
+1581,31,Male,9,3,Research & Development,10648,4,2,No
+1582,33,Male,15,3,Research & Development,13610,3,3,Yes
+1584,33,Male,10,1,Research & Development,3408,3,4,Yes
+1585,30,Male,7,1,Sales,2983,3,2,No
+1586,35,Male,16,3,Research & Development,7632,3,3,No
+1587,31,Male,20,3,Research & Development,9824,3,3,Yes
+1590,34,Female,23,3,Human Resources,9950,3,1,Yes
+1591,42,Male,5,1,Research & Development,2093,3,3,No
+1592,36,Male,10,3,Sales,9980,3,4,No
+1593,22,Male,4,1,Research & Development,3894,3,3,Yes
+1595,48,Female,2,2,Sales,4051,3,4,No
+1597,55,Female,18,4,Sales,16835,4,2,No
+1599,41,Male,10,2,Sales,6230,3,4,No
+1600,35,Male,1,2,Sales,4717,3,3,No
+1601,40,Female,6,4,Research & Development,13237,3,3,No
+1602,39,Female,8,1,Research & Development,3755,3,3,No
+1604,31,Male,2,2,Sales,6582,3,4,No
+1605,42,Male,24,3,Research & Development,7406,4,1,No
+1606,45,Male,2,2,Sales,4805,3,2,No
+1608,26,Female,17,1,Human Resources,2741,3,3,Yes
+1611,29,Male,19,2,Research & Development,4262,3,4,No
+1612,33,Female,1,4,Research & Development,16184,3,3,No
+1613,31,Male,7,3,Sales,11557,4,4,No
+1614,18,Male,5,1,Sales,1878,3,2,Yes
+1615,40,Male,28,3,Sales,10932,3,1,No
+1616,41,Female,2,2,Research & Development,6811,3,3,No
+1618,26,Male,29,2,Sales,4306,3,3,No
+1620,35,Female,1,2,Sales,4859,3,3,No
+1621,34,Male,21,2,Sales,5337,3,4,No
+1622,26,Male,24,1,Research & Development,2340,3,4,Yes
+1623,37,Female,1,3,Research & Development,7491,3,4,No
+1624,46,Female,18,3,Research & Development,10527,3,3,No
+1625,41,Female,2,4,Sales,16595,3,1,No
+1626,37,Male,9,3,Sales,8834,3,2,No
+1630,52,Male,6,2,Research & Development,5577,3,1,No
+1631,32,Male,11,2,Sales,4707,3,3,Yes
+1632,24,Male,24,1,Sales,2400,3,4,No
+1634,38,Female,10,2,Research & Development,9824,3,3,No
+1635,37,Female,1,2,Research & Development,6447,3,2,No
+1638,49,Male,18,5,Research & Development,19502,3,3,No
+1639,24,Male,23,1,Research & Development,2725,3,4,No
+1641,26,Male,28,2,Sales,6272,4,2,No
+1643,24,Male,17,1,Research & Development,2127,4,2,No
+1644,50,Male,3,5,Human Resources,18200,3,2,No
+1645,25,Male,13,1,Sales,2096,3,3,No
+1647,24,Female,7,1,Research & Development,2886,3,3,Yes
+1648,30,Male,12,1,Sales,2033,3,1,Yes
+1649,34,Male,1,1,Research & Development,3622,3,4,No
+1650,31,Male,13,2,Sales,4233,3,1,Yes
+1652,35,Male,25,2,Research & Development,3681,3,4,No
+1653,31,Male,6,2,Sales,5460,4,4,No
+1655,27,Female,6,1,Research & Development,2187,3,3,No
+1656,37,Male,2,2,Sales,9602,3,3,No
+1657,20,Female,1,1,Research & Development,2836,3,2,No
+1659,42,Female,2,2,Research & Development,4089,3,4,No
+1661,43,Male,6,4,Research & Development,16627,3,4,No
+1662,38,Female,1,1,Research & Development,2619,3,1,No
+1663,43,Male,9,2,Research & Development,5679,3,3,No
+1664,48,Female,1,4,Research & Development,15402,3,1,No
+1665,44,Female,1,2,Human Resources,5985,3,3,No
+1666,34,Female,14,1,Sales,2579,3,3,No
+1667,27,Male,2,1,Sales,3041,3,1,Yes
+1669,21,Male,22,1,Sales,3447,3,3,No
+1671,44,Male,3,5,Research & Development,19513,3,4,No
+1675,22,Male,6,1,Research & Development,2773,4,3,No
+1677,33,Male,8,2,Sales,7104,3,3,No
+1679,32,Female,9,2,Research & Development,6322,3,4,No
+1680,30,Female,3,1,Research & Development,2083,4,3,No
+1682,53,Female,1,2,Sales,8381,4,1,No
+1683,34,Male,1,1,Research & Development,2691,3,4,No
+1684,45,Female,26,2,Sales,4286,3,1,Yes
+1686,26,Female,6,1,Research & Development,2659,3,4,No
+1689,37,Male,3,3,Research & Development,9434,3,3,No
+1690,29,Female,3,2,Sales,5561,3,3,No
+1691,35,Male,6,2,Research & Development,6646,3,4,No
+1692,33,Male,6,2,Research & Development,7725,4,4,No
+1698,54,Male,19,3,Human Resources,10725,3,2,No
+1699,36,Male,9,2,Research & Development,8847,3,2,No
+1700,27,Male,3,1,Research & Development,2045,3,4,No
+1701,20,Male,10,1,Research & Development,1009,3,3,Yes
+1702,33,Male,3,1,Research & Development,3348,3,1,Yes
+1704,35,Male,3,1,Research & Development,1281,3,3,No
+1705,23,Male,4,1,Research & Development,2819,3,1,No
+1707,25,Male,8,2,Sales,4851,4,2,No
+1709,38,Female,7,2,Sales,4028,4,4,No
+1710,29,Male,1,1,Research & Development,2720,3,4,No
+1712,48,Male,2,2,Sales,8120,3,2,No
+1714,27,Female,3,2,Sales,4647,4,4,No
+1715,37,Male,10,1,Research & Development,4680,3,4,No
+1716,50,Male,28,1,Research & Development,3221,3,3,No
+1717,34,Female,9,3,Research & Development,8621,3,2,No
+1720,24,Female,3,2,Sales,4577,3,3,Yes
+1721,39,Female,2,2,Research & Development,4553,3,3,No
+1722,32,Male,10,2,Sales,5396,3,4,No
+1723,50,Male,8,2,Sales,6796,3,3,Yes
+1724,38,Female,1,2,Research & Development,7625,3,4,No
+1725,27,Female,1,3,Research & Development,7412,3,1,No
+1727,32,Female,3,3,Research & Development,11159,3,4,No
+1728,47,Male,14,2,Sales,4960,3,1,No
+1729,40,Male,5,3,Sales,10475,4,1,No
+1730,53,Male,7,4,Research & Development,14814,3,3,No
+1731,41,Male,10,5,Human Resources,19141,3,4,No
+1732,60,Male,16,2,Sales,5405,3,1,No
+1733,27,Male,10,3,Research & Development,8793,4,1,No
+1734,41,Male,1,5,Human Resources,19189,3,3,No
+1738,50,Male,8,1,Sales,3875,3,2,No
+1741,28,Female,1,1,Research & Development,2216,3,2,Yes
+1742,36,Female,8,3,Research & Development,11713,3,1,No
+1743,38,Female,1,3,Research & Development,7861,3,3,No
+1744,44,Male,24,1,Research & Development,3708,3,3,No
+1746,47,Female,3,4,Sales,13770,3,3,No
+1747,30,Male,27,2,Sales,5304,4,4,No
+1749,29,Male,10,1,Sales,2642,3,3,No
+1752,42,Male,19,1,Research & Development,2759,3,3,Yes
+1754,43,Male,15,2,Sales,6804,3,4,No
+1757,34,Female,8,2,Research & Development,6142,3,3,No
+1758,23,Male,9,1,Research & Development,2500,3,1,No
+1760,39,Female,3,2,Human Resources,6389,3,2,No
+1762,56,Male,9,4,Research & Development,11103,3,4,No
+1763,40,Female,2,1,Research & Development,2342,4,4,No
+1764,27,Female,7,2,Research & Development,6811,3,1,No
+1766,29,Male,10,1,Sales,2297,3,2,No
+1769,53,Male,6,2,Research & Development,2450,3,4,No
+1771,35,Female,2,2,Research & Development,5093,3,1,No
+1772,32,Male,24,2,Research & Development,5309,3,4,No
+1773,38,Male,2,1,Research & Development,3057,3,3,No
+1775,34,Female,8,2,Research & Development,5121,3,1,No
+1776,52,Male,3,4,Sales,16856,3,1,No
+1780,33,Male,1,1,Research & Development,2686,3,4,Yes
+1781,25,Female,26,2,Sales,6180,4,4,No
+1783,45,Male,2,2,Sales,6632,3,3,No
+1784,23,Male,10,1,Research & Development,3505,3,3,No
+1785,47,Female,27,2,Sales,6397,3,3,Yes
+1786,34,Male,2,2,Sales,6274,4,4,No
+1787,55,Male,2,5,Research & Development,19859,3,1,Yes
+1789,36,Male,8,3,Sales,7587,3,1,No
+1791,52,Male,19,1,Research & Development,4258,3,4,No
+1792,26,Female,1,1,Research & Development,4364,3,4,No
+1793,29,Female,27,2,Research & Development,4335,3,3,No
+1796,26,Male,8,2,Sales,5326,3,1,Yes
+1797,34,Female,1,1,Research & Development,3280,3,4,No
+1799,54,Female,19,2,Research & Development,5485,3,1,No
+1800,27,Male,8,2,Sales,4342,3,4,No
+1802,37,Female,10,1,Research & Development,2782,3,1,No
+1803,38,Female,2,2,Research & Development,5980,3,1,No
+1804,34,Female,2,1,Research & Development,4381,3,1,No
+1805,35,Female,8,1,Sales,2572,3,4,No
+1806,30,Male,1,1,Research & Development,3833,4,3,No
+1807,40,Female,2,2,Research & Development,4244,4,2,No
+1808,34,Female,8,2,Sales,6500,3,1,No
+1809,42,Male,8,5,Research & Development,18430,3,4,No
+1811,23,Male,6,1,Research & Development,1601,4,1,Yes
+1812,24,Male,9,1,Research & Development,2694,3,2,No
+1813,52,Female,11,2,Research & Development,3149,4,3,No
+1815,50,Male,2,4,Research & Development,17639,3,3,No
+1816,29,Female,1,1,Research & Development,2319,3,1,Yes
+1817,33,Male,7,3,Research & Development,11691,3,3,No
+1819,33,Female,16,2,Sales,5324,3,1,Yes
+1820,47,Female,2,4,Research & Development,16752,3,4,No
+1823,36,Female,1,2,Research & Development,5228,3,2,No
+1824,29,Male,23,1,Research & Development,2700,4,3,No
+1825,58,Male,2,5,Research & Development,19246,3,2,Yes
+1826,35,Female,1,1,Research & Development,2506,3,3,No
+1827,42,Female,1,2,Research & Development,6062,3,4,No
+1828,28,Male,2,1,Research & Development,4382,3,3,Yes
+1829,36,Male,13,1,Human Resources,2143,3,2,No
+1830,32,Female,4,2,Research & Development,6162,3,3,No
+1832,40,Male,16,2,Research & Development,5094,3,3,No
+1833,30,Female,2,2,Research & Development,6877,4,4,No
+1834,45,Female,2,1,Research & Development,2274,3,3,No
+1836,42,Male,29,2,Research & Development,4434,3,2,No
+1837,38,Male,12,2,Research & Development,6288,3,1,No
+1838,34,Female,16,1,Research & Development,2553,3,4,No
+1840,49,Female,11,3,Sales,7654,3,4,Yes
+1842,55,Male,2,2,Sales,5160,3,4,Yes
+1843,43,Male,14,4,Research & Development,17159,4,1,No
+1844,27,Male,5,3,Research & Development,12808,3,4,No
+1845,35,Male,7,3,Research & Development,10221,4,3,No
+1846,28,Female,2,2,Sales,4779,4,2,No
+1847,34,Male,3,1,Human Resources,3737,3,4,No
+1848,26,Female,5,1,Research & Development,2366,3,3,Yes
+1850,27,Male,3,1,Research & Development,1706,3,4,No
+1851,51,Female,26,4,Sales,16307,3,3,No
+1852,44,Male,4,2,Research & Development,5933,3,2,No
+1854,25,Male,2,1,Research & Development,3424,3,1,No
+1855,33,Male,1,2,Sales,4037,4,1,No
+1856,35,Female,27,1,Research & Development,2559,3,1,No
+1857,36,Male,1,2,Sales,6201,3,4,No
+1859,32,Male,13,2,Sales,4403,3,4,No
+1861,30,Male,5,1,Research & Development,3761,3,4,No
+1862,53,Female,7,3,Sales,10934,3,4,No
+1864,45,Male,9,3,Sales,10761,3,1,No
+1865,32,Female,8,2,Research & Development,5175,3,3,No
+1867,52,Female,25,4,Research & Development,13826,4,4,No
+1868,37,Male,16,2,Sales,6334,3,3,No
+1869,28,Male,8,1,Human Resources,4936,3,4,No
+1872,22,Male,1,2,Research & Development,4775,4,4,No
+1874,44,Male,8,1,Research & Development,2818,4,4,No
+1875,42,Male,2,1,Research & Development,2515,3,4,No
+1878,36,Male,8,1,Human Resources,2342,4,1,No
+1879,25,Male,3,2,Sales,4194,3,1,No
+1880,35,Female,9,3,Research & Development,10685,4,3,No
+1881,35,Female,25,1,Research & Development,2022,3,2,Yes
+1882,32,Male,1,1,Research & Development,2314,3,4,No
+1885,25,Male,4,2,Sales,4256,3,1,No
+1887,49,Female,1,1,Research & Development,3580,3,1,No
+1888,24,Male,4,1,Research & Development,3162,3,4,No
+1889,32,Male,5,2,Sales,6524,3,2,No
+1893,38,Male,9,1,Sales,2899,3,2,No
+1894,42,Female,3,2,Research & Development,5231,3,4,No
+1895,31,Male,11,1,Research & Development,2356,3,4,No
+1896,29,Female,1,1,Sales,2800,3,3,Yes
+1897,53,Male,8,4,Sales,11836,3,4,No
+1899,35,Male,25,3,Research & Development,10903,3,2,No
+1900,37,Female,21,1,Sales,2973,3,4,No
+1901,53,Female,23,4,Research & Development,14275,3,4,No
+1902,43,Female,1,2,Research & Development,5562,3,4,No
+1903,47,Female,2,2,Sales,4537,4,4,No
+1904,37,Male,19,3,Sales,7642,3,2,No
+1905,50,Male,2,4,Research & Development,17924,3,1,No
+1909,39,Female,2,2,Human Resources,5204,3,4,No
+1910,33,Male,3,1,Human Resources,2277,3,2,No
+1911,32,Male,25,1,Research & Development,2795,4,4,Yes
+1912,29,Female,7,1,Research & Development,2532,3,4,No
+1913,44,Male,9,1,Research & Development,2559,3,1,No
+1916,28,Male,5,2,Sales,4908,3,4,No
+1918,58,Male,2,1,Research & Development,2380,3,4,Yes
+1920,43,Female,8,2,Research & Development,4765,4,2,No
+1922,20,Female,2,1,Sales,2044,3,3,Yes
+1923,21,Female,18,1,Research & Development,2693,3,4,Yes
+1924,36,Male,14,2,Research & Development,6586,3,4,No
+1925,47,Female,2,1,Sales,3294,3,4,No
+1926,22,Female,3,2,Research & Development,4171,3,3,Yes
+1927,41,Female,2,1,Research & Development,2778,3,4,Yes
+1930,28,Female,9,1,Research & Development,2377,3,3,No
+1932,39,Male,6,1,Research & Development,2404,4,1,Yes
+1933,27,Female,4,1,Research & Development,2318,3,3,No
+1934,34,Male,10,1,Research & Development,2008,3,2,No
+1936,42,Female,14,2,Sales,6244,3,3,No
+1939,33,Male,1,1,Research & Development,2799,3,1,No
+1940,58,Female,5,3,Research & Development,10552,3,2,No
+1941,31,Male,7,1,Sales,2329,3,3,No
+1942,35,Female,21,2,Research & Development,4014,4,4,No
+1944,49,Female,8,3,Research & Development,7403,3,2,No
+1945,48,Male,20,1,Research & Development,2259,3,3,No
+1947,31,Female,20,2,Sales,6932,3,3,No
+1949,36,Male,7,1,Research & Development,4678,3,4,No
+1950,38,Female,1,3,Research & Development,13582,3,1,No
+1951,32,Female,1,1,Research & Development,2332,4,2,No
+1952,25,Male,19,1,Sales,2413,3,2,Yes
+1954,40,Male,10,3,Sales,9705,3,2,No
+1956,26,Male,1,2,Sales,4294,3,1,No
+1957,41,Male,6,1,Research & Development,4721,3,1,No
+1958,36,Male,2,1,Research & Development,2519,4,3,No
+1959,19,Male,21,1,Sales,2121,3,2,Yes
+1960,20,Male,4,1,Research & Development,2973,3,1,Yes
+1961,31,Female,12,2,Research & Development,5855,3,4,No
+1964,40,Male,9,1,Research & Development,3617,3,2,No
+1966,32,Female,3,2,Research & Development,6725,3,1,No
+1967,36,Male,3,3,Sales,10325,3,4,Yes
+1969,33,Female,1,2,Research & Development,6949,3,4,No
+1970,37,Male,1,3,Sales,10609,3,3,Yes
+1972,45,Male,4,2,Research & Development,4447,3,2,No
+1974,29,Female,20,1,Sales,2157,3,4,No
+1975,35,Female,18,2,Sales,4601,3,3,No
+1976,52,Male,1,4,Research & Development,17099,3,4,No
+1977,58,Male,2,1,Research & Development,2479,4,3,Yes
+1981,53,Male,2,4,Sales,14852,3,3,No
+1982,30,Male,8,3,Sales,7264,3,3,No
+1983,38,Female,10,2,Sales,5666,3,4,No
+1984,35,Male,3,3,Sales,7823,3,4,No
+1985,39,Male,2,3,Sales,7880,3,3,No
+1986,40,Female,24,4,Sales,13194,3,2,Yes
+1987,47,Male,16,2,Research & Development,5067,3,3,No
+1990,36,Male,8,2,Sales,5079,3,4,No
+1991,31,Male,9,1,Research & Development,2321,4,1,Yes
+1992,33,Male,17,4,Sales,17444,3,3,No
+1994,29,Female,10,1,Research & Development,2404,4,1,Yes
+1995,33,Female,13,1,Research & Development,3452,3,4,No
+1996,45,Female,1,1,Research & Development,2270,3,4,No
+1997,50,Male,1,4,Research & Development,17399,4,4,No
+1998,33,Female,1,2,Research & Development,5488,3,2,No
+1999,41,Male,9,5,Research & Development,19419,3,3,No
+2001,27,Female,16,1,Research & Development,2811,3,2,No
+2002,45,Male,23,2,Research & Development,3633,3,1,No
+2003,47,Female,4,2,Sales,4163,3,4,No
+2004,30,Female,22,1,Research & Development,2132,3,3,Yes
+2005,50,Male,24,4,Research & Development,13973,3,3,No
+2006,38,Male,10,1,Research & Development,2684,3,3,No
+2007,46,Male,7,3,Research & Development,10845,3,3,No
+2009,24,Female,17,2,Research & Development,4377,3,3,No
+2010,35,Male,14,1,Research & Development,3743,4,2,Yes
+2011,31,Female,1,2,Research & Development,4148,3,1,No
+2012,18,Male,5,1,Research & Development,1051,3,4,No
+2013,54,Female,17,3,Research & Development,10739,3,3,No
+2014,35,Female,25,3,Research & Development,10388,3,3,No
+2015,30,Female,8,3,Research & Development,11416,3,1,No
+2016,20,Female,11,1,Research & Development,2600,3,1,Yes
+2017,30,Female,5,1,Research & Development,2422,3,2,Yes
+2018,26,Male,2,2,Research & Development,5472,3,4,No
+2019,22,Male,8,1,Research & Development,2451,3,1,No
+2022,48,Male,6,2,Research & Development,4240,3,3,No
+2024,48,Male,4,3,Research & Development,10999,3,3,No
+2025,41,Female,7,2,Research & Development,5003,3,3,No
+2026,39,Female,1,4,Research & Development,12742,3,4,No
+2027,27,Female,2,2,Research & Development,4227,3,4,No
+2028,35,Male,10,1,Research & Development,3917,4,4,No
+2029,42,Male,5,5,Sales,18303,3,3,No
+2030,50,Male,9,1,Research & Development,2380,3,4,No
+2032,59,Female,2,4,Research & Development,13726,3,4,No
+2033,37,Female,11,2,Research & Development,4777,3,2,Yes
+2034,55,Male,18,2,Research & Development,6385,3,2,No
+2035,41,Female,7,5,Research & Development,19973,4,3,No
+2036,38,Male,3,2,Sales,6861,3,4,No
+2037,26,Male,29,2,Sales,4969,3,1,Yes
+2038,52,Female,2,5,Sales,19845,3,4,Yes
+2039,44,Female,28,4,Sales,13320,3,4,No
+2040,50,Female,1,2,Sales,6347,3,3,No
+2042,36,Female,16,1,Research & Development,2743,3,1,Yes
+2043,39,Female,22,3,Research & Development,10880,3,1,No
+2044,33,Female,8,1,Sales,2342,3,4,No
+2045,45,Female,11,4,Sales,17650,3,4,No
+2046,32,Female,29,1,Research & Development,4025,3,3,No
+2047,34,Male,1,2,Sales,9725,3,4,No
+2048,59,Male,1,3,Sales,11904,3,4,No
+2049,45,Male,24,1,Human Resources,2177,3,2,No
+2050,53,Female,2,3,Sales,7525,3,2,No
+2052,36,Male,15,2,Research & Development,4834,3,3,Yes
+2053,26,Male,2,1,Research & Development,2042,3,1,Yes
+2055,34,Female,10,1,Sales,2220,3,3,No
+2056,28,Male,10,1,Sales,1052,4,2,No
+2060,38,Male,3,1,Research & Development,2821,3,3,No
+2061,50,Male,2,5,Research & Development,19237,3,3,No
+2062,37,Female,3,2,Research & Development,4107,3,2,No
+2066,40,Male,26,2,Sales,8396,3,1,No
+2068,26,Female,1,1,Research & Development,2007,3,3,No
+2069,46,Male,1,5,Research & Development,19627,3,4,No
+2070,54,Female,2,3,Sales,10686,3,3,No
+2071,56,Female,9,1,Research & Development,2942,3,3,No
+2073,36,Female,12,3,Research & Development,8858,3,4,No
+2074,55,Male,2,4,Research & Development,16756,3,1,No
+2076,43,Male,25,3,Sales,10798,3,4,No
+2077,20,Female,9,1,Sales,2323,3,4,Yes
+2079,21,Female,10,1,Research & Development,1416,3,1,Yes
+2080,46,Female,8,2,Research & Development,4615,4,1,No
+2081,51,Male,4,1,Research & Development,2461,3,3,Yes
+2082,28,Male,24,3,Research & Development,8722,3,1,Yes
+2083,26,Male,1,1,Research & Development,3955,3,1,No
+2084,30,Male,20,2,Research & Development,9957,3,1,No
+2085,41,Female,7,1,Research & Development,3376,3,3,No
+2088,38,Female,17,3,Research & Development,8823,3,3,No
+2092,40,Male,20,3,Research & Development,10322,4,4,No
+2094,27,Male,8,1,Research & Development,4621,3,3,No
+2096,55,Male,2,3,Research & Development,10976,3,2,No
+2097,28,Female,10,2,Research & Development,3660,3,3,No
+2098,44,Male,1,3,Human Resources,10482,3,1,Yes
+2099,33,Male,5,3,Research & Development,7119,3,4,No
+2100,35,Male,4,3,Sales,9582,4,1,Yes
+2101,33,Female,29,2,Research & Development,4508,4,3,Yes
+2102,28,Male,15,1,Research & Development,2207,3,3,No
+2103,34,Male,3,2,Research & Development,7756,3,4,No
+2105,37,Female,10,2,Sales,6694,3,4,No
+2106,25,Male,4,1,Research & Development,3691,3,4,Yes
+2107,26,Male,21,1,Research & Development,2377,4,3,Yes
+2108,33,Male,25,1,Research & Development,2313,4,2,Yes
+2109,42,Male,2,4,Research & Development,17665,3,1,No
+2111,28,Male,1,1,Research & Development,2596,3,2,Yes
+2113,50,Male,1,2,Sales,4728,3,3,Yes
+2114,33,Female,7,2,Sales,4302,3,2,No
+2115,34,Male,3,1,Research & Development,2979,3,4,No
+2116,48,Male,1,4,Research & Development,16885,4,4,No
+2117,45,Female,9,2,Sales,5593,3,3,No
+2118,52,Male,7,3,Research & Development,10445,3,2,No
+2119,38,Male,10,3,Sales,8740,3,3,No
+2120,29,Female,28,1,Research & Development,2514,4,4,No
+2121,28,Female,3,3,Research & Development,7655,3,2,No
+2124,46,Male,3,4,Sales,17465,3,3,No
+2125,38,Male,2,3,Sales,7351,3,2,No
+2126,43,Female,27,3,Research & Development,10820,3,1,No
+2127,39,Male,2,4,Research & Development,12169,3,4,Yes
+2128,40,Male,14,5,Research & Development,19626,3,3,No
+2131,21,Female,1,1,Research & Development,2070,3,2,No
+2132,39,Male,9,2,Research & Development,6782,3,2,No
+2133,36,Male,18,2,Research & Development,7779,4,4,No
+2135,31,Male,20,1,Sales,2791,3,4,No
+2136,28,Male,2,1,Research & Development,3201,3,2,No
+2137,35,Male,11,2,Sales,4968,3,4,No
+2138,49,Male,8,4,Sales,13120,3,2,No
+2140,34,Male,2,2,Research & Development,4033,3,3,No
+2143,29,Female,10,1,Research & Development,3291,3,2,No
+2148,42,Male,29,2,Research & Development,4272,3,4,No
+2150,29,Male,8,2,Research & Development,5056,3,4,No
+2152,38,Male,1,1,Human Resources,2844,3,3,No
+2154,28,Male,6,1,Research & Development,2703,3,3,No
+2156,18,Male,8,1,Research & Development,1904,3,3,Yes
+2157,33,Female,9,2,Sales,8224,3,1,Yes
+2158,41,Male,12,1,Research & Development,4766,3,4,No
+2160,31,Male,15,1,Research & Development,2610,3,3,Yes
+2161,37,Female,25,2,Research & Development,5731,3,4,No
+2162,27,Male,6,1,Research & Development,2539,3,3,No
+2163,34,Female,9,2,Sales,5714,4,3,No
+2164,35,Male,8,1,Human Resources,4323,3,3,No
+2165,29,Female,23,3,Sales,7336,3,1,Yes
+2166,40,Female,9,3,Research & Development,13499,3,3,No
+2167,42,Male,12,4,Sales,13758,3,1,Yes
+2171,42,Male,4,2,Sales,5155,3,1,No
+2172,35,Male,1,1,Research & Development,2258,3,3,No
+2173,24,Male,24,1,Research & Development,3597,4,2,No
+2175,28,Female,12,1,Research & Development,2515,3,4,Yes
+2177,26,Male,3,1,Research & Development,4420,4,4,No
+2179,30,Male,10,2,Sales,6578,3,3,No
+2180,40,Female,26,2,Research & Development,4422,3,4,No
+2182,35,Male,2,3,Research & Development,10274,3,2,No
+2184,34,Male,1,2,Research & Development,5343,4,1,No
+2185,35,Male,4,1,Research & Development,2376,3,4,No
+2188,43,Female,9,2,Sales,5346,3,3,Yes
+2190,32,Female,2,1,Sales,2827,3,1,No
+2191,56,Female,4,5,Research & Development,19943,3,1,No
+2192,29,Female,6,1,Research & Development,3131,3,4,No
+2193,19,Male,9,1,Research & Development,2552,4,1,No
+2195,45,Female,7,1,Research & Development,4477,3,3,No
+2196,37,Female,1,2,Research & Development,6474,3,4,No
+2198,20,Male,3,1,Research & Development,3033,3,3,No
+2200,44,Male,10,1,Research & Development,2936,3,3,Yes
+2201,53,Female,7,5,Research & Development,18606,3,3,No
+2202,29,Female,15,1,Research & Development,2168,3,4,No
+2203,22,Male,3,1,Research & Development,2853,3,4,Yes
+2204,46,Female,2,4,Sales,17048,4,1,No
+2206,44,Male,17,1,Research & Development,2290,3,3,No
+2207,33,Male,2,1,Human Resources,3600,3,3,No
+2210,41,Male,5,1,Research & Development,2107,3,1,Yes
+2211,30,Male,29,2,Sales,4115,3,1,No
+2212,40,Male,2,2,Sales,4327,3,2,No
+2215,50,Female,2,4,Research & Development,17856,4,1,No
+2216,28,Male,19,1,Research & Development,3196,3,1,No
+2217,46,Male,15,5,Research & Development,19081,3,2,No
+2218,35,Male,17,2,Sales,8966,3,1,No
+2219,24,Female,17,1,Research & Development,2210,3,2,Yes
+2220,33,Female,25,2,Sales,4539,3,3,No
+2221,36,Male,6,1,Research & Development,2741,3,3,No
+2224,30,Male,7,2,Research & Development,3491,3,3,No
+2225,44,Male,29,2,Research & Development,4541,4,4,No
+2226,20,Male,21,1,Sales,2678,3,4,No
+2228,46,Male,2,2,Research & Development,7379,3,4,No
+2231,42,Male,2,2,Human Resources,6272,3,1,No
+2233,60,Male,7,2,Sales,5220,3,4,No
+2234,32,Female,13,1,Research & Development,2743,4,2,No
+2235,32,Female,2,2,Research & Development,4998,3,3,No
+2237,36,Female,1,3,Research & Development,10252,4,1,No
+2238,33,Male,9,1,Research & Development,2781,3,4,No
+2239,40,Female,10,2,Sales,6852,3,2,No
+2240,25,Male,10,2,Sales,4950,3,4,No
+2241,30,Male,1,1,Research & Development,3579,4,2,No
+2242,42,Female,26,3,Research & Development,13191,3,1,No
+2243,35,Female,8,3,Sales,10377,3,4,No
+2244,27,Male,14,1,Research & Development,2235,3,1,No
+2245,54,Female,1,3,Research & Development,10502,3,3,No
+2246,44,Female,2,1,Research & Development,2011,3,4,No
+2248,19,Female,10,1,Research & Development,1859,4,2,Yes
+2249,29,Female,1,1,Research & Development,3760,3,4,No
+2250,54,Male,3,4,Research & Development,17779,3,4,No
+2251,31,Male,11,2,Research & Development,6833,3,1,No
+2252,31,Female,24,2,Research & Development,6812,3,1,No
+2254,59,Female,3,2,Sales,5171,3,4,No
+2255,43,Male,3,5,Research & Development,19740,3,4,No
+2256,49,Male,4,5,Research & Development,18711,3,3,No
+2257,36,Male,3,1,Research & Development,3692,3,2,No
+2258,48,Male,2,1,Research & Development,2559,3,2,No
+2259,27,Male,4,1,Research & Development,2517,3,3,No
+2260,29,Male,7,2,Research & Development,6623,3,4,No
+2263,48,Male,1,5,Research & Development,18265,3,4,No
+2264,29,Female,1,4,Research & Development,16124,3,4,No
+2265,34,Female,20,1,Research & Development,2585,3,3,No
+2267,44,Male,5,5,Sales,18213,3,2,No
+2268,33,Male,10,3,Sales,8380,3,3,No
+2269,19,Female,25,1,Research & Development,2994,3,4,No
+2270,23,Male,1,1,Research & Development,1223,4,3,No
+2273,25,Male,24,1,Sales,1118,3,4,Yes
+2275,26,Male,4,1,Research & Development,2875,4,4,No
+2277,45,Female,2,5,Sales,18824,3,2,Yes
+2278,55,Male,8,4,Research & Development,13577,3,2,No
+2279,21,Female,10,1,Research & Development,2625,4,3,Yes
+2280,46,Female,4,5,Sales,18789,3,2,No
+2281,34,Female,2,2,Sales,4538,3,1,No
+2282,51,Male,9,5,Sales,19847,4,2,No
+2283,59,Male,18,3,Research & Development,10512,3,4,No
+2285,34,Female,19,2,Research & Development,4444,3,2,No
+2286,28,Male,1,1,Research & Development,2154,3,3,No
+2288,44,Male,4,5,Research & Development,19190,3,1,No
+2289,34,Male,11,2,Human Resources,4490,3,2,No
+2291,35,Male,6,1,Research & Development,3506,3,3,No
+2292,42,Female,7,2,Research & Development,2372,3,2,No
+2293,43,Female,4,3,Sales,10231,3,4,No
+2294,36,Female,2,2,Research & Development,5410,3,2,No
+2295,44,Female,15,3,Research & Development,7978,3,4,Yes
+2296,28,Male,2,1,Research & Development,3867,3,4,No
+2297,51,Female,6,1,Research & Development,2838,3,3,No
+2298,30,Female,9,2,Research & Development,4695,3,3,No
+2299,29,Female,7,1,Research & Development,3339,3,3,Yes
+2301,28,Male,1,1,Research & Development,2080,3,1,No
+2303,25,Female,1,1,Research & Development,2096,3,2,No
+2304,32,Male,8,2,Sales,6209,3,4,No
+2306,45,Female,25,5,Research & Development,18061,4,2,No
+2307,39,Female,13,4,Research & Development,17123,3,2,No
+2308,58,Male,23,1,Research & Development,2372,3,3,No
+2309,32,Male,7,2,Research & Development,4883,3,3,Yes
+2310,39,Male,23,1,Research & Development,3904,3,1,Yes
+2311,30,Female,6,2,Research & Development,4627,3,4,No
+2312,36,Female,10,3,Research & Development,7094,3,3,No
+2314,46,Female,1,1,Human Resources,3423,3,1,No
+2315,28,Female,1,2,Research & Development,6674,3,4,No
+2317,50,Female,28,4,Research & Development,16880,3,1,No
+2318,40,Male,25,3,Sales,9094,3,2,Yes
+2319,52,Male,5,3,Sales,8446,3,2,Yes
+2321,30,Female,17,3,Research & Development,11916,4,1,No
+2322,39,Male,18,2,Research & Development,4534,3,3,No
+2324,31,Female,2,3,Sales,9852,3,3,No
+2329,41,Male,10,2,Sales,6151,3,2,No
+2331,31,Female,1,1,Sales,2302,3,2,Yes
+2333,44,Male,3,1,Research & Development,2362,3,1,Yes
+2334,42,Male,2,4,Research & Development,17861,3,3,No
+2336,55,Female,2,5,Research & Development,19187,3,3,No
+2338,56,Male,8,5,Human Resources,19717,3,2,No
+2340,40,Male,16,1,Research & Development,3544,3,3,No
+2344,34,Male,9,3,Research & Development,8500,3,4,No
+2346,40,Male,2,2,Research & Development,4661,3,4,No
+2349,41,Female,1,2,Sales,4103,3,1,No
+2350,35,Male,4,2,Research & Development,4249,3,3,No
+2352,51,Male,5,4,Human Resources,14026,3,2,No
+2355,38,Female,2,2,Sales,6893,3,1,No
+2356,34,Female,15,2,Sales,6125,3,1,No
+2358,25,Male,19,1,Research & Development,3669,3,4,No
+2360,58,Female,7,3,Research & Development,10008,3,1,Yes
+2361,40,Male,1,1,Research & Development,2387,4,2,No
+2362,36,Female,7,2,Sales,4639,3,1,No
+2363,48,Male,4,3,Research & Development,7898,3,4,No
+2364,27,Female,11,1,Sales,2534,3,4,No
+2367,51,Female,11,4,Research & Development,13142,3,2,No
+2368,18,Female,1,1,Research & Development,1611,3,4,No
+2369,35,Female,1,2,Research & Development,5363,3,4,No
+2371,27,Male,2,2,Sales,5071,4,4,No
+2372,55,Male,13,4,Sales,13695,3,3,Yes
+2373,56,Male,23,4,Research & Development,13402,3,2,No
+2374,34,Female,26,1,Research & Development,2029,4,3,No
+2375,40,Female,2,2,Research & Development,6377,4,3,No
+2377,34,Male,29,2,Research & Development,5429,3,3,No
+2379,31,Female,2,1,Sales,2785,3,4,Yes
+2380,35,Female,18,2,Sales,4614,3,3,Yes
+2382,38,Male,7,1,Research & Development,2610,3,3,No
+2383,34,Female,2,2,Research & Development,6687,3,4,No
+2387,28,Male,26,2,Sales,4724,3,1,No
+2389,31,Male,22,2,Research & Development,6179,3,3,Yes
+2390,39,Male,21,2,Sales,6120,3,4,No
+2391,51,Male,2,3,Sales,10596,3,2,No
+2392,41,Female,22,2,Research & Development,5467,3,4,No
+2394,37,Male,4,1,Research & Development,2996,3,3,No
+2395,33,Male,5,2,Sales,9998,3,4,No
+2396,32,Male,2,2,Sales,4078,3,2,No
+2397,39,Male,25,3,Research & Development,10920,4,3,No
+2399,25,Male,18,2,Sales,6232,3,3,No
+2401,52,Female,28,4,Research & Development,13247,3,3,No
+2402,43,Female,6,2,Research & Development,4081,3,3,No
+2403,27,Female,10,2,Sales,5769,3,4,No
+2405,27,Female,17,1,Research & Development,2394,3,3,Yes
+2407,26,Male,2,1,Research & Development,3904,3,4,No
+2408,42,Female,10,4,Human Resources,16799,3,1,No
+2409,52,Female,8,1,Research & Development,2950,3,1,No
+2411,37,Female,11,1,Research & Development,3629,3,3,No
+2412,35,Male,18,3,Research & Development,9362,3,4,No
+2415,25,Male,1,1,Research & Development,3229,3,4,No
+2417,26,Male,7,1,Research & Development,3578,3,1,No
+2419,29,Male,17,3,Human Resources,7988,3,1,No
+2420,49,Male,28,2,Research & Development,4284,4,1,Yes
+2421,29,Female,14,3,Research & Development,7553,3,4,Yes
+2422,54,Female,1,4,Research & Development,17328,3,4,No
+2423,58,Female,1,5,Research & Development,19701,4,1,No
+2424,55,Male,1,4,Research & Development,14732,3,4,No
+2425,36,Female,3,2,Sales,9278,3,2,No
+2427,31,Female,1,1,Sales,1359,3,3,Yes
+2428,30,Female,7,2,Sales,4779,3,1,No
+2430,31,Female,8,4,Research & Development,16422,3,2,No
+2431,34,Male,1,1,Research & Development,2996,3,1,No
+2433,31,Female,8,1,Research & Development,1261,3,2,Yes
+2434,27,Male,11,1,Research & Development,2099,3,1,No
+2435,36,Male,4,2,Research & Development,5810,3,4,No
+2436,36,Female,16,2,Sales,5647,3,1,No
+2438,47,Male,1,1,Research & Development,3420,3,4,No
+2439,25,Male,9,1,Sales,4400,3,1,Yes
+2440,37,Male,5,1,Research & Development,3500,3,3,No
+2441,56,Female,1,1,Research & Development,2066,4,1,No
+2443,47,Female,2,4,Research & Development,17169,3,3,No
+2445,24,Female,4,2,Sales,4162,3,3,No
+2446,32,Male,7,2,Sales,9204,3,4,No
+2447,34,Female,1,1,Research & Development,3294,3,2,No
+2448,41,Male,5,1,Research & Development,2127,3,3,No
+2449,40,Male,9,2,Research & Development,3975,3,3,No
+2453,31,Male,8,3,Sales,10793,3,4,No
+2457,46,Male,9,3,Sales,10096,3,4,Yes
+2458,39,Female,2,1,Research & Development,3646,4,1,Yes
+2459,31,Female,1,3,Research & Development,7446,3,2,Yes
+2460,45,Male,20,3,Research & Development,10851,3,1,No
+2461,31,Female,8,1,Human Resources,2109,3,2,No
+2464,31,Male,2,1,Research & Development,3722,3,4,Yes
+2465,45,Male,29,3,Research & Development,9380,3,4,No
+2466,48,Male,7,2,Sales,5486,3,1,No
+2467,34,Female,9,1,Human Resources,2742,3,3,Yes
+2468,40,Male,8,3,Research & Development,13757,3,2,No
+2469,28,Male,5,2,Sales,8463,3,1,No
+2471,44,Male,5,1,Research & Development,3162,3,3,No
+2472,53,Male,2,4,Research & Development,16598,3,2,No
+2473,49,Male,5,2,Research & Development,6651,3,3,No
+2474,40,Male,2,1,Research & Development,2345,3,3,No
+2475,44,Male,20,1,Research & Development,3420,3,2,No
+2477,33,Male,7,2,Sales,4373,3,1,No
+2478,34,Male,3,2,Sales,4759,3,1,No
+2479,30,Male,16,2,Sales,5301,3,3,No
+2480,42,Female,9,1,Research & Development,3673,3,4,No
+2481,44,Female,1,2,Sales,4768,3,3,No
+2482,30,Male,7,1,Research & Development,1274,3,3,No
+2483,57,Male,1,2,Research & Development,4900,4,3,No
+2484,49,Male,7,3,Research & Development,10466,3,2,No
+2485,34,Male,15,4,Research & Development,17007,3,1,No
+2486,28,Male,1,1,Sales,2909,3,3,Yes
+2487,29,Female,13,2,Sales,5765,3,2,Yes
+2489,34,Female,24,2,Sales,4599,4,2,Yes
+2492,35,Male,7,1,Sales,2404,3,3,No
+2494,24,Male,9,1,Research & Development,3172,3,1,Yes
+2495,24,Female,13,1,Sales,2033,3,2,No
+2496,44,Male,2,3,Research & Development,10209,3,3,No
+2497,29,Male,19,2,Sales,8620,3,3,No
+2499,30,Male,1,1,Human Resources,2064,4,3,No
+2501,55,Male,4,2,Research & Development,4035,3,3,No
+2502,33,Female,4,1,Research & Development,3838,3,2,No
+2503,47,Female,14,2,Sales,4591,3,3,No
+2504,28,Male,2,1,Research & Development,2561,3,1,Yes
+2506,28,Male,1,1,Research & Development,1563,3,3,No
+2507,28,Male,7,2,Sales,4898,3,1,No
+2509,49,Female,3,2,Research & Development,4789,4,1,No
+2513,29,Female,2,1,Research & Development,3180,3,2,No
+2514,28,Male,29,2,Research & Development,6549,3,2,No
+2515,33,Male,8,2,Research & Development,6388,3,3,No
+2516,32,Male,10,3,Research & Development,11244,4,4,No
+2520,54,Female,11,4,Research & Development,16032,4,4,No
+2522,29,Male,1,1,Research & Development,2362,3,1,Yes
+2523,44,Male,28,4,Research & Development,16328,3,1,No
+2525,39,Female,6,3,Research & Development,8376,3,2,No
+2527,46,Female,3,4,Sales,16606,3,2,No
+2529,35,Female,16,3,Research & Development,8606,3,2,No
+2533,23,Male,20,2,Research & Development,2272,3,3,No
+2534,40,Male,9,1,Research & Development,2018,3,1,Yes
+2535,34,Male,1,3,Sales,7083,3,3,No
+2537,31,Female,3,1,Research & Development,4084,3,3,Yes
+2539,50,Male,22,4,Research & Development,14411,3,4,No
+2541,34,Male,7,1,Sales,2308,4,3,No
+2542,42,Male,2,1,Research & Development,4841,3,2,No
+2543,37,Male,13,2,Research & Development,4285,3,4,No
+2544,29,Female,8,2,Research & Development,9715,3,1,No
+2545,33,Male,25,2,Research & Development,4320,3,2,No
+2546,45,Male,28,1,Research & Development,2132,4,4,No
+2547,42,Male,2,3,Research & Development,10124,3,4,No
+2548,40,Male,9,2,Sales,5473,3,1,No
+2549,33,Male,28,2,Research & Development,5207,3,3,No
+2550,40,Male,6,4,Human Resources,16437,4,4,No
+2551,24,Male,21,1,Research & Development,2296,3,1,No
+2552,40,Male,8,2,Research & Development,4069,3,4,No
+2553,45,Male,1,3,Research & Development,7441,3,2,No
+2554,35,Female,28,1,Sales,2430,4,3,No
+2555,32,Female,5,2,Research & Development,5878,3,2,No
+2556,36,Male,2,1,Sales,2644,4,4,No
+2557,48,Female,16,2,Sales,6439,3,3,No
+2558,29,Male,9,1,Research & Development,2451,3,3,No
+2560,33,Male,8,2,Sales,6392,3,1,No
+2562,30,Male,1,2,Sales,9714,3,1,Yes
+2563,38,Male,10,2,Human Resources,6077,3,3,No
+2564,35,Male,1,1,Research & Development,2450,3,1,No
+2568,30,Male,29,3,Sales,9250,3,2,No
+2569,35,Female,2,1,Research & Development,2074,3,1,Yes
+2572,53,Female,2,3,Research & Development,10169,3,4,Yes
+2573,38,Male,2,2,Research & Development,4855,3,2,Yes
+2574,32,Male,1,2,Research & Development,4087,3,1,No
+2576,48,Female,15,1,Research & Development,2367,3,1,No
+2577,34,Male,7,1,Research & Development,2972,3,4,No
+2578,55,Male,26,5,Sales,19586,4,4,No
+2580,34,Male,1,2,Research & Development,5484,3,4,No
+2581,26,Female,3,1,Research & Development,2061,4,4,No
+2582,38,Male,14,2,Sales,9924,3,2,No
+2583,38,Female,16,2,Sales,4198,3,2,No
+2585,36,Female,1,2,Sales,6815,3,3,No
+2586,29,Male,3,1,Research & Development,4723,3,1,No
+2587,35,Female,10,2,Research & Development,6142,3,3,No
+2588,39,Male,6,3,Sales,8237,3,3,No
+2590,29,Male,2,2,Research & Development,8853,3,4,No
+2591,50,Male,9,5,Sales,19331,3,3,No
+2592,23,Male,10,1,Research & Development,2073,3,3,No
+2594,36,Male,6,2,Research & Development,5562,3,1,No
+2595,42,Male,9,5,Research & Development,19613,4,4,No
+2596,35,Male,28,2,Research & Development,3407,3,3,No
+2597,34,Male,10,2,Research & Development,5063,3,3,No
+2598,40,Female,14,2,Sales,4639,3,1,No
+2599,43,Male,27,1,Research & Development,4876,3,2,No
+2601,35,Male,7,1,Research & Development,2690,3,4,No
+2602,46,Male,1,4,Sales,17567,3,1,No
+2604,28,Male,24,1,Research & Development,2408,3,2,Yes
+2605,22,Female,26,1,Research & Development,2814,3,3,No
+2606,50,Male,20,4,Research & Development,11245,3,3,No
+2607,32,Female,5,1,Research & Development,3312,3,4,No
+2608,44,Female,7,5,Research & Development,19049,3,4,No
+2609,30,Male,7,1,Research & Development,2141,3,2,No
+2611,45,Female,5,2,Research & Development,5769,3,1,No
+2612,45,Male,26,2,Sales,4385,3,1,No
+2613,31,Male,2,2,Sales,5332,3,1,No
+2614,36,Female,12,2,Research & Development,4663,3,3,No
+2615,34,Male,10,2,Research & Development,4724,3,4,No
+2617,49,Female,25,1,Research & Development,3211,3,1,No
+2618,39,Male,10,2,Research & Development,5377,3,1,No
+2619,27,Male,19,1,Research & Development,4066,3,1,No
+2621,35,Male,18,2,Research & Development,5208,3,1,No
+2622,28,Female,27,2,Research & Development,4877,4,1,No
+2623,21,Male,5,1,Research & Development,3117,3,4,No
+2624,18,Female,3,1,Sales,1569,3,4,Yes
+2625,47,Female,26,5,Human Resources,19658,3,3,No
+2627,39,Male,3,2,Research & Development,3069,3,3,No
+2628,40,Female,15,3,Research & Development,10435,3,3,No
+2630,35,Female,8,2,Research & Development,4148,3,3,No
+2631,37,Male,19,2,Research & Development,5768,3,3,No
+2633,39,Female,4,2,Research & Development,5042,3,3,No
+2635,45,Female,2,2,Research & Development,5770,3,4,No
+2638,38,Female,2,3,Research & Development,7756,3,3,No
+2639,35,Male,10,3,Sales,10306,3,1,Yes
+2640,37,Female,10,1,Research & Development,3936,3,2,No
+2641,40,Female,16,3,Research & Development,7945,3,4,No
+2642,44,Male,1,2,Human Resources,5743,3,4,No
+2644,48,Male,4,4,Research & Development,15202,4,4,No
+2645,35,Male,15,2,Sales,5440,3,4,Yes
+2646,24,Female,2,1,Research & Development,3760,3,4,No
+2647,27,Female,8,1,Research & Development,3517,3,3,No
+2648,27,Male,2,1,Research & Development,2580,3,4,No
+2649,40,Male,7,1,Research & Development,2166,3,1,Yes
+2650,29,Male,10,2,Sales,5869,3,3,No
+2651,36,Female,5,3,Research & Development,8008,3,1,No
+2653,25,Male,2,2,Research & Development,5206,3,3,No
+2654,39,Male,12,2,Research & Development,5295,4,2,No
+2655,49,Female,22,4,Research & Development,16413,3,2,No
+2656,50,Female,17,3,Research & Development,13269,3,1,No
+2657,20,Female,2,1,Sales,2783,3,3,No
+2658,34,Female,3,2,Research & Development,5433,3,2,No
+2659,36,Male,7,1,Research & Development,2013,3,2,No
+2661,49,Female,6,4,Research & Development,13966,3,3,No
+2662,36,Female,1,2,Research & Development,4374,3,3,No
+2664,36,Male,3,2,Research & Development,6842,4,1,No
+2665,54,Female,22,4,Research & Development,17426,4,3,No
+2666,43,Male,15,4,Research & Development,17603,4,3,No
+2667,35,Male,12,2,Sales,4581,4,4,Yes
+2668,38,Male,1,2,Research & Development,4735,3,4,No
+2669,29,Male,5,2,Sales,4187,3,2,No
+2670,33,Male,2,2,Sales,5505,3,4,No
+2671,32,Male,2,2,Research & Development,5470,3,2,No
+2673,31,Female,5,2,Sales,5476,3,4,No
+2674,49,Female,16,1,Research & Development,2587,3,1,No
+2675,38,Female,2,1,Research & Development,2440,4,2,No
+2676,47,Female,2,4,Sales,15972,3,2,No
+2677,49,Male,1,4,Research & Development,15379,3,3,No
+2678,41,Male,23,3,Sales,7082,3,3,No
+2680,20,Male,9,1,Sales,2728,3,1,No
+2681,33,Female,16,2,Sales,5368,4,4,No
+2682,36,Male,26,2,Research & Development,5347,3,3,No
+2683,44,Female,1,1,Human Resources,3195,3,4,No
+2684,23,Male,8,1,Research & Development,3989,3,3,Yes
+2687,38,Female,4,1,Research & Development,3306,3,3,No
+2689,53,Male,24,3,Research & Development,7005,3,4,No
+2691,48,Female,7,1,Sales,2655,3,3,Yes
+2692,32,Male,2,1,Research & Development,1393,3,2,Yes
+2693,26,Male,7,1,Research & Development,2570,4,4,No
+2694,55,Male,22,1,Research & Development,3537,3,2,No
+2696,34,Male,5,2,Research & Development,3986,3,4,No
+2697,60,Male,1,3,Research & Development,10883,4,4,No
+2698,33,Male,21,1,Research & Development,2028,3,2,No
+2700,37,Male,1,2,Sales,9525,3,4,No
+2701,34,Female,19,1,Research & Development,2929,3,4,No
+2702,23,Male,7,1,Sales,2275,4,4,Yes
+2703,44,Female,2,3,Research & Development,7879,3,4,No
+2704,35,Male,2,1,Research & Development,4930,3,4,No
+2706,43,Male,2,2,Sales,7847,3,4,No
+2707,24,Male,9,1,Research & Development,4401,3,3,No
+2708,41,Male,6,3,Sales,9241,3,3,No
+2709,29,Female,9,1,Research & Development,2974,3,3,No
+2710,36,Female,2,2,Sales,4502,3,4,No
+2712,45,Male,1,3,Research & Development,10748,4,3,No
+2714,24,Male,22,1,Human Resources,1555,3,3,Yes
+2716,47,Male,9,4,Sales,12936,3,3,Yes
+2718,26,Male,17,1,Research & Development,2305,3,3,No
+2719,45,Female,28,4,Research & Development,16704,3,2,No
+2720,32,Male,10,1,Research & Development,3433,3,3,No
+2721,31,Male,2,1,Research & Development,3477,3,3,No
+2722,41,Male,4,2,Human Resources,6430,3,2,No
+2724,40,Female,8,2,Research & Development,6516,3,1,No
+2725,24,Male,29,1,Research & Development,3907,3,1,No
+2727,46,Male,13,2,Research & Development,5562,3,2,No
+2728,35,Male,27,2,Research & Development,6883,3,3,No
+2729,30,Male,16,1,Research & Development,2862,3,4,No
+2731,47,Male,2,2,Sales,4978,3,2,No
+2732,46,Male,2,3,Sales,10368,3,4,No
+2733,36,Male,13,2,Sales,6134,3,1,Yes
+2734,32,Male,1,2,Sales,6735,3,2,Yes
+2735,23,Female,4,1,Research & Development,3295,3,2,No
+2736,31,Female,24,2,Research & Development,5238,4,4,No
+2737,39,Male,1,2,Research & Development,6472,3,4,No
+2739,32,Male,19,3,Sales,9610,3,3,No
+2740,40,Male,7,5,Sales,19833,3,2,No
+2744,45,Female,4,3,Human Resources,9756,4,3,No
+2745,30,Female,2,1,Research & Development,4968,3,1,No
+2746,24,Male,10,1,Human Resources,2145,3,4,No
+2747,30,Female,8,1,Human Resources,2180,3,4,Yes
+2749,31,Male,5,2,Sales,8346,3,3,No
+2751,27,Female,8,1,Research & Development,3445,3,4,No
+2752,29,Female,9,1,Sales,2760,3,2,Yes
+2753,29,Male,1,2,Research & Development,6294,3,3,No
+2754,30,Male,15,3,Sales,7140,3,1,No
+2755,34,Male,2,1,Research & Development,2932,3,4,No
+2756,33,Female,2,2,Sales,5147,3,2,No
+2757,49,Female,11,2,Sales,4507,3,4,No
+2758,33,Female,16,3,Sales,8564,4,1,Yes
+2760,38,Female,2,1,Research & Development,2468,3,2,No
+2761,31,Male,16,3,Sales,8161,3,3,Yes
+2762,29,Female,4,1,Research & Development,2109,3,1,No
+2763,30,Male,16,2,Research & Development,5294,3,3,No
+2764,32,Male,5,1,Research & Development,2718,3,2,No
+2766,38,Male,18,2,Research & Development,5811,3,4,No
+2767,43,Male,17,1,Research & Development,2437,3,3,Yes
+2768,42,Male,12,1,Research & Development,2766,4,2,No
+2770,55,Male,2,5,Research & Development,19038,3,1,No
+2771,33,Male,4,2,Research & Development,3055,3,2,No
+2772,41,Male,9,1,Research & Development,2289,4,1,No
+2774,34,Male,10,2,Sales,4001,3,3,No
+2775,53,Female,1,4,Research & Development,12965,4,3,No
+2778,43,Male,2,1,Human Resources,3539,3,4,No
+2779,34,Female,3,2,Sales,6029,3,4,No
+2780,21,Male,7,1,Sales,2679,3,2,Yes
+2782,38,Female,6,1,Research & Development,3702,3,3,No
+2783,22,Female,8,1,Research & Development,2398,3,1,Yes
+2784,31,Female,29,2,Sales,5468,3,4,No
+2786,51,Female,3,3,Research & Development,13116,3,3,No
+2787,37,Male,9,2,Sales,4189,3,2,No
+2789,46,Male,2,5,Research & Development,19328,3,4,No
+2790,36,Male,10,3,Research & Development,8321,3,1,No
+2792,44,Male,1,1,Research & Development,2342,3,2,Yes
+2794,37,Male,8,2,Human Resources,4071,3,2,No
+2797,35,Male,27,2,Sales,5813,3,4,Yes
+2798,33,Male,8,1,Research & Development,3143,3,1,No
+2799,28,Male,1,1,Research & Development,2044,3,4,No
+2800,39,Male,10,3,Research & Development,13464,4,3,No
+2801,46,Male,26,2,Sales,7991,3,2,No
+2802,40,Female,2,1,Research & Development,3377,3,1,No
+2803,42,Male,13,2,Research & Development,5538,3,1,No
+2804,35,Male,2,2,Research & Development,5762,3,4,No
+2805,38,Male,2,1,Human Resources,2592,3,2,No
+2807,34,Male,9,2,Research & Development,5346,3,1,Yes
+2809,37,Male,10,2,Research & Development,4213,3,1,Yes
+2812,39,Male,20,2,Sales,4127,3,4,No
+2813,43,Male,9,1,Research & Development,2438,3,3,No
+2814,41,Male,5,2,Research & Development,6870,3,2,No
+2815,41,Female,4,3,Sales,10447,3,3,No
+2816,30,Female,10,3,Research & Development,9667,3,3,No
+2818,26,Female,20,1,Human Resources,2148,3,2,Yes
+2821,46,Female,21,2,Research & Development,8926,4,2,Yes
+2822,40,Female,1,2,Research & Development,6513,3,4,No
+2823,34,Male,8,2,Sales,6799,4,3,No
+2824,58,Male,2,4,Sales,16291,4,2,No
+2826,35,Male,23,1,Research & Development,2705,3,3,No
+2827,47,Female,4,3,Research & Development,10333,3,2,No
+2829,40,Female,12,2,Research & Development,4448,3,1,No
+2830,54,Female,7,2,Research & Development,6854,3,4,No
+2833,31,Female,7,3,Sales,9637,3,1,No
+2834,28,Female,1,1,Research & Development,3591,4,1,No
+2835,38,Female,2,2,Sales,5405,4,4,No
+2836,26,Male,10,2,Sales,4684,3,4,No
+2837,58,Male,15,4,Research & Development,15787,3,3,No
+2839,18,Female,14,1,Research & Development,1514,3,3,No
+2842,31,Male,18,1,Human Resources,2956,3,1,Yes
+2844,29,Male,13,1,Human Resources,2335,3,1,Yes
+2845,45,Female,2,2,Sales,5154,4,3,No
+2847,36,Female,2,2,Research & Development,6962,4,2,No
+2849,43,Male,2,2,Sales,5675,4,4,No
+2850,27,Female,5,1,Research & Development,2379,3,4,No
+2852,29,Male,20,1,Research & Development,3812,3,4,No
+2853,32,Male,10,2,Sales,4648,3,4,No
+2854,42,Male,10,1,Research & Development,2936,4,3,No
+2856,47,Female,9,1,Research & Development,2105,3,3,No
+2857,46,Male,2,3,Research & Development,8578,3,4,No
+2858,28,Male,1,1,Human Resources,2706,3,4,No
+2859,29,Male,29,2,Research & Development,6384,3,3,No
+2860,42,Male,8,1,Research & Development,3968,3,3,No
+2862,32,Male,2,2,Sales,9907,3,2,Yes
+2863,46,Female,3,4,Sales,13225,3,1,No
+2864,27,Female,23,2,Sales,3540,4,3,No
+2865,29,Male,6,1,Human Resources,2804,3,2,No
+2866,43,Female,6,5,Research & Development,19392,3,3,No
+2867,48,Male,10,5,Research & Development,19665,3,2,No
+2868,29,Male,24,1,Research & Development,2439,4,4,Yes
+2869,46,Female,10,3,Sales,7314,4,2,Yes
+2870,27,Female,15,1,Research & Development,4774,3,1,No
+2871,39,Male,19,2,Research & Development,3902,3,4,No
+2873,55,Male,2,1,Research & Development,2662,4,4,No
+2875,28,Female,3,1,Sales,2856,3,2,No
+2876,30,Male,9,1,Sales,1081,3,4,Yes
+2878,22,Male,7,1,Research & Development,2472,4,2,Yes
+2880,36,Female,10,2,Sales,5673,3,3,No
+2881,31,Male,20,2,Research & Development,4197,3,3,No
+2882,34,Male,4,3,Sales,9713,3,4,No
+2883,29,Male,7,1,Research & Development,2062,3,1,No
+2885,37,Male,7,2,Research & Development,4284,4,1,No
+2886,35,Female,16,2,Research & Development,4788,3,2,No
+2888,45,Female,25,2,Research & Development,5906,3,4,No
+2890,36,Male,2,2,Human Resources,3886,4,4,No
+2892,40,Male,1,4,Research & Development,16823,3,1,No
+2893,26,Female,1,1,Research & Development,2933,3,3,No
+2898,27,Female,2,2,Sales,6500,3,3,No
+2900,48,Female,22,4,Research & Development,17174,3,4,No
+2903,44,Male,1,2,Research & Development,5033,3,1,No
+2905,34,Male,16,1,Research & Development,2307,4,1,Yes
+2907,56,Male,24,1,Research & Development,2587,3,4,Yes
+2908,36,Male,17,2,Sales,5507,3,2,No
+2909,41,Female,8,2,Sales,4393,4,2,No
+2911,42,Male,6,3,Research & Development,13348,3,1,No
+2912,31,Female,10,2,Sales,6583,3,4,No
+2915,34,Female,3,2,Sales,8103,3,4,No
+2916,31,Female,4,1,Research & Development,3978,3,3,No
+2918,26,Male,6,1,Research & Development,2544,3,4,No
+2922,45,Male,1,2,Research & Development,5399,3,3,No
+2924,33,Male,10,2,Sales,5487,3,3,No
+2927,28,Male,1,2,Sales,6834,3,4,No
+2928,29,Male,24,1,Sales,1091,3,1,Yes
+2929,39,Female,21,2,Sales,5736,3,3,No
+2931,27,Male,2,1,Research & Development,2226,3,2,No
+2932,34,Male,22,2,Research & Development,5747,3,4,No
+2933,28,Female,13,2,Sales,9854,3,3,Yes
+2934,47,Male,14,2,Research & Development,5467,3,2,No
+2935,56,Female,11,2,Sales,5380,3,1,No
+2936,39,Male,9,2,Research & Development,5151,4,1,No
+2937,38,Female,8,2,Research & Development,2133,3,2,No
+2938,58,Female,21,4,Sales,17875,3,4,No
+2939,32,Female,5,1,Research & Development,2432,3,3,Yes
+2940,38,Male,9,1,Research & Development,4771,3,4,No
+2941,49,Male,2,5,Research & Development,19161,3,4,No
+2943,42,Male,12,2,Sales,5087,3,4,No
+2944,27,Female,22,1,Human Resources,2863,3,2,Yes
+2945,35,Male,18,2,Sales,5561,3,1,No
+2947,28,Male,16,1,Research & Development,2144,3,3,No
+2948,31,Male,3,1,Research & Development,3065,3,1,No
+2949,36,Male,9,1,Research & Development,2810,4,2,No
+2950,34,Male,1,3,Sales,9888,4,4,No
+2951,34,Male,13,3,Sales,8628,3,3,No
+2952,26,Male,1,1,Research & Development,2867,3,1,No
+2954,29,Male,1,2,Research & Development,5373,3,1,No
+2955,32,Female,15,2,Research & Development,6667,3,4,No
+2956,31,Male,1,2,Research & Development,5003,4,1,No
+2960,28,Male,17,1,Research & Development,2367,3,4,Yes
+2961,38,Male,1,1,Sales,2858,3,1,No
+2962,35,Female,7,2,Sales,5204,3,4,No
+2965,27,Male,9,2,Sales,4105,3,4,No
+2966,32,Male,5,2,Research & Development,9679,4,4,No
+2967,31,Male,26,2,Sales,5617,3,4,Yes
+2968,53,Male,24,3,Sales,10448,3,1,Yes
+2969,54,Female,9,2,Research & Development,2897,3,3,No
+2970,33,Male,7,2,Research & Development,5968,4,3,No
+2971,43,Male,11,3,Research & Development,7510,3,3,No
+2972,38,Male,1,1,Human Resources,2991,3,2,No
+2973,55,Male,26,5,Human Resources,19636,3,2,No
+2974,31,Female,2,1,Research & Development,1129,3,4,No
+2975,39,Male,15,4,Sales,13341,3,1,No
+2976,42,Male,23,2,Research & Development,4332,3,3,No
+2979,31,Female,10,3,Research & Development,11031,4,3,No
+2980,54,Female,10,2,Research & Development,4440,3,1,No
+2981,24,Male,1,2,Research & Development,4617,3,3,No
+2982,23,Male,12,1,Research & Development,2647,3,4,No
+2985,40,Female,11,2,Research & Development,6323,3,3,No
+2986,40,Female,2,2,Sales,5677,3,2,No
+2987,25,Female,2,1,Human Resources,2187,3,2,No
+2989,30,Male,1,1,Research & Development,3748,3,2,No
+2992,25,Male,2,1,Research & Development,3977,3,3,No
+2993,47,Male,25,3,Research & Development,8633,4,3,No
+2994,33,Male,1,1,Research & Development,2008,3,3,No
+2995,38,Male,1,2,Sales,4440,3,2,No
+2996,31,Male,2,1,Sales,3067,3,3,No
+2997,38,Male,6,2,Research & Development,5321,3,3,No
+2998,42,Male,18,2,Research & Development,5410,3,1,No
+2999,41,Male,1,1,Research & Development,2782,4,4,No
+3000,47,Female,1,3,Research & Development,11957,3,2,No
+3003,35,Male,11,1,Research & Development,2660,3,3,No
+3007,22,Male,1,1,Research & Development,3375,3,3,No
+3008,35,Male,9,2,Research & Development,5098,3,3,No
+3009,33,Female,15,2,Research & Development,4878,3,4,No
+3010,32,Female,29,1,Research & Development,2837,3,2,No
+3012,40,Male,1,1,Research & Development,2406,3,4,No
+3013,32,Male,1,1,Sales,2269,3,2,No
+3014,39,Male,24,2,Research & Development,4108,3,4,No
+3015,38,Female,10,3,Research & Development,13206,3,3,No
+3016,32,Female,1,3,Sales,10422,3,4,No
+3017,37,Female,10,3,Research & Development,13744,4,4,No
+3018,25,Female,8,2,Sales,4907,4,3,No
+3019,52,Male,29,1,Sales,3482,3,4,No
+3020,44,Male,1,1,Research & Development,2436,3,4,No
+3021,21,Male,5,1,Sales,2380,3,1,No
+3022,39,Male,9,5,Research & Development,19431,3,4,No
+3023,23,Male,9,1,Sales,1790,3,1,Yes
+3024,36,Female,3,3,Sales,7644,3,4,No
+3025,36,Female,4,2,Research & Development,5131,3,2,No
+3026,56,Male,1,2,Research & Development,6306,4,3,No
+3027,29,Male,1,1,Research & Development,4787,3,4,Yes
+3031,42,Male,2,5,Research & Development,18880,3,3,No
+3032,56,Male,7,1,Research & Development,2339,3,3,Yes
+3034,41,Female,28,4,Research & Development,13570,4,2,No
+3035,34,Female,28,2,Sales,6712,4,3,No
+3036,36,Male,15,2,Sales,5406,4,4,No
+3037,41,Male,3,2,Sales,8938,3,2,No
+3038,32,Male,2,1,Research & Development,2439,3,1,No
+3040,35,Female,26,3,Human Resources,8837,3,4,No
+3041,38,Female,10,2,Sales,5343,3,4,No
+3044,50,Male,1,2,Sales,6728,3,3,Yes
+3045,36,Female,11,2,Sales,6652,3,4,No
+3046,45,Female,20,2,Sales,4850,3,3,No
+3048,40,Male,2,1,Research & Development,2809,3,3,No
+3049,35,Male,18,2,Research & Development,5689,3,3,No
+3051,40,Female,2,1,Research & Development,2001,3,3,No
+3052,35,Female,1,1,Research & Development,2977,3,4,No
+3053,29,Male,13,2,Research & Development,4025,3,2,No
+3054,29,Female,28,1,Research & Development,3785,3,1,No
+3055,50,Male,28,3,Sales,10854,3,1,Yes
+3056,39,Female,24,4,Sales,12031,3,4,No
+3057,31,Male,5,2,Research & Development,9936,3,1,No
+3060,26,Female,5,1,Sales,2966,3,3,No
+3061,36,Male,23,2,Research & Development,2571,3,4,No
+3062,39,Male,6,3,Research & Development,9991,3,1,No
+3064,27,Male,4,2,Research & Development,6142,4,2,No
+3065,49,Male,2,2,Sales,5390,3,2,No
+3068,34,Male,8,2,Research & Development,4404,3,3,No
