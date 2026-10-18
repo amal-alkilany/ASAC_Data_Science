@@ -1,0 +1,84 @@
+# Eight features, judged honestly, and priced
+
+In this activity, you will train a classifier on eight features, score it against the majority guess, read its confusion matrix and ROC curve, move the threshold, find who it misses, read what it learned, and let invented costs choose the threshold.
+
+**Time:** about 90 minutes in class, following along, across several steps · **Data:** `ml.telco` (activity 01) · **Starter:** `Unsolved/many_features.sql`
+
+## The story
+
+The one-feature model ranked customers by tenure only. The retention team knows more about each customer: the contract, the monthly bill, the internet service, how they pay, whether they have tech support. With more to learn from, can the model find the leavers better? And once it gives a probability, which customers should actually get an offer?
+
+## What you will learn
+
+- To judge a classifier against the **majority guess**, not against zero.
+- To read accuracy, precision, recall, F1 and ROC AUC, and the confusion matrix, in business words.
+- To move the threshold, and to see that each choice trades leavers found against offers wasted.
+- To let the costs of each mistake choose the threshold.
+
+## Before you start
+
+You need `ml.telco` from activity 01.
+
+## Steps
+
+1. **Train with eight features (block 1).** `tenure`, `MonthlyCharges`, `Contract`, `InternetService`, `PaymentMethod`, `SeniorCitizen`, `PaperlessBilling`, `TechSupport`. Five are text: BigQuery one-hot encodes them, as in D11. `customerID` is left out (an identifier says nothing about leaving), and so is `TotalCharges`.
+
+2. **Score it (block 2).** `ML.EVALUATE` scores the 20% held aside at threshold 0.5:
+
+    | Column | Question it answers |
+    |---|---|
+    | `accuracy` | what share of all customers did it get right? |
+    | `precision` | of the customers it said would leave, what share did? |
+    | `recall` | of the customers who left, what share did it find? |
+    | `f1_score` | one number that balances precision and recall |
+    | `roc_auc` | how well it ranks leavers above stayers, over every threshold: 0.5 is guessing, 1 is perfect |
+
+    Expect about 0.80, 0.64, 0.52, 0.58 and 0.84. Your split is random: your numbers move a little.
+
+3. **The guess to beat (block 3).** Say "No" for everyone. It is right for every customer who stayed: 0.735. The model's 0.80 is only a little higher, but the guess finds **no** leavers and the model finds about half. When one class is rare, accuracy hides what matters.
+
+4. **The matrix in SQL (block 4).** `ML.CONFUSION_MATRIX` counts the held-aside customers by what really happened (rows) and what the model said (columns). About 925 stayed and were left alone; 109 stayed but got an offer; 178 left without an offer; 195 left and got one.
+
+5. **The ROC curve (block 5).** `ML.ROC_CURVE` lists many thresholds and, for each, the recall and the false positive rate (the share of stayers wrongly flagged). As the threshold falls, both rise.
+
+6. **Move the threshold (block 6).** `STRUCT(0.3 AS threshold)` passes a setting to `ML.EVALUATE`. At 0.3, 0.5 and 0.7: precision about 0.53, 0.64, 0.78; recall about 0.77, 0.52, 0.19. A lower threshold finds more leavers and wastes more offers. There is no setting that is free.
+
+7. **Who does it miss? (block 7).** The customers who left but were predicted to stay, by contract. They have longer tenure and more often yearly contracts: the kind of customer the model learned to trust.
+
+8. **Read what it learned (block 8).** In logistic regression a weight works on the log-odds of leaving. Read the **sign** and compare sizes within a feature; do not read it in dollars. Pushing toward leaving: month-to-month contracts, fiber optic internet, paying by electronic check, paperless billing, being a senior citizen. Pushing toward staying: one- and two-year contracts, longer tenure, tech support.
+
+9. **Two new customers (block 9).** The same customer, 12 months in, 70 a month, fiber, electronic check, no tech support: month-to-month about 0.65; two-year contract about 0.31.
+
+10. **Let the costs choose (no SQL).** Invented costs for class: an offer costs 50; a customer who leaves costs 500; an offer keeps 1 in 3 of the leavers who get it. Each caught leaver is worth about 500 ÷ 3 − 50 ≈ 117; each wasted offer costs 50. With the counts from step 6:
+
+    | Threshold | Offers | Leavers caught | Value |
+    |---|---:|---:|---:|
+    | 0.3 | ≈ 538 | ≈ 286 | ≈ +20,800 |
+    | 0.5 | ≈ 304 | ≈ 195 | ≈ +17,300 |
+    | 0.7 | ≈ 93 | ≈ 72 | ≈ +7,400 |
+
+    An offer pays when the probability of leaving × 500 ÷ 3 is more than 50, that is above 0.3. Change the costs and the best threshold moves.
+
+## Check yourself
+
+| Block | Rows returned | One value to check |
+|---|---:|---|
+| 2 | 1 | accuracy ≈ 0.80 · recall ≈ 0.52 · ROC AUC ≈ 0.84 |
+| 3 | 1 | 0.735 |
+| 4 | 2 | rows for No and Yes; your four counts add up to the held-aside rows (about 1,400) |
+| 6 | 3 | recall at 0.3 ≈ 0.77 |
+| 9 | 2 | month-to-month ≈ 0.65 · two year ≈ 0.31 |
+
+## If something goes wrong
+
+- **`Churn` is BOOLEAN:** write `TRUE`/`FALSE` for `'Yes'`/`'No'`, and `p.label = TRUE`.
+- **Block 9 fails with a type error:** each typed-in value must have the training column's type: `SeniorCitizen` is a number (0 or 1), the others text.
+- **Your counts differ from the slides:** each random 20% is a different 1,400 customers.
+
+## Bonus
+
+If an offer cost 100 instead of 50, which threshold would the costs choose? (Hint: an offer pays when the probability × 500 ÷ 3 is more than the cost.)
+
+## References
+
+Telco Customer Churn, IBM sample data; course copy in [`shared/datasets/ml_classics`](../../../../../shared/datasets/ml_classics/README.md). The retention costs are invented for class. BigQuery ML: [ML.EVALUATE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate), [ML.CONFUSION_MATRIX](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-confusion), [ML.ROC_CURVE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc), Google Cloud.
