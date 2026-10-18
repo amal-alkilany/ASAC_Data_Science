@@ -4,7 +4,7 @@ Small, clean teaching datasets for Module 3. One row is already one example, so 
 
 | File | Table in BigQuery | One row is one … | Rows | Used on |
 |---|---|---|---:|---|
-| [`salary_data.csv`](salary_data.csv) | `ml.salary` | past hire | 30 | D11: a first model, one feature |
+| [`salary_data.csv`](salary_data.csv) | `ml.salary_data` | past hire | 30 | D11: a first model, one feature |
 | [`insurance.csv`](insurance.csv) | `ml.insurance` | insured person | 1,338 | D11: many features, scored on held-out rows |
 | [`mpg.csv`](mpg.csv) | `ml.cars` | car model | 398 | D11 lab (self-guided) |
 | [`telco_churn.csv`](telco_churn.csv) | `ml.telco` | telecom customer | 7,043 | D12: predicting a category |
@@ -16,13 +16,15 @@ Small, clean teaching datasets for Module 3. One row is already one example, so 
 2. Download the CSV file from this folder.
 3. Next to `ml`, **⋮** → **Create table**. **Create table from:** Upload; choose the file; **File format:** CSV. **Table:** the name in the table above. **Schema:** tick **Auto detect**. **Create table**.
 
+Use the table names above. None of them is also the name of one of its columns: in BigQuery a table name can stand for the whole row, so `salary` as a table holding a `salary` column invites confusion. That is why the salary table is `salary_data`.
+
 The steps are the same as in [Upload a CSV to BigQuery](../../../modules/02-sql/resources/upload-a-csv-to-bigquery.md).
 
 ## Check the upload
 
 | Table | `COUNT(*)` | Check |
 |---|---:|---|
-| `ml.salary` | 30 | `years_experience` from 1.1 to 10.5 |
+| `ml.salary_data` | 30 | `years_experience` from 1.1 to 10.5 |
 | `ml.insurance` | 1,338 | `smoker` and `sex` are text (STRING) |
 | `ml.cars` | 398 | `horsepower` arrives as STRING: six cars have `?` (the lab explains why that matters) |
 | `ml.telco` | 7,043 | `TotalCharges` arrives as STRING (11 blanks, all tenure 0); `Churn` is Yes or No |

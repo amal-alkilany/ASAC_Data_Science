@@ -1,8 +1,8 @@
 # Lab 03 · Thresholds and curves: from a probability to a decision
 
-In this self-guided lab, you will read the whole ROC curve, rebuild the confusion matrix at any threshold, let SQL find the threshold your costs prefer, and compare a one-feature model with the eight-feature one on ranking.
+In this self-guided lab, you will read the whole ROC curve, rebuild the confusion matrix at any threshold, let SQL find the threshold your costs prefer, compare a one-feature model with the eight-feature one on ranking, and compute the precision-recall curve and its area (PR AUC) from BigQuery's output.
 
-**When:** after class, about 40 minutes, at your own pace. Not submitted. · **Data:** `ml.telco`, `ml.churn_tenure`, `ml.churn_model` (activities 01 and 02) · **SQL:** `Solved/thresholds_and_curves.sql`
+**When:** after class, about 50 minutes, at your own pace. Not submitted. · **Data:** `ml.telco`, `ml.churn_tenure`, `ml.churn_model` (activities 01 and 02) · **SQL:** `Solved/thresholds_and_curves.sql`
 
 ## How to work through this lab
 
@@ -67,7 +67,44 @@ FROM ML.EVALUATE(MODEL ml.churn_model);
 
 **What you should see:** about 0.74 against about 0.84. The extra features help the model put leavers above stayers.
 
-## Step 5 · Log loss: are the probabilities honest?
+## Step 5 · Precision against recall: PR AUC
+
+ROC AUC asks whether leavers get higher probabilities than stayers; guessing scores 0.5 whatever the share of leavers. The precision-recall curve asks something closer to the retention team's question: of the customers we flag, how many really leave, as we flag more and find more leavers? Guessing scores the share who left. BigQuery does not print PR AUC, but `ML.ROC_CURVE` has everything needed: precision is `true_positives ÷ (true_positives + false_positives)`.
+
+```sql
+SELECT ROUND(threshold, 2) AS threshold, ROUND(recall, 3) AS recall,
+       ROUND(SAFE_DIVIDE(true_positives, true_positives + false_positives), 3) AS precision
+FROM ML.ROC_CURVE(MODEL ml.churn_model)
+ORDER BY recall;
+```
+
+**What you should see:** as recall rises toward 1, precision falls toward about 0.27: flag everyone and only the share who left are right.
+
+Now the area under that curve. Walk the thresholds from high to low; each step finds a little more recall, and that slice counts at the precision it came with. `LAG` (D10's window functions) gives the recall of the step before.
+
+```sql
+WITH pr AS (
+  SELECT threshold, recall,
+         SAFE_DIVIDE(true_positives, true_positives + false_positives) AS precision
+  FROM ML.ROC_CURVE(MODEL ml.churn_model)
+),
+steps AS (
+  SELECT precision,
+         recall - COALESCE(LAG(recall) OVER (ORDER BY threshold DESC), 0) AS recall_gained
+  FROM pr
+)
+SELECT ROUND(SUM(recall_gained * precision), 3) AS pr_auc
+FROM steps;
+
+SELECT ROUND(COUNTIF(Churn = 'Yes') / COUNT(*), 3) AS share_who_left
+FROM ml.telco;
+```
+
+**What you should see:** PR AUC about 0.64 (between about 0.60 and 0.67, depending on your split), against a guessing line of 0.265. Change `ml.churn_model` to `ml.churn_tenure` in the first query: about 0.49. `ML.ROC_CURVE` uses about a hundred thresholds, so this is a close approximation of the area Python's `average_precision_score` gives, not the exact value.
+
+**Think:** ROC AUC 0.84 and PR AUC 0.63 describe the same model. Why is it wrong to say the second is "worse"? (Hint: compare each with its own guessing line.)
+
+## Step 6 · Log loss: are the probabilities honest?
 
 `ML.EVALUATE` also prints `log_loss`. It punishes confident mistakes: a leaver given 0.02 costs far more than a leaver given 0.4. Lower is better.
 
@@ -91,8 +128,9 @@ FROM ML.EVALUATE(MODEL ml.churn_model);
 | `STRUCT(0.3 AS threshold)` | |
 | campaign value per threshold | |
 | `roc_auc`, one feature against eight | |
+| PR AUC, and its guessing line | |
 | `log_loss` | |
 
 ## References
 
-Telco Customer Churn, IBM sample data. BigQuery ML: [ML.ROC_CURVE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc), [ML.CONFUSION_MATRIX](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-confusion), [ML.EVALUATE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate), Google Cloud.
+Telco Customer Churn, IBM sample data. Precision-recall curves: Saito and Rehmsmeier, "The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets", *PLoS ONE*, 2015. BigQuery ML: [ML.ROC_CURVE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc), [ML.CONFUSION_MATRIX](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-confusion), [ML.EVALUATE](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate), Google Cloud.

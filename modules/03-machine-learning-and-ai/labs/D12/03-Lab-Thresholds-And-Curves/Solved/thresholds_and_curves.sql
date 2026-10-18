@@ -28,7 +28,28 @@ UNION ALL
 SELECT 'eight features', ROUND(roc_auc, 3)
 FROM ML.EVALUATE(MODEL ml.churn_model);
 
--- Step 5 · Log loss: are the probabilities honest?
+-- Step 5 · Precision against recall: PR AUC
+SELECT ROUND(threshold, 2) AS threshold, ROUND(recall, 3) AS recall,
+       ROUND(SAFE_DIVIDE(true_positives, true_positives + false_positives), 3) AS precision
+FROM ML.ROC_CURVE(MODEL ml.churn_model)
+ORDER BY recall;
+WITH pr AS (
+  SELECT threshold, recall,
+         SAFE_DIVIDE(true_positives, true_positives + false_positives) AS precision
+  FROM ML.ROC_CURVE(MODEL ml.churn_model)
+),
+steps AS (
+  SELECT precision,
+         recall - COALESCE(LAG(recall) OVER (ORDER BY threshold DESC), 0) AS recall_gained
+  FROM pr
+)
+SELECT ROUND(SUM(recall_gained * precision), 3) AS pr_auc
+FROM steps;
+
+SELECT ROUND(COUNTIF(Churn = 'Yes') / COUNT(*), 3) AS share_who_left
+FROM ml.telco;
+
+-- Step 6 · Log loss: are the probabilities honest?
 SELECT 'tenure only' AS model, ROUND(log_loss, 3) AS log_loss
 FROM ML.EVALUATE(MODEL ml.churn_tenure)
 UNION ALL

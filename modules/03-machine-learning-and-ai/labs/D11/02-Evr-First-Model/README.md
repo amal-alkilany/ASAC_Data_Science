@@ -2,7 +2,7 @@
 
 In this activity, you will upload 30 past hires, train a model that predicts salary from years of experience, read the two numbers it learned, and ask it about a new candidate.
 
-**Time:** about 22 minutes in class, following along · **Data:** [`salary_data.csv`](../../../../../shared/datasets/ml_classics/salary_data.csv) → `ml.salary` · **Starter:** `Unsolved/first_model.sql`
+**Time:** about 22 minutes in class, following along · **Data:** [`salary_data.csv`](../../../../../shared/datasets/ml_classics/salary_data.csv) → `ml.salary_data` · **Starter:** `Unsolved/first_model.sql`
 
 ## The story
 
@@ -24,7 +24,9 @@ You need nothing from earlier days. Download [`salary_data.csv`](../../../../../
 
 1. **A dataset for machine learning (block 1).** Run it. It creates the dataset `ml`, in the same location (US) as `nakheel`. Everything this week goes in it.
 
-2. **Upload the file.** Next to `ml`, **⋮** → **Create table**. **Create table from:** Upload; choose `salary_data.csv`; **File format:** CSV. **Table:** `salary`. **Schema:** tick **Auto detect**. **Create table**. (The same steps as [Upload a CSV to BigQuery](../../../../02-sql/resources/upload-a-csv-to-bigquery.md).)
+2. **Upload the file.** Next to `ml`, **⋮** → **Create table**. **Create table from:** Upload; choose `salary_data.csv`; **File format:** CSV. **Table:** `salary_data`. **Schema:** tick **Auto detect**. **Create table**. (The same steps as [Upload a CSV to BigQuery](../../../../02-sql/resources/upload-a-csv-to-bigquery.md).)
+
+    Why `salary_data` and not `salary`? The file has a column called `salary`. In BigQuery, a table name can also stand for a whole row, so a table that shares its name with one of its columns invites confusion: `salary` could be read as the row instead of the column. Give each table a name that none of its columns uses.
 
 3. **Look at the data (block 2).** Never train on a table you have not looked at. One row is one past hire. Experience runs from 1.1 to 10.5 years and salary from about 37,700 to 122,400 dollars. Salary rises with experience: you could almost draw the line yourself.
 
@@ -54,7 +56,7 @@ You need nothing from earlier days. Download [`salary_data.csv`](../../../../../
 
 ## If something goes wrong
 
-- **`Not found: Table ml.salary`:** the upload went to another dataset or another name. The table must be `salary` inside `ml`.
+- **`Not found: Table ml.salary_data`:** the upload went to another dataset or another name. The table must be `salary_data` inside `ml`.
 - **`Unrecognized name: salary`:** open the table's **Schema** tab and use the column names it shows.
 - **The model takes longer than two minutes:** wait. The sandbox queues training jobs.
 

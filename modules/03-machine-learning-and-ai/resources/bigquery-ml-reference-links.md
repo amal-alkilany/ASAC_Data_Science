@@ -36,7 +36,7 @@ Official pages to read alongside Module 3. Start with **Start here**; then use t
 | [Hyperparameter tuning overview](https://docs.cloud.google.com/bigquery/docs/hp-tuning-overview) | Letting BigQuery try settings for you (`NUM_TRIALS`, `HPARAM_RANGE`); D11 lab 07, part C |
 | [Explainable AI overview](https://docs.cloud.google.com/bigquery/docs/xai-overview) | Which features drive a model's predictions (`ENABLE_GLOBAL_EXPLAIN`) |
 | [Model selection guide (PDF)](https://docs.cloud.google.com/static/bigquery/images/ml-model-cheatsheet.pdf) | Which model type fits which question |
-| [BigQuery ML pricing](https://cloud.google.com/bigquery/pricing#bqml) | What training costs in a paid project (training is free in the sandbox, within its limits) |
+| [BigQuery ML pricing](https://cloud.google.com/bigquery/pricing#bqml) | What training costs. Linear and logistic regression, k-means and time series train inside BigQuery; boosted trees, random forest, neural networks and AutoML are trained on Vertex AI and billed separately |
 
 ## CREATE MODEL, by model type
 
@@ -49,7 +49,8 @@ Each page lists every option for that model type, with its default. The labs cha
 | D14 | Boosted trees | [CREATE MODEL for boosted trees](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-boosted-tree) |
 | D14 | Random forest | [CREATE MODEL for random forest](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-random-forest) |
 | D15 | Time series (`ARIMA_PLUS`) | [CREATE MODEL for time series](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-time-series) |
-| Recognition only | Deep neural networks, AutoML | [DNN](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-dnn-models) · [AutoML](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-automl) |
+| D12 (named), recognition only | Deep neural networks, wide & deep, AutoML | [DNN](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-dnn-models) · [Wide & deep](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-wnd-models) · [AutoML](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-automl) |
+| D12 (named), recognition only | Classifying free text with Gemini, no training (`AI.CLASSIFY`; needs a billed project) | [The AI.CLASSIFY function](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-ai-classify) |
 | All | Every model type and option on one page | [The CREATE MODEL statement](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create) |
 
 ## The ML functions used in class and in the labs
@@ -57,13 +58,13 @@ Each page lists every option for that model type, with its default. The labs cha
 | Function | What it returns | First used |
 |---|---|---|
 | [`ML.PREDICT`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-predict) | a prediction (and, for classifiers, probabilities) for each row you pass in | D11 |
-| [`ML.EVALUATE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate) | the scores: MAE and R², or accuracy, precision, recall and ROC AUC | D11 |
+| [`ML.EVALUATE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate) | the scores: MAE and R², or accuracy, precision, recall, F1, log loss and ROC AUC | D11 |
 | [`ML.WEIGHTS`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-weights) | the numbers the model learned | D11 |
 | [`ML.ADVANCED_WEIGHTS`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-advanced-weights) | weights with standard errors and p-values | D11 lab 06 |
 | [`ML.TRAINING_INFO`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-train) | the loss at each training step | D11 labs 05, 07 |
 | [`ML.GLOBAL_EXPLAIN`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-global-explain) | how much each feature drives the predictions | D11 lab 06 |
 | [`ML.CONFUSION_MATRIX`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-confusion) | the counts of right and wrong answers by class | D12 |
-| [`ML.ROC_CURVE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc) | recall and false positive rate at each threshold | D12 |
+| [`ML.ROC_CURVE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc) | recall, false positive rate and the four counts at each threshold; precision and PR AUC are computed from them (D12 lab 03) | D12 |
 
 ## Tutorials to try on your own
 

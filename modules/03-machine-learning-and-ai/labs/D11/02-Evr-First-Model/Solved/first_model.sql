@@ -4,11 +4,11 @@
 -- 1. A dataset for machine learning, in the same location as nakheel.
 CREATE SCHEMA IF NOT EXISTS ml OPTIONS (location = 'US');
 
--- (Upload salary_data.csv as the table ml.salary: see the README, step 2.)
+-- (Upload salary_data.csv as the table ml.salary_data: see the README, step 2.)
 
 -- 2. Look at the data first. One row is one past hire.
 SELECT years_experience, salary
-FROM ml.salary
+FROM ml.salary_data
 ORDER BY years_experience;
 
 -- 3. Train. The label is salary; every other column in the SELECT is a feature.
@@ -18,7 +18,7 @@ OPTIONS (
   input_label_cols = ['salary']
 ) AS
 SELECT years_experience, salary
-FROM ml.salary;
+FROM ml.salary_data;
 
 -- 4. The model is two numbers: a starting point and an amount per year.
 SELECT processed_input, ROUND(weight, 1) AS weight

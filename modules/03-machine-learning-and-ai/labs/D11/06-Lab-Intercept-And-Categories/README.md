@@ -2,7 +2,7 @@
 
 In this self-guided lab, you will switch the intercept off and watch the line break, see the two ways BigQuery turns text into numbers, ask which features the data really supports, and find out why raw weights can rank features in the wrong order.
 
-**When:** after class, about 40 minutes, at your own pace. Not submitted. · **Data:** `ml.salary`, `ml.insurance` (class), `ml.cars_clean` and `ml.cars_random` (lab 05) · **SQL:** `Solved/intercept_and_categories.sql`
+**When:** after class, about 40 minutes, at your own pace. Not submitted. · **Data:** `ml.salary_data`, `ml.insurance` (class), `ml.cars_clean` and `ml.cars_random` (lab 05) · **SQL:** `Solved/intercept_and_categories.sql`
 
 ## How to work through this lab
 
@@ -17,7 +17,7 @@ CREATE OR REPLACE MODEL ml.salary_no_intercept
 OPTIONS (model_type = 'LINEAR_REG', input_label_cols = ['salary'],
          fit_intercept = FALSE) AS
 SELECT years_experience, salary
-FROM ml.salary;
+FROM ml.salary_data;
 
 SELECT processed_input, ROUND(weight, 1) AS weight
 FROM ML.WEIGHTS(MODEL ml.salary_no_intercept);

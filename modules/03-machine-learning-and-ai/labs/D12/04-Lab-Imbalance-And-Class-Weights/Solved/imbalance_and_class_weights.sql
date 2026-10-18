@@ -32,11 +32,31 @@ SELECT ROUND(accuracy, 3) AS accuracy, ROUND(precision, 3) AS precision,
        ROUND(recall, 3) AS recall, ROUND(roc_auc, 3) AS roc_auc
 FROM ML.EVALUATE(MODEL ml.attrition_weighted);
 
--- Step 4 · The threshold does something similar
+-- Step 4 · Which scores moved?
+SELECT 'plain' AS model, ROUND(recall, 3) AS recall, ROUND(f1_score, 3) AS f1,
+       ROUND(roc_auc, 3) AS roc_auc
+FROM ML.EVALUATE(MODEL ml.attrition_plain)
+UNION ALL
+SELECT 'auto weights', ROUND(recall, 3), ROUND(f1_score, 3), ROUND(roc_auc, 3)
+FROM ML.EVALUATE(MODEL ml.attrition_weighted);
+WITH pr AS (
+  SELECT threshold, recall,
+         SAFE_DIVIDE(true_positives, true_positives + false_positives) AS precision
+  FROM ML.ROC_CURVE(MODEL ml.attrition_plain)
+),
+steps AS (
+  SELECT precision,
+         recall - COALESCE(LAG(recall) OVER (ORDER BY threshold DESC), 0) AS recall_gained
+  FROM pr
+)
+SELECT ROUND(SUM(recall_gained * precision), 3) AS pr_auc
+FROM steps;
+
+-- Step 5 · The threshold does something similar
 SELECT ROUND(precision, 3) AS precision, ROUND(recall, 3) AS recall
 FROM ML.EVALUATE(MODEL ml.attrition_plain, STRUCT(0.2 AS threshold));
 
--- Step 5 · `CLASS_WEIGHTS`: choose the weights yourself
+-- Step 6 · `CLASS_WEIGHTS`: choose the weights yourself
 CREATE OR REPLACE MODEL ml.attrition_custom
 OPTIONS (model_type = 'LOGISTIC_REG', input_label_cols = ['Attrition'],
          data_split_method = 'RANDOM', data_split_eval_fraction = 0.2,

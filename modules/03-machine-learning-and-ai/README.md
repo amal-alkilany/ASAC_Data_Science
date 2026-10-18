@@ -23,7 +23,7 @@ Each algorithm is learned first on small, well-known datasets, so the attention 
 
 | Dataset | BigQuery table | Used on | Public page |
 |---|---|---|---|
-| Salary and years of experience (30 hires) | `ml.salary` | D11 activity 02, lab 06 | [Kaggle: Salary data, simple linear regression](https://www.kaggle.com/datasets/karthickveerakumar/salary-data-simple-linear-regression) |
+| Salary and years of experience (30 hires) | `ml.salary_data` | D11 activity 02, lab 06 | [Kaggle: Salary data, simple linear regression](https://www.kaggle.com/datasets/karthickveerakumar/salary-data-simple-linear-regression) |
 | Medical Cost Personal Datasets | `ml.insurance` | D11 activities 03 and 04, lab 06 | [Kaggle: Medical Cost Personal Datasets](https://www.kaggle.com/datasets/mirichoi0218/insurance); from Brett Lantz, *Machine Learning with R* (Packt, 2013) |
 | Auto MPG | `ml.cars` | D11 labs 05–07 | [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/9/auto+mpg) (Quinlan, 1993) |
 | Telco Customer Churn (IBM sample data) | `ml.telco` | D12 activities 01 and 02, lab 03 | [IBM on GitHub](https://github.com/IBM/telco-customer-churn-on-icp4d) · [Kaggle: Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) |

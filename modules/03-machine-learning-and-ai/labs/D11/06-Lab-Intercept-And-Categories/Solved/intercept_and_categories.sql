@@ -6,7 +6,7 @@ CREATE OR REPLACE MODEL ml.salary_no_intercept
 OPTIONS (model_type = 'LINEAR_REG', input_label_cols = ['salary'],
          fit_intercept = FALSE) AS
 SELECT years_experience, salary
-FROM ml.salary;
+FROM ml.salary_data;
 
 SELECT processed_input, ROUND(weight, 1) AS weight
 FROM ML.WEIGHTS(MODEL ml.salary_no_intercept);
