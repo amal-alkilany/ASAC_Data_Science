@@ -2,7 +2,7 @@
 
 [Course home](../../README.md) · [Schedule](../../course/STUDENT_SCHEDULE.md)
 
-**D11–D15 and D24 · Status: D11 and D12 ready (slides and labs; BigQuery numbers still being confirmed); D13–D15 and D24 in production.**
+**D11–D15 and D24 · Status: D11, D12 and D13 ready (slides and labs; BigQuery numbers still being confirmed); D14–D15 and D24 in production.**
 
 Understand how models learn and are evaluated, build them in BigQuery ML, hand their outputs to Power BI, and use generative AI with verification and privacy controls.
 
@@ -28,17 +28,19 @@ Each algorithm is learned first on small, well-known datasets, so the attention 
 | Auto MPG | `ml.cars` | D11 labs 05–07 | [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/9/auto+mpg) (Quinlan, 1993) |
 | Telco Customer Churn (IBM sample data) | `ml.telco` | D12 activities 01 and 02, lab 03 | [IBM on GitHub](https://github.com/IBM/telco-customer-churn-on-icp4d) · [Kaggle: Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) |
 | IBM HR Analytics Employee Attrition & Performance (ten columns) | `ml.employees` | D12 lab 04 | [Kaggle: IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) |
-| Palmer penguins | `bigquery-public-data.ml_datasets.penguins` (public, nothing to upload) | D12 lab 05 | [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) (Horst, Hill and Gorman, 2020; data from Gorman, Williams and Fraser, 2014) · [Google's tutorial that uses the table](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial) |
-| Nakheel Retail (course data) | `nakheel.*` | D11 lab 08, D12 lab 06 (optional) | [shared/datasets/nakheel](../../shared/datasets/nakheel/README.md) |
+| Palmer penguins | `bigquery-public-data.ml_datasets.penguins` (public, nothing to upload) | D12 lab 05, D13 activity 03 | [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) (Horst, Hill and Gorman, 2020; data from Gorman, Williams and Fraser, 2014) · [Google's tutorial that uses the table](https://docs.cloud.google.com/bigquery/docs/linear-regression-tutorial) |
+| Mall Customer Segmentation Data (200 card members) | `ml.mall` | D13 activities 01, 02 and 04, labs 05–06 | [Kaggle: Mall Customer Segmentation Data](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python); made for teaching, from the *Machine Learning A–Z* course |
+| Wholesale customers (440 clients of a Portuguese food distributor) | `ml.wholesale` | D13 labs 07–08 | [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/292/wholesale+customers) (Cardoso, 2013) |
+| Nakheel Retail (course data) | `nakheel.*` | D11 lab 08, D12 lab 06, D13 lab 09 (optional) | [shared/datasets/nakheel](../../shared/datasets/nakheel/README.md) |
 
 ## Materials
 
 | Folder | Intended contents | Status |
 |---|---|---|
-| [slides_pdf/](slides_pdf/) | The slides for each session, as PDF | D11, D12 |
-| [labs/](labs/) | Guided/independent instructions, starter and restart files; released solutions | [D11](labs/D11/), [D12](labs/D12/) |
+| [slides_pdf/](slides_pdf/) | The slides for each session, as PDF | D11, D12, D13 |
+| [labs/](labs/) | Guided/independent instructions, starter and restart files; released solutions | [D11](labs/D11/), [D12](labs/D12/), [D13](labs/D13/) |
 | [assignments/](assignments/) | Relevant weekly sets, graded briefs, rubrics and submission instructions | Planned |
-| [datasets/](datasets/) | Small domain-specific fixtures or links to the shared dataset | D11 and D12 use the [classic ML datasets](../../shared/datasets/ml_classics/README.md); see [Datasets](#datasets) |
+| [datasets/](datasets/) | Small domain-specific fixtures or links to the shared dataset | D11, D12 and D13 use the [classic ML datasets](../../shared/datasets/ml_classics/README.md); see [Datasets](#datasets) |
 | [resources/](resources/) | Setup instructions, cheat sheets and official reference links | [BigQuery ML reference links](resources/bigquery-ml-reference-links.md) |
 
 Keep D01–D26 in filenames, for example `D03-select-and-filter.md`; use `W02-...`, `A01-...` and `P01-...` for weekly sets, assignments and practicals. These are naming examples, not existing files.

@@ -6,7 +6,7 @@ SELECT column_name, data_type
 FROM ml.INFORMATION_SCHEMA.COLUMNS
 WHERE table_name = 'cars';
 
-SELECT horsepower, COUNT(*) AS cars
+SELECT horsepower, COUNT(*) AS car_count
 FROM ml.cars
 WHERE SAFE_CAST(horsepower AS FLOAT64) IS NULL
 GROUP BY horsepower;

@@ -22,22 +22,22 @@ Before you build anything, find out what the tables really hold.
 
 ```sql
 -- Orders: one row per order, three statuses.
-SELECT status, COUNT(*) AS orders, COUNT(DISTINCT customer_id) AS customers
+SELECT status, COUNT(*) AS order_count, COUNT(DISTINCT customer_id) AS customer_count
 FROM nakheel.orders
 GROUP BY status
 ORDER BY status;
 
 -- Segments as they were typed.
-SELECT segment, COUNT(*) AS customers
+SELECT segment, COUNT(*) AS customer_count
 FROM nakheel.customers
 GROUP BY segment
-ORDER BY customers DESC;
+ORDER BY customer_count DESC;
 
 -- Cities as they were typed.
-SELECT city, COUNT(*) AS customers
+SELECT city, COUNT(*) AS customer_count
 FROM nakheel.customers
 GROUP BY city
-ORDER BY customers DESC;
+ORDER BY customer_count DESC;
 ```
 
 **What you should see:**
@@ -130,7 +130,7 @@ Why each part is there:
 Check it:
 
 ```sql
-SELECT COUNT(*) AS customers,
+SELECT COUNT(*) AS customer_count,
        COUNTIF(revenue_next_6m = 0) AS bought_nothing_after,
        ROUND(AVG(revenue_next_6m), 2) AS avg_next_6m
 FROM ml.customer_features;

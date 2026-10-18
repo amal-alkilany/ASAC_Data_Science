@@ -3,22 +3,22 @@
 
 -- Step 1 · Check the data
 -- Orders: one row per order, three statuses.
-SELECT status, COUNT(*) AS orders, COUNT(DISTINCT customer_id) AS customers
+SELECT status, COUNT(*) AS order_count, COUNT(DISTINCT customer_id) AS customer_count
 FROM nakheel.orders
 GROUP BY status
 ORDER BY status;
 
 -- Segments as they were typed.
-SELECT segment, COUNT(*) AS customers
+SELECT segment, COUNT(*) AS customer_count
 FROM nakheel.customers
 GROUP BY segment
-ORDER BY customers DESC;
+ORDER BY customer_count DESC;
 
 -- Cities as they were typed.
-SELECT city, COUNT(*) AS customers
+SELECT city, COUNT(*) AS customer_count
 FROM nakheel.customers
 GROUP BY city
-ORDER BY customers DESC;
+ORDER BY customer_count DESC;
 
 -- Step 3 · Build the customer view
 CREATE SCHEMA IF NOT EXISTS ml OPTIONS (location = 'US');
@@ -72,7 +72,7 @@ FROM customers AS c
 INNER JOIN before_cutoff AS b ON c.customer_id = b.customer_id
 LEFT JOIN after_cutoff AS a ON c.customer_id = a.customer_id;
 
-SELECT COUNT(*) AS customers,
+SELECT COUNT(*) AS customer_count,
        COUNTIF(revenue_next_6m = 0) AS bought_nothing_after,
        ROUND(AVG(revenue_next_6m), 2) AS avg_next_6m
 FROM ml.customer_features;

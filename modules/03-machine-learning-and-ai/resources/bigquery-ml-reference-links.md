@@ -23,6 +23,7 @@ Official pages to read alongside Module 3. Start with **Start here**; then use t
 | D12 | [Logistic regression](https://developers.google.com/machine-learning/crash-course/logistic-regression) | The sigmoid, probabilities, log loss |
 | D12 | [Classification](https://developers.google.com/machine-learning/crash-course/classification) | Thresholds, the confusion matrix, accuracy, precision, recall, ROC and AUC |
 | D12 | [ML fairness](https://developers.google.com/machine-learning/crash-course/fairness) | Which features should be in a model at all |
+| D13 | [Clustering](https://developers.google.com/machine-learning/clustering) (an advanced course beside the Crash Course) | Similarity measures, k-means, judging a clustering, with exercises |
 | D15 | [Production ML systems](https://developers.google.com/machine-learning/crash-course/production-ml-systems) | What happens to a model after it is trained |
 | D24 | [Intro to large language models](https://developers.google.com/machine-learning/crash-course/llm) | How the models behind generative AI are built |
 
@@ -33,7 +34,7 @@ Official pages to read alongside Module 3. Start with **Start here**; then use t
 | [Automatic feature preprocessing](https://docs.cloud.google.com/bigquery/docs/auto-preprocessing) | What BigQuery does to your columns before training: one-hot encoding of text, standardizing numbers, filling missing values |
 | [Feature preprocessing overview](https://docs.cloud.google.com/bigquery/docs/preprocess-overview) | Doing your own preprocessing, including the `TRANSFORM` clause |
 | [Model evaluation overview](https://docs.cloud.google.com/bigquery/docs/evaluate-overview) | Which rows each model is scored on, and the metrics for each model type |
-| [Hyperparameter tuning overview](https://docs.cloud.google.com/bigquery/docs/hp-tuning-overview) | Letting BigQuery try settings for you (`NUM_TRIALS`, `HPARAM_RANGE`); D11 lab 07, part C |
+| [Hyperparameter tuning overview](https://docs.cloud.google.com/bigquery/docs/hp-tuning-overview) | Letting BigQuery try settings for you (`NUM_TRIALS`, `HPARAM_RANGE`); D11 lab 07, part C; D13 lab 05 |
 | [Explainable AI overview](https://docs.cloud.google.com/bigquery/docs/xai-overview) | Which features drive a model's predictions (`ENABLE_GLOBAL_EXPLAIN`) |
 | [Model selection guide (PDF)](https://docs.cloud.google.com/static/bigquery/images/ml-model-cheatsheet.pdf) | Which model type fits which question |
 | [BigQuery ML pricing](https://cloud.google.com/bigquery/pricing#bqml) | What training costs. Linear and logistic regression, k-means and time series train inside BigQuery; boosted trees, random forest, neural networks and AutoML are trained on Vertex AI and billed separately |
@@ -58,13 +59,16 @@ Each page lists every option for that model type, with its default. The labs cha
 | Function | What it returns | First used |
 |---|---|---|
 | [`ML.PREDICT`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-predict) | a prediction (and, for classifiers, probabilities) for each row you pass in | D11 |
-| [`ML.EVALUATE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate) | the scores: MAE and R², or accuracy, precision, recall, F1, log loss and ROC AUC | D11 |
+| [`ML.EVALUATE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-evaluate) | the scores: MAE and R², or accuracy, precision, recall, F1, log loss and ROC AUC; for k-means, the Davies–Bouldin index and mean squared distance | D11 |
 | [`ML.WEIGHTS`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-weights) | the numbers the model learned | D11 |
 | [`ML.ADVANCED_WEIGHTS`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-advanced-weights) | weights with standard errors and p-values | D11 lab 06 |
-| [`ML.TRAINING_INFO`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-train) | the loss at each training step | D11 labs 05, 07 |
+| [`ML.TRAINING_INFO`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-train) | the loss at each training step (for k-means, also each group's size and radius) | D11 labs 05, 07; D13 lab 06 |
 | [`ML.GLOBAL_EXPLAIN`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-global-explain) | how much each feature drives the predictions | D11 lab 06 |
 | [`ML.CONFUSION_MATRIX`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-confusion) | the counts of right and wrong answers by class | D12 |
 | [`ML.ROC_CURVE`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-roc) | recall, false positive rate and the four counts at each threshold; precision and PR AUC are computed from them (D12 lab 03) | D12 |
+| [`ML.CENTROIDS`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-centroids) | the centre of each k-means group, feature by feature | D13 |
+| [`ML.TRIAL_INFO`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-trial-info) | one row per hyperparameter-tuning trial, with its settings and score | D11 lab 07; D13 lab 05 |
+| [`ML.DETECT_ANOMALIES`](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-detect-anomalies) | which rows are unusual; for k-means, by distance to the nearest centre | D13 lab 08 |
 
 ## Tutorials to try on your own
 

@@ -22,7 +22,7 @@ FROM `bigquery-public-data.ml_datasets.penguins`
 WHERE body_mass_g IS NOT NULL;
 
 -- 3. Each group against the species the model never saw.
-SELECT centroid_id, species, COUNT(*) AS penguins,
+SELECT centroid_id, species, COUNT(*) AS penguin_count,
        MIN(body_mass_g) AS lightest_g, MAX(body_mass_g) AS heaviest_g
 FROM ML.PREDICT(MODEL ml.penguins_raw,
        (SELECT * FROM `bigquery-public-data.ml_datasets.penguins` WHERE body_mass_g IS NOT NULL))
@@ -42,7 +42,7 @@ FROM `bigquery-public-data.ml_datasets.penguins`
 WHERE body_mass_g IS NOT NULL;
 
 -- 5. Compare with species again.
-SELECT centroid_id, species, COUNT(*) AS penguins
+SELECT centroid_id, species, COUNT(*) AS penguin_count
 FROM ML.PREDICT(MODEL ml.penguins_scaled,
        (SELECT * FROM `bigquery-public-data.ml_datasets.penguins` WHERE body_mass_g IS NOT NULL))
 GROUP BY centroid_id, species

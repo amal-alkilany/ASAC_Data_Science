@@ -15,7 +15,7 @@ Run each query, compare with **What you should see**, and answer **Think** in on
 ## Step 1 · Look first
 
 ```sql
-SELECT species, COUNT(*) AS penguins,
+SELECT species, COUNT(*) AS penguin_count,
        ROUND(AVG(flipper_length_mm), 1) AS avg_flipper,
        ROUND(AVG(body_mass_g)) AS avg_mass
 FROM `bigquery-public-data.ml_datasets.penguins`

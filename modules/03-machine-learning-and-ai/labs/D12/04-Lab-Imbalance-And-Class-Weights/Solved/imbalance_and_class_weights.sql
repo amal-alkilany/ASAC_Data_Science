@@ -2,7 +2,7 @@
 -- Self-guided: run one statement at a time.
 
 -- Step 1 · How rare is Yes?
-SELECT Attrition, COUNT(*) AS employees,
+SELECT Attrition, COUNT(*) AS employee_count,
        ROUND(COUNT(*) / SUM(COUNT(*)) OVER (), 3) AS share
 FROM ml.employees
 GROUP BY Attrition;

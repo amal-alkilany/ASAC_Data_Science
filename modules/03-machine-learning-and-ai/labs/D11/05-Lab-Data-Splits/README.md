@@ -29,7 +29,7 @@ WHERE table_name = 'cars';
 Find out why:
 
 ```sql
-SELECT horsepower, COUNT(*) AS cars
+SELECT horsepower, COUNT(*) AS car_count
 FROM ml.cars
 WHERE SAFE_CAST(horsepower AS FLOAT64) IS NULL
 GROUP BY horsepower;

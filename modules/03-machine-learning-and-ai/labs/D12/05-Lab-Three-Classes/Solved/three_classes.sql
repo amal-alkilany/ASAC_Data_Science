@@ -2,7 +2,7 @@
 -- Self-guided: run one statement at a time.
 
 -- Step 1 · Look first
-SELECT species, COUNT(*) AS penguins,
+SELECT species, COUNT(*) AS penguin_count,
        ROUND(AVG(flipper_length_mm), 1) AS avg_flipper,
        ROUND(AVG(body_mass_g)) AS avg_mass
 FROM `bigquery-public-data.ml_datasets.penguins`

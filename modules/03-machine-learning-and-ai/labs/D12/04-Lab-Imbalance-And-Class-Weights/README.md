@@ -17,7 +17,7 @@ Upload `employee_data.csv` as `employees` in the `ml` dataset (**⋮** → **Cre
 ## Step 1 · How rare is Yes?
 
 ```sql
-SELECT Attrition, COUNT(*) AS employees,
+SELECT Attrition, COUNT(*) AS employee_count,
        ROUND(COUNT(*) / SUM(COUNT(*)) OVER (), 3) AS share
 FROM ml.employees
 GROUP BY Attrition;
