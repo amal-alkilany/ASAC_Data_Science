@@ -25,7 +25,7 @@ Understand how models learn and are evaluated, build them in BigQuery ML, hand t
 | [labs/](labs/) | Guided/independent instructions, starter and restart files; released solutions | [D11](labs/D11/), [D12](labs/D12/) |
 | [assignments/](assignments/) | Relevant weekly sets, graded briefs, rubrics and submission instructions | Planned |
 | [datasets/](datasets/) | Small domain-specific fixtures or links to the shared dataset | Planned |
-| [resources/](resources/) | Setup instructions, cheat sheets and official reference links | Planned |
+| [resources/](resources/) | Setup instructions, cheat sheets and official reference links | [BigQuery ML reference links](resources/bigquery-ml-reference-links.md) |
 
 Keep D01–D26 in filenames, for example `D03-select-and-filter.md`; use `W02-...`, `A01-...` and `P01-...` for weekly sets, assignments and practicals. These are naming examples, not existing files.
 
