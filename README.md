@@ -43,16 +43,18 @@ The third-party mock on D26 is separate from all of these. It informs the vouche
 
 ## Course coverage
 
-| Module | Scheduled hours | Main focus |
-|---|---:|---|
-| [01 Data foundations](modules/01-data-foundations/) | 8 | Analyst roles, data quality, ethics and the Power BI workflow |
-| [02 SQL and GitHub](modules/02-sql-and-github/) | 24 | Querying, joins, CTEs, window functions and portfolio workflow |
-| [03 Power Query](modules/03-power-query/) | 16 | Importing, profiling, cleaning, combining and validating data |
-| [04 Data modelling and DAX](modules/04-data-modeling-and-dax/) | 16 | Star schemas, relationships, measures, context and optimisation |
-| [05 Visualisation and storytelling](modules/05-visualization-and-storytelling/) | 16 | Report design, accessibility, interaction and presentation |
-| [06 Managing and securing Power BI](modules/06-power-bi-service/) | 4 | Publishing, workspaces, refresh and row-level security |
-| [07 Machine learning and responsible AI](modules/07-machine-learning-and-ai/) | 12 | BigQuery ML, model evaluation, Python literacy and responsible use |
-| [08 PL-300 review and career readiness](modules/08-pl300-and-career-readiness/) | 8 | Structured review, mock practice and next steps |
+| Module | Days | Scheduled hours | Main focus |
+|---|---|---:|---|
+| [01 Data foundations](modules/01-data-foundations/) | D01–D02 | 8 | Analyst roles, data quality, ethics and the Power BI workflow |
+| [02 SQL](modules/02-sql/) | D03–D10 | 32 | Querying, joins, CTEs, views and window functions in BigQuery |
+| [03 Machine learning and AI literacy](modules/03-machine-learning-and-ai/) | D11–D15, D24 | 24 | BigQuery ML, model evaluation, predictions for Power BI and generative AI used with checks |
+| [04 Power Query](modules/04-power-query/) | D16–D17 | 8 | Importing, profiling, cleaning, combining and validating data |
+| [05 Data modelling and DAX](modules/05-data-modeling-and-dax/) | D18–D20 | 12 | Star schemas, relationships, measures and filter context |
+| [06 Visualisation and storytelling](modules/06-visualization-and-storytelling/) | D21–D22 | 8 | Report design, accessibility, interaction and presentation |
+| [07 Managing and securing Power BI](modules/07-power-bi-service/) | D23 | 4 | Publishing, workspaces, refresh and row-level security |
+| [08 PL-300 review and career readiness](modules/08-pl300-and-career-readiness/) | D25–D26 | 8 | Structured review, mock practice and next steps |
+
+Modules are numbered in the order they are taught. Generative AI (D24) belongs to module 03 although it is taught after Power BI.
 
 ## How sessions work
 

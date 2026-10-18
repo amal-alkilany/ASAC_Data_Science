@@ -6,6 +6,8 @@ Classes run **4:00–8:00 PM** (Asia/Amman) with a break from **6:30 to 7:00 PM*
 
 **Updated 9 October 2026.** D08 needed more time, so Sunday 11 October finishes subqueries, CTEs and views, and Monday 12 October covers window functions and starts Assignment 1. Machine learning starts on 18 October.
 
+**Updated 18 October 2026.** Each assignment now starts when its module is finished, and you always get a full week: Assignment 2 runs from Thursday 29 October to Thursday 5 November, Assignment 3 from Wednesday 4 to Wednesday 11 November, and Assignment 4 from Sunday 8 to Sunday 15 November, three days after the last session.
+
 **Optional sessions, 4:00–6:00 PM: Thursday 8 and Tuesday 20 October.** 8 October reviewed the SQL so far. 20 October is help with SQL and Assignment 1, the day before it is due. They are optional: no new content, no lab and nothing graded. They are shown in yellow on the schedule. (The session on Thursday 22 October is cancelled.)
 
 | Date | Topic | Material home | Lab | Assignment given | Assignment due |
@@ -21,20 +23,20 @@ Classes run **4:00–8:00 PM** (Asia/Amman) with a break from **6:30 to 7:00 PM*
 | **Optional** · Thu 8 Oct 2026 | **Optional review: SQL so far (D03–D08)**, 4:00–6:00 PM | [SQL](../modules/02-sql/README.md) | No | - | - |
 | D09 · Sun 11 Oct 2026 | Subqueries and CTEs, then views (D08 continued) | [SQL](../modules/02-sql/README.md) | After class | - | - |
 | D10 · Mon 12 Oct 2026 | Window functions, cloud warehouses and Assignment 1 | [SQL](../modules/02-sql/README.md) | After class | Assignment 1 | - |
-| D11 · Sun 18 Oct 2026 | Machine learning 1: what learning means, and regression | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
-| D12 · Mon 19 Oct 2026 | Machine learning 2: classification and choosing an algorithm | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
+| D11 · Sun 18 Oct 2026 | Machine learning 1: what learning means, and regression | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | - |
+| D12 · Mon 19 Oct 2026 | Machine learning 2: classification, and judging the prediction | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | - |
 | **Optional** · Tue 20 Oct 2026 | **Optional support session: SQL and Assignment 1**, 4:00–6:00 PM | [SQL](../modules/02-sql/README.md) | No | - | - |
-| D13 · Wed 21 Oct 2026 | Machine learning 3: unsupervised learning and clustering | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | Assignment 2 | Assignment 1, before 4:00 PM |
-| D14 · Sun 25 Oct 2026 | Machine learning 4: forecasting, time series and anomalies | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
-| D15 · Mon 26 Oct 2026 | Machine learning 5: MLOps and what BigQuery ML gives you | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | - |
-| D16 · Thu 29 Oct 2026 | Power BI Desktop, then Power Query I: clean, shape and combine | [Prepare data with Power Query](../modules/03-power-query/README.md) | After class | - | Assignment 2, before 4:00 PM |
-| D17 · Sun 1 Nov 2026 | Power Query II: BigQuery, folding and reusable queries | [Prepare data with Power Query](../modules/03-power-query/README.md) | After class | Assignment 3 | - |
-| D18 · Mon 2 Nov 2026 | Model: star schema, relationships and the date table | [Data modelling and DAX](../modules/04-data-modeling-and-dax/README.md) | After class | - | - |
-| D19 · Tue 3 Nov 2026 | DAX I: measures and filter context | [Data modelling and DAX](../modules/04-data-modeling-and-dax/README.md) | After class | - | - |
-| D20 · Wed 4 Nov 2026 | DAX II: time and ranking | [Data modelling and DAX](../modules/04-data-modeling-and-dax/README.md) | After class | - | - |
-| D21 · Thu 5 Nov 2026 | Report design and interactivity | [Visualisation and storytelling](../modules/05-visualization-and-storytelling/README.md) | After class | Assignment 4 | Assignment 3, before 4:00 PM |
-| D22 · Sun 8 Nov 2026 | Analyse and tell the story | [Visualisation and storytelling](../modules/05-visualization-and-storytelling/README.md) | After class | - | - |
-| D23 · Mon 9 Nov 2026 | Manage and secure Power BI | [Manage and secure Power BI](../modules/06-power-bi-service/README.md) | After class | - | - |
-| D24 · Tue 10 Nov 2026 | Generative AI for analysts | [Machine learning and AI literacy](../modules/07-machine-learning-and-ai/README.md) | After class | - | Assignment 4, by 8:00 PM |
-| D25 · Wed 11 Nov 2026 | PL-300 review and weak-area clinic | [PL-300 and career readiness](../modules/08-pl300-and-career-readiness/README.md) | Yes | - | - |
+| D13 · Wed 21 Oct 2026 | Machine learning 3: unsupervised learning and clustering | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | Assignment 1, before 4:00 PM |
+| D14 · Sun 25 Oct 2026 | Machine learning 4: improving models | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | - |
+| D15 · Mon 26 Oct 2026 | Machine learning 5: forecasting, explaining and serving predictions | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | - |
+| D16 · Thu 29 Oct 2026 | ML capstone on new data, then Power BI Desktop and Power Query I | [Prepare data with Power Query](../modules/04-power-query/README.md) | After class | Assignment 2 | - |
+| D17 · Sun 1 Nov 2026 | Power Query II: BigQuery, folding and reusable queries | [Prepare data with Power Query](../modules/04-power-query/README.md) | After class | - | - |
+| D18 · Mon 2 Nov 2026 | Model: star schema, relationships and the date table | [Data modelling and DAX](../modules/05-data-modeling-and-dax/README.md) | After class | - | - |
+| D19 · Tue 3 Nov 2026 | DAX I: measures and filter context | [Data modelling and DAX](../modules/05-data-modeling-and-dax/README.md) | After class | - | - |
+| D20 · Wed 4 Nov 2026 | DAX II: time and ranking | [Data modelling and DAX](../modules/05-data-modeling-and-dax/README.md) | After class | Assignment 3 | - |
+| D21 · Thu 5 Nov 2026 | Report design and interactivity | [Visualisation and storytelling](../modules/06-visualization-and-storytelling/README.md) | After class | - | Assignment 2, before 4:00 PM |
+| D22 · Sun 8 Nov 2026 | Analyse and tell the story | [Visualisation and storytelling](../modules/06-visualization-and-storytelling/README.md) | After class | Assignment 4 (due before 4:00 PM Sun 15 Nov) | - |
+| D23 · Mon 9 Nov 2026 | Manage and secure Power BI | [Manage and secure Power BI](../modules/07-power-bi-service/README.md) | After class | - | - |
+| D24 · Tue 10 Nov 2026 | Generative AI for analysts | [Machine learning and AI literacy](../modules/03-machine-learning-and-ai/README.md) | After class | - | - |
+| D25 · Wed 11 Nov 2026 | PL-300 review and weak-area clinic | [PL-300 and career readiness](../modules/08-pl300-and-career-readiness/README.md) | Yes | - | Assignment 3, before 4:00 PM |
 | D26 · Thu 12 Nov 2026 | Third-party mock and placement handoff | [PL-300 and career readiness](../modules/08-pl300-and-career-readiness/README.md) | No | - | - |
