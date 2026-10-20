@@ -1,0 +1,6 @@
+person_id,person,split,age,sex,bmi,children,smoker,region,charges,prediction,baseline,contrib_age,contrib_bmi,contrib_children,contrib_sex,contrib_smoker,contrib_region
+298,A,validation,25,female,24.3,3,no,southwest,4391.65,8068.54,13219.11,-1938.29,-827.66,1899.81,26.2,-3554.67,-755.96
+733,B,validation,49,female,33.345,2,no,northeast,10370.91,10349.92,13219.11,1117.81,473.25,809.83,-183.28,-5669.97,583.18
+918,C,validation,60,female,36.005,0,no,northeast,13228.85,15261.94,13219.11,6167.65,1641.69,-683.55,-31.42,-5539.02,487.48
+1023,D,validation,33,male,24.795,0,yes,northeast,17904.53,17717.4,13219.11,-1958.54,-7143.68,-769.35,13.23,13986.61,370.04
+1288,E,validation,57,female,31.16,0,yes,northwest,43578.94,43525.61,13219.11,4610.68,4552.53,-512.07,-84.86,21546.2,194.03

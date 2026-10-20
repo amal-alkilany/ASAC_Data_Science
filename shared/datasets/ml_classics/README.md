@@ -5,13 +5,14 @@ Small, clean teaching datasets for Module 3. One row is already one example, so 
 | File | Table in BigQuery | One row is one … | Rows | Used on |
 |---|---|---|---:|---|
 | [`salary_data.csv`](salary_data.csv) | `ml.salary_data` | past hire | 30 | D11: a first model, one feature |
-| [`insurance.csv`](insurance.csv) | `ml.insurance` | insured person | 1,338 | D11: many features, scored on held-out rows |
+| [`insurance.csv`](insurance.csv) | `ml.insurance` | insured person | 1,338 | D11: many features, scored on held-out rows; D14: trees, forests, boosting and better features |
 | [`mpg.csv`](mpg.csv) | `ml.cars` | car model | 398 | D11 lab (self-guided) |
-| [`telco_churn.csv`](telco_churn.csv) | `ml.telco` | telecom customer | 7,043 | D12: predicting a category |
+| [`telco_churn.csv`](telco_churn.csv) | `ml.telco` | telecom customer | 7,043 | D12: predicting a category; D14 lab 07: trees for a category |
 | [`employee_data.csv`](employee_data.csv) | `ml.employees` | employee | 1,470 | D12 lab 04: a rare Yes |
 | [`mall_customers.csv`](mall_customers.csv) | `ml.mall` | mall card member | 200 | D13: a first clustering, judging it, labs 05–06 |
 | [`penguins.csv`](penguins.csv) | none: class reads `bigquery-public-data.ml_datasets.penguins` | penguin | 344 | D13 activity 03 and D12 lab 05 (reference copy) |
 | [`wholesale_customers.csv`](wholesale_customers.csv) | `ml.wholesale` | client of a food wholesaler | 440 | D13 labs 07–08: heavy tails, cosine distance, anomalies |
+| [`air_passengers.csv`](air_passengers.csv) | `ml.air_passengers` | month of international airline travel | 144 | D15: a monthly series for ARIMA_PLUS, split by date, judged against a naive forecast |
 
 ## Upload to BigQuery
 
@@ -20,6 +21,8 @@ Small, clean teaching datasets for Module 3. One row is already one example, so 
 3. Next to `ml`, **⋮** → **Create table**. **Create table from:** Upload; choose the file; **File format:** CSV. **Table:** the name in the table above. **Schema:** tick **Auto detect**. **Create table**.
 
 Use the table names above. None of them is also the name of one of its columns: in BigQuery a table name can stand for the whole row, so `salary` as a table holding a `salary` column invites confusion. That is why the salary table is `salary_data`.
+
+`air_passengers.csv` has a date column: `month` holds the first day of each month. With **Auto detect**, `month` should arrive as DATE and `passengers` as INTEGER; check the schema before you use the table.
 
 The steps are the same as in [Upload a CSV to BigQuery](../../../modules/02-sql/resources/upload-a-csv-to-bigquery.md).
 
@@ -34,6 +37,7 @@ The steps are the same as in [Upload a CSV to BigQuery](../../../modules/02-sql/
 | `ml.employees` | 1,470 | `Attrition` is Yes or No |
 | `ml.mall` | 200 | `annual_income_k` 15 to 137 · `spending_score` 1 to 99 · `gender` is text |
 | `ml.wholesale` | 440 | `channel` Horeca (298) or Retail (142) · `region` Lisbon, Oporto or Other · six spending columns, whole numbers |
+| `ml.air_passengers` | 144 | `month` from 1949-01-01 to 1960-12-01 (DATE) · `passengers` 104 (1949-11) to 622 (1960-07), whole numbers |
 
 ## Sources
 
@@ -46,8 +50,9 @@ The steps are the same as in [Upload a CSV to BigQuery](../../../modules/02-sql/
 | `employee_data.csv` | IBM HR Analytics Employee Attrition & Performance, fictional data created by IBM data scientists. Ten of the columns; `EmployeeID` added for the course copy | [Kaggle](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) | To confirm on the Kaggle page |
 | `mall_customers.csv` | Mall Customer Segmentation Data: 200 members of a mall's card scheme with age, gender, yearly income (thousands of dollars) and a spending score from 1 to 100 that the mall assigns from purchase behaviour. Made for teaching, from the *Machine Learning A–Z* course. Columns renamed (`customer_id`, `gender`, `age`, `annual_income_k`, `spending_score`); values unchanged. Course copy from a public GitHub mirror, checked value by value against a second mirror | [Kaggle](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python) | Kaggle lists "Other (specified in description)"; the description says it was made for learning and gives no licence. To confirm |
 | `penguins.csv` | Palmer penguins (Gorman, Williams and Fraser, 2014, *PLoS ONE* 9(3): e90081), from `penguins_raw` in the palmerpenguins package, with the column names and species names of BigQuery's public table (`culmen_length_mm`, `Adelie Penguin (Pygoscelis adeliae)`, `MALE`/`FEMALE`). For reference: class reads the public table | [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `air_passengers.csv` | Monthly totals of international airline passengers, 1949 to 1960, from Box, Jenkins and Reinsel, *Time Series Analysis, Forecasting and Control* (1976), Series G; the original is in thousands of passengers. Course copy with `month` as the first day of each month and `passengers` as whole numbers, taken from `pmdarima.datasets.load_airpassengers()` and checked value by value against two public GitHub copies (`jbrownlee/Datasets`, `airline-passengers.csv`; `facebook/prophet`, `examples/example_air_passengers.csv`) | [R datasets](https://rweb.stat.umn.edu/R/library/datasets/html/AirPassengers.html) | To confirm before publishing (as for the Kaggle copies) |
 | `wholesale_customers.csv` | Wholesale customers (Cardoso, 2013), UCI Machine Learning Repository, [doi:10.24432/C5030X](https://doi.org/10.24432/C5030X): 440 clients of a Portuguese food distributor and a year's spending, in monetary units, on six product groups. `client_id` added; channel and region codes written out (1 Horeca, 2 Retail; 1 Lisbon, 2 Oporto, 3 Other); columns renamed in lower case (`Delicassen` → `delicatessen`). Course copy checked against the means, minimums and maximums on the UCI page | [UCI](https://archive.ics.uci.edu/dataset/292/wholesale+customers) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 D12 lab 05 and D13 activity 03 use the Palmer penguins, which BigQuery hosts as the public table `bigquery-public-data.ml_datasets.penguins`, so nothing is uploaded; `penguins.csv` is a fixed copy for checking numbers. Source: [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) (Horst, Hill and Gorman, 2020), data from Gorman, Williams and Fraser (2014), *PLoS ONE* 9(3): e90081; [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-Course copies taken 18 October 2026 from Tarek's TechCatalyst materials, the book repository, IBM's repository, the palmerpenguins repository and public mirrors of the Mall and UCI files. Licences of the Kaggle copies to be confirmed before the folder is published on GitHub.
+Course copies taken 18 October 2026 from Tarek's TechCatalyst materials, the book repository, IBM's repository, the palmerpenguins repository and public mirrors of the Mall and UCI files. The Air Passengers copy was taken on 19 October 2026. Licences of the Kaggle copies to be confirmed before the folder is published on GitHub.

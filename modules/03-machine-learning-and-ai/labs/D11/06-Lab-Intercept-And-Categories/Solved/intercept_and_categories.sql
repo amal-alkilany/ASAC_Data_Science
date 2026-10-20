@@ -49,7 +49,12 @@ SELECT processed_input, category, ROUND(weight, 1) AS weight,
        ROUND(standard_error, 1) AS standard_error, ROUND(p_value, 4) AS p_value
 FROM ML.ADVANCED_WEIGHTS(MODEL ml.insurance_pvalues, STRUCT(FALSE AS standardize));
 
--- Step 4 · Raw weights against standardized weights
+-- Step 4 · `ML.FEATURE_INFO`: what the model was given
+SELECT input, min, max, ROUND(mean, 2) AS mean, median, ROUND(stddev, 1) AS stddev,
+       category_count, null_count
+FROM ML.FEATURE_INFO(MODEL ml.insurance_pvalues);
+
+-- Step 5 · Raw weights against standardized weights
 SELECT processed_input, ROUND(weight, 4) AS weight
 FROM ML.WEIGHTS(MODEL ml.cars_random)
 WHERE processed_input != '__INTERCEPT__'
@@ -60,7 +65,7 @@ FROM ML.WEIGHTS(MODEL ml.cars_random, STRUCT(TRUE AS standardize))
 WHERE processed_input != '__INTERCEPT__'
 ORDER BY ABS(weight) DESC;
 
--- Step 5 · `ENABLE_GLOBAL_EXPLAIN`: which features matter most, in one table
+-- Step 6 · `ENABLE_GLOBAL_EXPLAIN`: which features matter most, in one table
 CREATE OR REPLACE MODEL ml.insurance_explained
 OPTIONS (model_type = 'LINEAR_REG', input_label_cols = ['charges'],
          enable_global_explain = TRUE) AS

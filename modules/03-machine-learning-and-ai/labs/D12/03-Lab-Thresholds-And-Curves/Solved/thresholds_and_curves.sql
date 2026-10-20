@@ -12,7 +12,26 @@ ORDER BY threshold;
 SELECT * FROM ML.CONFUSION_MATRIX(MODEL ml.churn_model, STRUCT(0.3 AS threshold));
 SELECT * FROM ML.CONFUSION_MATRIX(MODEL ml.churn_model, STRUCT(0.7 AS threshold));
 
--- Step 3 · Let the costs choose, in SQL
+-- Step 3 · `ML.METRICS`: the same scores from any table of predictions
+SELECT ROUND(precision, 3) AS precision, ROUND(recall, 3) AS recall,
+       ROUND(accuracy, 3) AS accuracy, ROUND(f1_score, 3) AS f1_score
+FROM ML.METRICS(
+  (SELECT predicted_Churn = 'Yes' AS predicted_leave,
+          Churn = 'Yes' AS actual_leave
+   FROM ML.PREDICT(MODEL ml.churn_model, (SELECT * FROM ml.telco), STRUCT(0.5 AS threshold))),
+  predicted_col => 'predicted_leave',
+  actual_col => 'actual_leave',
+  task_type => 'classification');
+
+SELECT ROUND(precision, 3) AS precision, ROUND(recall, 3) AS recall,
+       ROUND(accuracy, 3) AS accuracy, ROUND(f1_score, 3) AS f1_score
+FROM ML.EVALUATE(MODEL ml.churn_model,
+  (SELECT tenure, MonthlyCharges, Contract, InternetService, PaymentMethod,
+          SeniorCitizen, PaperlessBilling, TechSupport, Churn
+   FROM ml.telco),
+  STRUCT(0.5 AS threshold));
+
+-- Step 4 · Let the costs choose, in SQL
 SELECT ROUND(threshold, 2) AS threshold,
        true_positives + false_positives AS offers,
        true_positives AS leavers_caught,
@@ -21,14 +40,14 @@ FROM ML.ROC_CURVE(MODEL ml.churn_model)
 ORDER BY campaign_value DESC
 LIMIT 5;
 
--- Step 4 · Ranking: one feature against eight
+-- Step 5 · Ranking: one feature against eight
 SELECT 'tenure only' AS model, ROUND(roc_auc, 3) AS roc_auc
 FROM ML.EVALUATE(MODEL ml.churn_tenure)
 UNION ALL
 SELECT 'eight features', ROUND(roc_auc, 3)
 FROM ML.EVALUATE(MODEL ml.churn_model);
 
--- Step 5 · Precision against recall: PR AUC
+-- Step 6 · Precision against recall: PR AUC
 SELECT ROUND(threshold, 2) AS threshold, ROUND(recall, 3) AS recall,
        ROUND(SAFE_DIVIDE(true_positives, true_positives + false_positives), 3) AS precision
 FROM ML.ROC_CURVE(MODEL ml.churn_model)
@@ -49,7 +68,7 @@ FROM steps;
 SELECT ROUND(COUNTIF(Churn = 'Yes') / COUNT(*), 3) AS share_who_left
 FROM ml.telco;
 
--- Step 6 · Log loss: are the probabilities honest?
+-- Step 7 · Log loss: are the probabilities honest?
 SELECT 'tenure only' AS model, ROUND(log_loss, 3) AS log_loss
 FROM ML.EVALUATE(MODEL ml.churn_tenure)
 UNION ALL

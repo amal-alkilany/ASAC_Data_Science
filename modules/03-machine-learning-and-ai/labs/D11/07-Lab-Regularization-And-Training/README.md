@@ -144,7 +144,7 @@ FROM ML.WEIGHTS(MODEL ml.cars_l2, STRUCT(TRUE AS standardize))
 ORDER BY processed_input, model;
 ```
 
-Standardized weights (lab 06, step 4) put every feature on one yardstick, so you can compare sizes.
+Standardized weights (lab 06, step 5) put every feature on one yardstick, so you can compare sizes.
 
 **What you should see:** with L2, every weight is closer to zero, and the four engine features share the credit more evenly. No weight becomes exactly zero. Compare `ML.EVALUATE` for both: the scores are close, often a little lower with the penalty on data this small.
 
